@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Setting local port
 app.set('port', (process.env.PORT || 5000));
 
+// Index
 app.get('/', (req, res) => {
   Sign.find()
     .then(signs => {
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
     });
 });
 
+// Post
 app.post('/signs', (req, res) => {
   const newSign = Sign(req.body);
 
@@ -36,6 +38,7 @@ app.post('/signs', (req, res) => {
     })
 });
 
+// Listening to port
 app.listen(app.get('port'), function() {
   console.log('Server running on', app.get('port'));
 });
