@@ -1,22 +1,11 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Signs For Science</title>
-</head>
-<body>
-  <h1>Signs for science</h1>
-  <form action="/signs" method="POST">
-    <input type="text" placeholder="name" name="name" />
-    <input type="text" placeholder="url" name="url" />
-    <input type="text" placeholder="sign" name="sign" />
-    <input type="text" placeholder="tagline" name="tagline" />
-    <button type="submit">Submit</button>
-  </form>
-  <ul>
-    <% signs.forEach(function(sign) { %>
-      <li><%= sign.name %> - <%= sign.url %> - <%= sign.sign %></li>
-    <% }); %>
-  </ul>
-</body>
-</html>
+<% include ../partials/head %>
+
+<h1>Signs for science</h1>
+
+<ul>
+  <% signs.forEach(function(sign) { %>
+    <li><%= sign.name %> - <%= sign.url %> - <%= sign.sign %></li>
+  <% }); %>
+</ul>
+
+<% include ../partials/footer %>

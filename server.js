@@ -9,6 +9,9 @@ const Sign = require('./models/signs');
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+// Set assets
+app.use('/assets', express.static('assets'))
+
 // Body Parser for forms
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -37,6 +40,27 @@ app.post('/signs', (req, res) => {
       console.log('Error saving sign')
     })
 });
+
+// About
+app.get('/about', (req, res) => {
+  res.render('pages/about')
+});
+
+// Sign
+app.get('/sign', (req, res) => {
+  res.render('pages/sign')
+});
+
+// Sign
+app.get('/create', (req, res) => {
+  res.render('pages/create')
+});
+
+// Thank-you
+app.get('/thank-you', (req, res) => {
+  res.render('pages/thank-you')
+});
+
 
 // Listening to port
 app.listen(app.get('port'), function() {
