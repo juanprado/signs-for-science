@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Dosis:700,800i|Open+Sans:400i,700");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -31,3 +32,141 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+/* * * Colors * * */
+/* * * Grid * * */
+.grid-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 10%;
+  box-sizing: border-box; }
+
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  padding: 0 20px; }
+
+.col-1 {
+  width: 8.333333%; }
+
+.col-2 {
+  width: 16.666666%; }
+
+.col-3 {
+  width: 24.999999%; }
+
+.col-4 {
+  width: 33.333332%; }
+
+.col-5 {
+  width: 41.666665%; }
+
+.col-6 {
+  width: 49.999998%; }
+
+.col-7 {
+  width: 58.333331%; }
+
+.col-8 {
+  width: 66.666664%; }
+
+.col-9 {
+  width: 74.999997%; }
+
+.col-10 {
+  width: 83.333333%; }
+
+.col-11 {
+  width: 91.666663%; }
+
+.col-12 {
+  width: 100%; }
+
+/* * * Global * * */
+body {
+  background: #0af5df; }
+
+.hero {
+  margin: 80px 0 0; }
+
+.nav {
+  padding-top: 30px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.nav ul {
+  list-style-type: none;
+  margin-left: auto; }
+
+.nav li {
+  display: inline-block;
+  padding-left: 20px; }
+
+.nav .logo {
+  width: 200px;
+  margin-right: auto; }
+
+/* * * Typography * * */
+h1, h1:after {
+  position: relative;
+  width: 100%;
+  font-family: 'Dosis', sans-serif;
+  font-size: 75px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  line-height: 1.3em;
+  color: white;
+  text-shadow: black 3px 0px 0px, black 2.83487px 0.98158px 0px, black 2.35766px 1.85511px 0px, black 1.62091px 2.52441px 0px, black 0.70571px 2.91581px 0px, black -0.28717px 2.98622px 0px, black -1.24844px 2.72789px 0px, black -2.07227px 2.16926px 0px, black -2.66798px 1.37182px 0px, black -2.96998px 0.42336px 0px, black -2.94502px -0.5717px 0px, black -2.59586px -1.50383px 0px, black -1.96093px -2.27041px 0px, black -1.11013px -2.78704px 0px, black -0.13712px -2.99686px 0px, black 0.85099px -2.87677px 0px, black 1.74541px -2.43999px 0px, black 2.44769px -1.73459px 0px, black 2.88051px -0.83825px 0px; }
+
+h1:after {
+  content: attr(data-content);
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: -1;
+  color: #0af5df; }
+
+a {
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold; }
+
+/* * * Elements * * */
+.btn {
+  background: #ff7b90;
+  border: 3px solid black;
+  padding: 15px 20px;
+  position: relative; }
+
+.btn:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: -3px;
+  border: 3px solid black;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+.btn.mini {
+  padding: 12px 15px; }
