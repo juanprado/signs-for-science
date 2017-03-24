@@ -5,6 +5,7 @@
 /* * * Variables * * */
 $turquoise: #0af5df;
 $pink: #ff7b90;
+$broo: #4d43ff;
 
 /* * * Grid * * */
 @mixin breakpoint($point) {
@@ -26,7 +27,7 @@ $pink: #ff7b90;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0 7%;
   box-sizing: border-box;
 
   @include breakpoint(med) {
@@ -43,7 +44,10 @@ $pink: #ff7b90;
 
 [class*='col-'] {
   min-height: 1px;
-  padding: 0 20px;
+
+  @include breakpoint(med) {
+    padding: 0 20px;
+  }
 }
 
 .col-1{width: 8.333333%;}
@@ -72,39 +76,112 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.lrg {
+  display: none;
+
+  @include breakpoint(med) {
+    display: inline-block;
+  }
+}
+
+.sml {
+  display: inline-block;
+
+  @include breakpoint(med) {
+    display: none;
+  }
+}
+
 .hero {
-  margin: 80px 0 0;
+  margin: 40px 0 0;
+  text-align: center;
+
+  @include breakpoint(med) {
+    margin: 80px 0 0;
+  }
 }
 
 .nav {
-  padding-top: 30px;
+  // padding: 15px 0;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+
+  @include breakpoint(med) {
+    padding-top: 30px;
+    border-bottom: 0;
+  }
+}
+
+.nav .logo {
+  text-align: center;
+  margin-right: auto;
+  width: 100%;
+
+  img {
+    width: 200px;
+  }
+
+  @include breakpoint(med) {
+    width: auto;
+  }
 }
 
 .nav ul {
   list-style-type: none;
-  margin-left: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $pink;
+  width: 100%;
+  padding: 10px 0;
+
+  @include breakpoint(med) {
+    position: static;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    width: auto;
+    padding: 0;
+  }
 }
 
 .nav li {
   display: inline-block;
-  padding-left: 20px;
+  padding-left: 15px;
 }
 
-.nav .logo {
-  width: 200px;
-  margin-right: auto;
+.nav .btn {
+  display: inline-block;
+  text-align: center;
+  border: 0;
+  border-left: 3px solid black;
+  padding: 0;
+
+  @include breakpoint(med) {
+    width: auto;
+    border: 3px solid black;
+  }
+
+  &:after {
+    border: 0;
+
+    @include breakpoint(med) {
+      border: 3px solid black;
+    }
+  }
 }
+
 
 /* * * Typography * * */
 h1, h1:after {
   position: relative;
   width: 100%;
   font-family: 'Dosis', sans-serif;
-  font-size: 45px;
+  font-size: 36px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .3em;
@@ -132,22 +209,11 @@ h1:after {
   }
 }
 
-h2 {
-  position: relative;
-  width: 100%;
-  font-family: 'Dosis', sans-serif;
-  font-size: 45px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: .3em;
-  line-height: 1.4em;
-  color: red;
-}
-
-a, h3 {
+h3, .all-caps {
   font-family: 'Dosis', sans-serif;
   text-transform: uppercase;
   letter-spacing: .25em;
+  line-height: 1.2em;
   color: black;
   text-decoration: none;
   font-size: 12px;
@@ -155,7 +221,12 @@ a, h3 {
 }
 
 h3 {
-  margin: 25px 0;
+  margin: 0 0 15px;
+  line-height: 2em;
+
+  @include breakpoint(med) {
+    margin: 0 0 25px;
+  }
 }
 
 p {
@@ -165,6 +236,19 @@ p {
   font-size: 16px;
   line-height: 2em;
   text-align: left;
+}
+
+p a {
+  color: black;
+  background: url(../img/underline.svg) -20px 18px no-repeat;
+  background-size: 491px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+p a:hover {
+  background-image: url(../img/underline-broo.svg);
+  color: $broo;
 }
 
 /* * * Elements * * */
@@ -192,15 +276,24 @@ p {
 
 .divider {
   width: 30px;
+  margin-bottom: 15px;
+
+  @include breakpoint(med) {
+    margin-bottom: 20px;
+  }
 }
 
 /* * * Homepage * * */
-.intro-copy {
-  text-align: center;
+.hero h1 {
+  margin-bottom: 25px;
+
+  @include breakpoint(med) {
+    margin-bottom: 55px;
+  }
 }
 
-.intro-copy .divider {
-  margin: 55px 0 0;
+.intro-copy {
+  text-align: center;
 }
 
 .intro-copy p {
