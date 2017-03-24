@@ -288,7 +288,7 @@ a.all-caps:hover {
     color: #fff;
   }
 
-  &:after, &.secondary:after, &.square:after {
+  &:after, &.secondary:after, &.square:after, &.mini:after {
   content: '';
   position: absolute;
   top: 2px;

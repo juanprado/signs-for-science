@@ -308,7 +308,7 @@ a.all-caps:hover {
   .btn:hover {
     background: #4d43ff;
     color: #fff; }
-  .btn:after, .btn.secondary:after, .btn.square:after {
+  .btn:after, .btn.secondary:after, .btn.square:after, .btn.mini:after {
     content: '';
     position: absolute;
     top: 2px;
