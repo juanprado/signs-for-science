@@ -96,6 +96,39 @@ table {
 .col-12 {
   width: 100%; }
 
+.col-offset-1 {
+  margin-left: 8.333333%; }
+
+.col-offset-2 {
+  margin-left: 16.666666%; }
+
+.col-offset-3 {
+  margin-left: 24.999999%; }
+
+.col-offset-4 {
+  margin-left: 33.333332%; }
+
+.col-offset-5 {
+  margin-left: 41.666665%; }
+
+.col-offset-6 {
+  margin-left: 49.999998%; }
+
+.col-offset-7 {
+  margin-left: 58.333331%; }
+
+.col-offset-8 {
+  margin-left: 100%; }
+
+.col-offset-9 {
+  margin-left: 74.999997%; }
+
+.col-offset-10 {
+  margin-left: 83.333333%; }
+
+.col-offset-11 {
+  margin-left: 91.666663%; }
+
 /* * * Global * * */
 body {
   background: #0af5df;
@@ -275,21 +308,24 @@ a.all-caps:hover {
   .btn:hover {
     background: #4d43ff;
     color: #fff; }
-  .btn:after {
+  .btn:after, .btn.secondary:after, .btn.square:after {
     content: '';
     position: absolute;
     top: 2px;
     left: -3px;
     border: 3px solid black;
+    border-top: 3px solid transparent;
     width: 100%;
     height: 100%;
-    z-index: -1; }
+    z-index: 0; }
   .btn.mini {
     padding: 12px 15px; }
   .btn.square {
     width: 50px;
     padding: 12px 5px;
     display: block; }
+  .btn.secondary {
+    background: white; }
 
 .divider {
   width: 30px;
@@ -362,7 +398,7 @@ a.all-caps:hover {
   margin: 0 auto; }
 
 .sign-container {
-  padding: 40px 0; }
+  padding: 100px 0; }
 
 .sign-image {
   background: #f0f0f0;
@@ -382,6 +418,10 @@ a.all-caps:hover {
 .sign-creds {
   background: url(../img/divider-vertical.svg) 0 7px no-repeat;
   background-size: 8px 30px;
+  height: 80px;
   margin-top: 15px;
   padding-left: 15px;
   text-align: left; }
+
+.sign-buttons {
+  display: block; }
