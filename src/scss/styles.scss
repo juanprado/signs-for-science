@@ -231,6 +231,7 @@ h3 {
 
 p {
   max-width: 650px;
+  margin-bottom: 25px;
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   font-size: 16px;
@@ -251,12 +252,29 @@ p a:hover {
   color: $broo;
 }
 
+a.all-caps:hover {
+  color: $broo;
+}
+
 /* * * Elements * * */
 .btn {
   background: $pink;
   border: 3px solid black;
   padding: 15px 20px;
   position: relative;
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  line-height: 1.2em;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 300;
+
+  &:hover {
+    background: $broo;
+    color: #fff;
+  }
 }
 
 .btn:after {
@@ -297,5 +315,15 @@ p a:hover {
 }
 
 .intro-copy p {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-copy .all-caps {
+  display: inline-block;
+}
+
+.intro-copy .btn {
+  margin-right: 20px;
+  display: inline-block;
 }
