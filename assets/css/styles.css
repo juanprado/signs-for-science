@@ -524,6 +524,10 @@ a.all-caps {
   padding: 90px 0 90px 110px;
   text-align: center; }
 
+.sign-cta .divider {
+  margin-left: auto;
+  margin-right: auto; }
+
 .sign-cta h2 {
   margin-bottom: 20px; }
 
