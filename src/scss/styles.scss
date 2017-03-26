@@ -30,6 +30,7 @@ $emb-squiggles-size: 161px;
 
 .grid-container {
   width: 100%;
+  min-width: 1200px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 7%;
@@ -89,7 +90,6 @@ $emb-squiggles-size: 161px;
 
 /* * * Global * * */
 body {
-  background: $turquoise;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -184,6 +184,24 @@ body {
   }
 }
 
+.hero {
+  position: relative;
+  padding-top: 40px;
+  text-align: center;
+
+  @include breakpoint(med) {
+    padding-top: 60px;
+  }
+}
+
+.hero h1 {
+  margin-bottom: 25px;
+
+  @include breakpoint(med) {
+    margin-bottom: 35px;
+  }
+}
+
 
 /* * * Typography * * */
 h1, h1:after {
@@ -258,6 +276,7 @@ h3, .all-caps {
   text-decoration: none;
   font-size: 12px;
   font-weight: 300;
+  font-style: normal;
 }
 
 h3 {
@@ -267,7 +286,7 @@ h3 {
 
 .body-copy {
   max-width: 650px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   font-size: 16px;
@@ -279,8 +298,8 @@ h3 {
 }
 
 .body-copy a {
-  background: url(../img/underline.svg) -20px 18px no-repeat;
-  background-size: 491px;
+  background: url(../img/underline.svg) -50px 20px no-repeat;
+  background-size: 520px;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -293,10 +312,10 @@ h3 {
 }
 
 a.all-caps {
-  height: 20px;
-  margin-top: 6px;
-  background: url(../img/underline.svg) -50px 7px no-repeat;
-  background-size: 491px;
+  height: 25px;
+  margin-top: 10px;
+  background: url(../img/underline.svg) -50px 10px no-repeat;
+  background-size: 520px;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -357,6 +376,7 @@ a.all-caps {
 }
 
 .divider {
+  display: block;
   width: 30px;
   margin-bottom: 15px;
 
@@ -379,6 +399,10 @@ a.all-caps {
   background-image: url(../img/icon-link-hover.svg);
 }
 
+.body-copy li {
+  list-style-image: url('../img/bullet.svg');
+}
+
 .emb-1 {
   position: absolute;
   top: 0;
@@ -388,31 +412,23 @@ a.all-caps {
 }
 
 /* * * Homepage * * */
-.hero {
-  position: relative;
-  padding-top: 40px;
-  text-align: center;
-
-  @include breakpoint(med) {
-    padding-top: 60px;
-  }
-}
-
-.hero h1 {
-  margin-bottom: 25px;
-
-  @include breakpoint(med) {
-    margin-bottom: 35px;
-  }
+.homepage {
+  background: $turquoise;
 }
 
 .intro-copy {
   text-align: center;
 }
 
+.intro-copy .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .intro-copy p {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 25px;
   text-align: left;
 }
 
@@ -469,7 +485,7 @@ a.all-caps {
 }
 
 .filter .divider {
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
 }
 
 .filter .body-copy {
@@ -555,4 +571,54 @@ a.all-caps {
   background-size: $emb-circle-size, $emb-squiggles-size;
   background-repeat: no-repeat;
   background-position: 15vw 200px, 90vw 50px;
+}
+
+/* * * About * * */
+.about {
+  background: $orange;
+}
+
+.about h1 {
+  padding-top: 40px;
+  margin-bottom: 35px;
+  text-align: left;
+
+  &:after {
+    padding-top: 40px;
+    text-align: left;
+    color: $orange;
+  }
+}
+
+.about-brief {
+  display: flex;
+  text-align: left;
+}
+
+.about .btn {
+  display: inline-block;
+}
+
+.about-topic {
+  margin-bottom: 80px;
+}
+
+.creative-considerations li {
+  margin-bottom: 25px;
+}
+
+.about-sidebar {
+  padding-top: 25px;
+  height: 100vh;
+
+  &:before {
+    content: '';
+    background: $pink;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 35%;
+    height: 100vh;
+  }
 }
