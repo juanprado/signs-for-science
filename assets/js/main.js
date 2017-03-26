@@ -8,7 +8,7 @@ var stuck = false;
 var stickPoint = getDistance();
 
 function getDistance() {
-  var topDist = h.parentNode.parentNode.offsetTop;
+  var topDist = h.parentNode.offsetTop;
   return topDist;
 }
 

@@ -9,6 +9,9 @@ $broo: #4d43ff;
 $orange: #ffb72d;
 $light-gray: #f0f0f0;
 
+$emb-circle-size: 22px;
+$emb-squiggles-size: 161px;
+
 /* * * Grid * * */
 @mixin breakpoint($point) {
    @if $point == sml {
@@ -272,6 +275,7 @@ h3 {
 
   &.mini {
     font-size: 11px;
+  }
 }
 
 .body-copy a {
@@ -375,13 +379,22 @@ a.all-caps {
   background-image: url(../img/icon-link-hover.svg);
 }
 
+.emb-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+}
+
 /* * * Homepage * * */
 .hero {
-  margin-top: 40px;
+  position: relative;
+  padding-top: 40px;
   text-align: center;
 
   @include breakpoint(med) {
-    margin-top: 60px;
+    padding-top: 60px;
   }
 }
 
@@ -401,7 +414,6 @@ a.all-caps {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  background: red;
 }
 
 .intro-copy .all-caps {
@@ -411,6 +423,13 @@ a.all-caps {
 .intro-copy .btn {
   margin-right: 25px;
   display: inline-block;
+}
+
+.hero .emb-1 {
+  background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg');
+  background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size;
+  background-repeat: no-repeat;
+  background-position: 31vw 20px, 3vw 350px, 89vw 65vh, -60px 40px, 91vw 330px;
 }
 
 /* * * Gallery * * */
@@ -425,7 +444,7 @@ a.all-caps {
     width: 18px;
     height: 100px;
     display: inline-block;
-    position: relative;
+    position: absolute;
     top: -29px;
     left: calc(50% - 9px);
     margin: 0 auto;
@@ -435,11 +454,13 @@ a.all-caps {
 .filter {
   background: $turquoise;
   height: 100vh;
-  width: 110px;
+  min-width: 110px;
+  width: 8.33333%;
   padding: 20px 0 0;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   text-align: center;
 
   &.sticky {
@@ -460,7 +481,11 @@ a.all-caps {
 }
 
 .sign-container {
-  padding: 1vw 0;
+  padding: 7vw 0 3vw 2vw;
+
+  @include breakpoint(lrg) {
+    padding: 7vw 0 3vw;
+  }
 }
 
 .sign-item {
@@ -506,5 +531,28 @@ a.all-caps {
 
 .sign-cta {
   background: $turquoise;
+  position: relative;
+  margin-right: 0;
+  padding: 90px 0 90px 110px;
   text-align: center;
+}
+
+.sign-cta h2 {
+  margin-bottom: 20px;
+}
+
+.sign-cta p {
+  text-align: center;
+  margin: 0 auto 28px;
+}
+
+.sign-cta .btn {
+  display: inline-block;
+}
+
+.sign-cta .emb-1 {
+  background-image: url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+  background-size: $emb-circle-size, $emb-squiggles-size;
+  background-repeat: no-repeat;
+  background-position: 15vw 200px, 90vw 50px;
 }
