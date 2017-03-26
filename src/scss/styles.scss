@@ -8,6 +8,7 @@ $pink: #ff7b90;
 $broo: #4d43ff;
 $orange: #ffb72d;
 $light-gray: #f0f0f0;
+$charcoal: #181818;
 
 $emb-circle-size: 22px;
 $emb-squiggles-size: 161px;
@@ -167,19 +168,19 @@ body {
   display: inline-block;
   text-align: center;
   border: 0;
-  border-left: 3px solid black;
+  border-left: 3px solid $charcoal;
   padding: 0;
 
   @include breakpoint(med) {
     width: auto;
-    border: 3px solid black;
+    border: 3px solid $charcoal;
   }
 
   &:after {
     border: 0;
 
     @include breakpoint(med) {
-      border: 3px solid black;
+      border: 3px solid $charcoal;
     }
   }
 }
@@ -272,7 +273,7 @@ h3, .all-caps {
   text-transform: uppercase;
   letter-spacing: .25em;
   line-height: 1.2em;
-  color: black;
+  color: $charcoal;
   text-decoration: none;
   font-size: 12px;
   font-weight: 300;
@@ -291,9 +292,10 @@ h3 {
   font-style: italic;
   font-size: 16px;
   line-height: 2em;
+  color: $charcoal;
 
   &.mini {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
@@ -303,7 +305,8 @@ h3 {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  color: black;
+  color: $charcoal;
+  transition: background .2s, color .2s;
 
   &:hover {
     background-image: url(../img/underline-broo.svg);
@@ -319,7 +322,8 @@ a.all-caps {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  color: black;
+  color: $charcoal;
+  transition: background .2s, color .2s;
 
   &:hover {
     background-image: url(../img/underline-broo.svg);
@@ -330,18 +334,19 @@ a.all-caps {
 /* * * Elements * * */
 .btn {
   background: $pink;
-  border: 3px solid black;
+  border: 3px solid $charcoal;
   padding: 15px 20px;
   position: relative;
   font-family: 'Dosis', sans-serif;
   text-transform: uppercase;
   letter-spacing: .25em;
   line-height: 1.2em;
-  color: black;
+  color: $charcoal;
   text-decoration: none;
   font-size: 12px;
   font-weight: 300;
   cursor: pointer;
+  transition: background .4s, color .2s;
 
   &:hover, &.secondary:hover {
     background: $broo;
@@ -353,7 +358,7 @@ a.all-caps {
   position: absolute;
   top: 2px;
   left: -3px;
-  border: 3px solid black;
+  border: 3px solid $charcoal;
   border-top: 3px solid transparent;
   width: 100%;
   height: 100%;
@@ -446,6 +451,7 @@ a.all-caps {
   background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size;
   background-repeat: no-repeat;
   background-position: 31vw 20px, 3vw 350px, 89vw 65vh, -60px 40px, 91vw 330px;
+  z-index: -1;
 }
 
 /* * * Gallery * * */
@@ -472,7 +478,8 @@ a.all-caps {
   height: 100vh;
   min-width: 110px;
   width: 8.33333%;
-  padding: 20px 0 0;
+  padding: 20px 1% 0;
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
