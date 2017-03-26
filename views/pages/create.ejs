@@ -1,7 +1,8 @@
 <% include ../partials/head %>
 <body class="create">
+<form action="/signs" method="POST">
 
-<div class="hero">
+<div class="hero create-section">
   <div class="grid-container">
     <h1 data-content="Add your sign">Add your sign</h1>
     <h4>Choose your idea type:</h4>
@@ -29,12 +30,25 @@
   </div>
 </div>
 
+<div class="text-create create-section">
+  <div class="grid-container">
+    <h2 data-content="Say something clever">Say something clever</h2>
+    <ul class="body-copy mini">
+      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
+      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
+      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
+    </ul>
+
+    <input type="text" placeholder="sign" name="sign" />
+  </div>
+</div>
+
 <div class="overall emb"></div>
 
-<form action="/signs" method="POST">
+
   <input type="text" placeholder="name" name="name" />
   <input type="text" placeholder="url" name="url" />
-  <input type="text" placeholder="sign" name="sign" />
+
   <input type="text" placeholder="tagline" name="tagline" />
   <button type="submit">Submit</button>
 </form>
