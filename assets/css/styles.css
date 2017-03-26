@@ -162,7 +162,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
   @media (min-width: 600px) {
     .nav {
-      padding-top: 30px;
+      padding-top: 25px;
       border-bottom: 0; } }
 
 .nav .logo {
@@ -246,6 +246,33 @@ h1:after {
     h1:after {
       top: 5px; } }
 
+h2, h2:before {
+  position: relative;
+  width: 100%;
+  font-family: 'Dosis', sans-serif;
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  line-height: 1.4em;
+  color: white;
+  z-index: 0;
+  text-shadow: black 2px 0px 0px, black 1.75517px 0.95885px 0px, black 1.0806px 1.68294px 0px, black 0.14147px 1.99499px 0px, black -0.83229px 1.81859px 0px, black -1.60229px 1.19694px 0px, black -1.97998px 0.28224px 0px, black -1.87291px -0.70157px 0px, black -1.30729px -1.5136px 0px, black -0.42159px -1.95506px 0px, black 0.56732px -1.91785px 0px, black 1.41734px -1.41108px 0px, black 1.92034px -0.55883px 0px; }
+  @media (min-width: 600px) {
+    h2, h2:before {
+      font-size: 45px;
+      line-height: 1.3em; } }
+
+h2:before {
+  content: attr(data-content);
+  position: absolute;
+  top: 3px;
+  left: 0;
+  z-index: -1;
+  color: #0af5df; }
+  @media (min-width: 600px) {
+    h2:before {
+      top: 4px; } }
+
 h3, .all-caps {
   font-family: 'Dosis', sans-serif;
   text-transform: uppercase;
@@ -259,9 +286,6 @@ h3, .all-caps {
 h3 {
   margin: 0 0 15px;
   line-height: 2em; }
-  @media (min-width: 600px) {
-    h3 {
-      margin: 0 0 25px; } }
 
 p {
   max-width: 650px;
@@ -269,15 +293,15 @@ p {
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   font-size: 16px;
-  line-height: 2em;
-  text-align: left; }
+  line-height: 2em; }
 
 p a, a.all-caps {
   color: black;
   background: url(../img/underline.svg) -20px 18px no-repeat;
   background-size: 491px;
   display: inline-block;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
   p a:hover, a.all-caps:hover {
     background-image: url(../img/underline-broo.svg);
     color: #4d43ff; }
@@ -325,7 +349,7 @@ a.all-caps {
     padding: 12px 15px; }
   .btn.square {
     width: 50px;
-    padding: 12px 5px;
+    padding: 12px 9px;
     display: block; }
   .btn.secondary {
     background: white; }
@@ -355,13 +379,13 @@ a.all-caps {
   text-align: center; }
   @media (min-width: 600px) {
     .hero {
-      margin-top: 80px; } }
+      margin-top: 60px; } }
 
 .hero h1 {
   margin-bottom: 25px; }
   @media (min-width: 600px) {
     .hero h1 {
-      margin-bottom: 55px; } }
+      margin-bottom: 35px; } }
 
 .intro-copy {
   text-align: center; }
@@ -380,23 +404,30 @@ a.all-caps {
 /* * * Gallery * * */
 .gallery {
   background: #ffb72d;
-  margin-top: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-top: 80px;
   position: relative; }
+  .gallery:before {
+    content: '';
+    background: url(../img/down-arrow.svg) no-repeat;
+    width: 18px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+    top: -29px;
+    left: calc(50% - 9px);
+    margin: 0 auto; }
 
 .filter {
   background: #0af5df;
   height: 100vh;
+  width: 110px;
   padding: 20px 0 0;
   position: absolute;
   top: 0;
   left: 0;
   text-align: center; }
-
-.filter.sticky {
-  position: fixed; }
+  .filter.sticky {
+    position: fixed; }
 
 .filter .divider {
   margin-bottom: 10px; }
@@ -408,7 +439,7 @@ a.all-caps {
   margin: 0 auto; }
 
 .sign-container {
-  padding: 100px 0; }
+  padding: 1vw 0; }
 
 .sign-item {
   display: inline-block;
@@ -448,3 +479,7 @@ a.all-caps {
 
 .sign-url {
   margin-left: -7px; }
+
+.sign-cta {
+  background: #0af5df;
+  text-align: center; }

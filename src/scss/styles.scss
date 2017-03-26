@@ -116,7 +116,7 @@ body {
   border-bottom: 1px solid rgba(255,255,255,.5);
 
   @include breakpoint(med) {
-    padding-top: 30px;
+    padding-top: 25px;
     border-bottom: 0;
   }
 }
@@ -215,6 +215,37 @@ h1:after {
   }
 }
 
+h2, h2:before {
+  position: relative;
+  width: 100%;
+  font-family: 'Dosis', sans-serif;
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  line-height: 1.4em;
+  color: white;
+  z-index: 0;
+  text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+
+  @include breakpoint(med) {
+    font-size: 45px;
+    line-height: 1.3em;
+  }
+}
+
+h2:before {
+  content: attr(data-content);
+  position: absolute;
+  top: 3px;
+  left: 0;
+  z-index: -1;
+  color: $turquoise;
+
+  @include breakpoint(med) {
+    top: 4px;
+  }
+}
+
 h3, .all-caps {
   font-family: 'Dosis', sans-serif;
   text-transform: uppercase;
@@ -229,28 +260,27 @@ h3, .all-caps {
 h3 {
   margin: 0 0 15px;
   line-height: 2em;
-
-  @include breakpoint(med) {
-    margin: 0 0 25px;
-  }
 }
 
-p {
+.body-copy {
   max-width: 650px;
   margin-bottom: 25px;
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   font-size: 16px;
   line-height: 2em;
-  text-align: left;
+
+  &.mini {
+    font-size: 11px;
 }
 
-p a, a.all-caps {
-  color: black;
+.body-copy a {
   background: url(../img/underline.svg) -20px 18px no-repeat;
   background-size: 491px;
   display: inline-block;
   text-decoration: none;
+  cursor: pointer;
+  color: black;
 
   &:hover {
     background-image: url(../img/underline-broo.svg);
@@ -261,14 +291,17 @@ p a, a.all-caps {
 a.all-caps {
   height: 20px;
   margin-top: 6px;
-  background-position: -50px 7px;
-}
+  background: url(../img/underline.svg) -50px 7px no-repeat;
+  background-size: 491px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 
-.body-copy.mini {
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  font-size: 11px;
-  line-height: 2em;
+  &:hover {
+    background-image: url(../img/underline-broo.svg);
+    color: $broo;
+  }
 }
 
 /* * * Elements * * */
@@ -310,7 +343,7 @@ a.all-caps {
 
   &.square {
     width: 50px;
-    padding: 12px 5px;
+    padding: 12px 9px;
     display: block;
   }
 
@@ -348,7 +381,7 @@ a.all-caps {
   text-align: center;
 
   @include breakpoint(med) {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 }
 
@@ -356,7 +389,7 @@ a.all-caps {
   margin-bottom: 25px;
 
   @include breakpoint(med) {
-    margin-bottom: 55px;
+    margin-bottom: 35px;
   }
 }
 
@@ -367,6 +400,8 @@ a.all-caps {
 .intro-copy p {
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
+  background: red;
 }
 
 .intro-copy .all-caps {
@@ -381,23 +416,35 @@ a.all-caps {
 /* * * Gallery * * */
 .gallery {
   background: $orange;
-  margin-top: 100px;
-  display: flex;
+  margin-top: 80px;
   position: relative;
+
+  &:before {
+    content:'';
+    background: url(../img/down-arrow.svg) no-repeat;
+    width: 18px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+    top: -29px;
+    left: calc(50% - 9px);
+    margin: 0 auto;
+  }
 }
 
 .filter {
   background: $turquoise;
   height: 100vh;
+  width: 110px;
   padding: 20px 0 0;
   position: absolute;
   top: 0;
   left: 0;
   text-align: center;
-}
 
-.filter.sticky {
-  position: fixed;
+  &.sticky {
+    position: fixed;
+  }
 }
 
 .filter .divider {
@@ -413,7 +460,7 @@ a.all-caps {
 }
 
 .sign-container {
-  padding: 100px 0;
+  padding: 1vw 0;
 }
 
 .sign-item {
@@ -455,4 +502,9 @@ a.all-caps {
 
 .sign-url {
   margin-left: -7px;
+}
+
+.sign-cta {
+  background: $turquoise;
+  text-align: center;
 }
