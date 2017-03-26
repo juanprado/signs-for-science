@@ -275,7 +275,19 @@ h2:before {
   }
 }
 
-h3, .all-caps {
+h3 {
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  line-height: 1.5em;
+  color: $charcoal;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h4, .all-caps {
   font-family: 'Dosis', sans-serif;
   text-transform: uppercase;
   letter-spacing: .25em;
@@ -287,7 +299,7 @@ h3, .all-caps {
   font-style: normal;
 }
 
-h3 {
+h4 {
   margin: 0 0 15px;
   line-height: 2em;
 }
@@ -400,6 +412,11 @@ a.all-caps {
   @include breakpoint(med) {
     margin-bottom: 20px;
   }
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .icon-link {
@@ -433,6 +450,7 @@ a.all-caps {
   &.overall {
     bottom: 0;
     right: 0;
+    z-index: -1;
   }
 }
 
@@ -443,11 +461,6 @@ a.all-caps {
 
 .intro-copy {
   text-align: center;
-}
-
-.intro-copy .divider {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .intro-copy p {
@@ -578,11 +591,6 @@ a.all-caps {
   margin-right: 0;
   padding: 90px 0 90px 110px;
   text-align: center;
-}
-
-.sign-cta .divider {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .sign-cta h2 {
@@ -737,5 +745,107 @@ a.all-caps {
   background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg');
   background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-squiggles-size;
   background-position: 64.3vw 80px, 20vw 100px, bottom 40px left 30vw, 80vw 230px, -75px 580px, 59.4vw 3000px;
-  z-index: -1;
+}
+
+/* * * Create * * */
+.create {
+  background: $pink;
+}
+
+.create .create-btn {
+  display: none;
+}
+
+.create h1:after {
+  color: $pink;
+}
+
+.sign-type-container {
+  display: flex;
+}
+
+.sign-type {
+  display: flex;
+  align-items: center;
+  border: 3px solid $charcoal;
+  box-sizing: border-box;
+  min-height: 325px;
+  padding: 0 8%;
+  position: relative;
+  color: $charcoal;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .4s, color .2s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -3px;
+    border: 3px solid $charcoal;
+    border-top: 3px solid transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 0;
+  }
+
+  &:hover {
+    background: $broo;
+  }
+
+  &:hover h3, &:hover .body-copy {
+    color: white;
+    transition: color .2s;
+  }
+
+  &:hover .go {
+    color: white;
+    background-image: url('../img/right-arrow-hover.svg');
+    transition: background .4s, color .2s;
+  }
+
+  .emb {
+    background-image: url('../img/emb_squiggle_hug.svg');
+    background-size: $emb-squiggles-size;
+    background-position: 0 0;
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+    left: -95px;
+    top: 180px;
+  }
+}
+
+.text {
+  background: $turquoise;
+}
+
+.design {
+  background: $orange;
+  border-left: 0;
+}
+
+.sign-type .row {
+  margin-top: -20px;
+}
+
+.sign-type h3 {
+  margin-bottom: 9px;
+}
+
+.sign-type .go {
+  background: url(../img/right-arrow.svg) right 2px no-repeat;
+  background-size: 12px;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 25px);
+  width: 50px;
+  margin: 0 auto;
+}
+
+.create .emb.overall {
+  background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+  background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
+  background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
 }
