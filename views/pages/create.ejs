@@ -2,7 +2,7 @@
 <body class="create">
 <form action="/signs" method="POST">
 
-<div class="hero create-section">
+<section class="hero create-section">
   <div class="grid-container">
     <h1 data-content="Add your sign">Add your sign</h1>
     <h4>Choose your idea type:</h4>
@@ -28,22 +28,39 @@
     </a>
     </div>
   </div>
-</div>
+  <div class="overall emb"></div>
+</section>
 
-<div class="text-create create-section">
+<section class="create-text create-section">
   <div class="grid-container">
-    <h2 data-content="Say something clever">Say something clever</h2>
-    <ul class="body-copy mini">
-      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
-      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
-      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
-    </ul>
+    <div class="col-4 sign-item">
+      <div href="" class="back all-caps">Back</div>
+      <div class="sign-image turquoise">
+        <div class="sign-slogan-container">
+          <div class="sign-slogan">
+            <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+            Your positive, funny, non-partisan slogan here
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-offset-1 instructions">
+      <h2 data-content="Say something clever">Say something clever</h2>
 
-    <input type="text" placeholder="sign" name="sign" />
+      <ul class="body-copy mini">
+        <li><span class="all-caps">Keep it positive.</span> No anti-Trump stuff or doom & gloom. <a href="about#creative-considerations" target="_blank">Read why.</a></li>
+        <li><span class="all-caps">Be inclusive.</span> Scientists aren’t just a bunch of old white guys.</li>
+        <li><span class="all-caps">Celebrate science.</span> Talk about why science is awesome, or <a href="about#talking-points" target="_blank">these topics.</a></li>
+      </ul>
+      <img src="../assets/img/divider.svg" alt="----" class="divider" />
+
+      <textarea placeholder="Your positive, funny, non-partisan slogan here" name="sign" class="body-copy" maxlength="150"></textarea>
+
+      <div class="btn secondary disabled">Continue</div>
+    </div>
   </div>
-</div>
-
-<div class="overall emb"></div>
+  <div class="overall emb"></div>
+</section>
 
 
   <input type="text" placeholder="name" name="name" />
