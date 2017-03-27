@@ -90,9 +90,16 @@ $emb-squiggles-size: 161px;
 .col-offset-11{margin-left: 91.666663%;}
 
 /* * * Global * * */
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 .lrg {
@@ -237,7 +244,7 @@ h1:after {
   }
 }
 
-h2, h2:before {
+h2, h2:after {
   position: relative;
   width: 100%;
   font-family: 'Dosis', sans-serif;
@@ -255,7 +262,7 @@ h2, h2:before {
   }
 }
 
-h2:before {
+h2:after {
   content: attr(data-content);
   position: absolute;
   top: 3px;
@@ -268,7 +275,19 @@ h2:before {
   }
 }
 
-h3, .all-caps {
+h3 {
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  line-height: 1.5em;
+  color: $charcoal;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h4, .all-caps {
   font-family: 'Dosis', sans-serif;
   text-transform: uppercase;
   letter-spacing: .25em;
@@ -280,7 +299,7 @@ h3, .all-caps {
   font-style: normal;
 }
 
-h3 {
+h4 {
   margin: 0 0 15px;
   line-height: 2em;
 }
@@ -301,7 +320,7 @@ h3 {
 
 .body-copy a {
   background: url(../img/underline.svg) -50px 20px no-repeat;
-  background-size: 520px;
+  background-size: 530px;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -314,11 +333,16 @@ h3 {
   }
 }
 
+.body-copy.mini a {
+  background-position: -50px 14px;
+  padding-bottom: 6px;
+}
+
 a.all-caps {
   height: 25px;
   margin-top: 10px;
   background: url(../img/underline.svg) -50px 10px no-repeat;
-  background-size: 520px;
+  background-size: 530px;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -388,6 +412,11 @@ a.all-caps {
   @include breakpoint(med) {
     margin-bottom: 20px;
   }
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .icon-link {
@@ -406,14 +435,23 @@ a.all-caps {
 
 .body-copy li {
   list-style-image: url('../img/bullet.svg');
+  margin-bottom: 5px;
 }
 
-.emb-1 {
+.emb {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100%;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+  &.overall {
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
 }
 
 /* * * Homepage * * */
@@ -423,11 +461,6 @@ a.all-caps {
 
 .intro-copy {
   text-align: center;
-}
-
-.intro-copy .divider {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .intro-copy p {
@@ -446,7 +479,7 @@ a.all-caps {
   display: inline-block;
 }
 
-.hero .emb-1 {
+.hero .emb {
   background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg');
   background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size;
   background-repeat: no-repeat;
@@ -560,11 +593,6 @@ a.all-caps {
   text-align: center;
 }
 
-.sign-cta .divider {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .sign-cta h2 {
   margin-bottom: 20px;
 }
@@ -578,10 +606,9 @@ a.all-caps {
   display: inline-block;
 }
 
-.sign-cta .emb-1 {
+.sign-cta .emb {
   background-image: url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
   background-size: $emb-circle-size, $emb-squiggles-size;
-  background-repeat: no-repeat;
   background-position: 15vw 200px, 90vw 50px;
 }
 
@@ -591,12 +618,12 @@ a.all-caps {
 }
 
 .about h1 {
-  padding-top: 40px;
+  padding-top: 60px;
   margin-bottom: 35px;
   text-align: left;
 
   &:after {
-    padding-top: 40px;
+    padding-top: 60px;
     text-align: left;
     color: $orange;
   }
@@ -611,8 +638,16 @@ a.all-caps {
   display: inline-block;
 }
 
+.about .em-poop {
+  margin-top: -11px;
+}
+
 .about-topic {
   margin-bottom: 80px;
+}
+
+.about-topic ul {
+  margin-bottom: 40px;
 }
 
 .creative-considerations li {
@@ -622,6 +657,7 @@ a.all-caps {
 .about-sidebar {
   padding-top: 25px;
   height: 100vh;
+  position: relative;
 
   &:before {
     content: '';
@@ -633,4 +669,192 @@ a.all-caps {
     width: 35%;
     height: 100vh;
   }
+}
+
+.sign-example {
+  position: relative;
+}
+
+.sign-example img {
+  position: relative;
+  border: 4px solid $charcoal;
+  box-sizing: border-box;
+}
+
+.sign-example .sign-creds {
+    margin-top: 15px;
+}
+
+.sign-example .emb {
+    height: 300px;
+}
+
+.sign-example-1 {
+  margin-top: 20vh;
+
+  .emb {
+    background-image: url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+    background-size: $emb-circle-size, $emb-squiggles-size;
+    background-position: 125px 50px, 125px 90px;
+  }
+
+  .sign-img-1 {
+    top: 130px;
+    left: -90px;
+  }
+
+  .sign-img-2 {
+    top: 0;
+    left: 60px;
+  }
+}
+
+.sign-example-2 {
+  margin-top: 30vh;
+
+  .emb {
+    background-image: url('../img/emb_squiggles.svg');
+    background-size: $emb-squiggles-size;
+    background-position: 0px 50px;
+    left: -150px;
+  }
+
+  .sign-img-3 {
+    top: 0;
+    left: -90px;
+  }
+}
+
+.sign-example-3 {
+  margin-top: 30vh;
+
+  .emb {
+    background-image: url('../img/emb_circle.svg');
+    background-size: $emb-circle-size;
+    background-position: 0px 0px;
+    top: -60px;
+  }
+
+  .sign-img-4 {
+    top: 0;
+    left: -90px;
+  }
+}
+
+.about .emb.overall {
+  background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg');
+  background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-squiggles-size;
+  background-position: 64.3vw 80px, 20vw 100px, bottom 40px left 30vw, 80vw 230px, -75px 580px, 59.4vw 3000px;
+}
+
+/* * * Create * * */
+.create {
+  background: $pink;
+}
+
+.create .create-btn {
+  display: none;
+}
+
+.create-section {
+  height: 100vh;
+}
+
+.create h1:after, .create h2:after {
+  color: $pink;
+}
+
+.sign-type-container {
+  display: flex;
+}
+
+.sign-type {
+  display: flex;
+  align-items: center;
+  border: 3px solid $charcoal;
+  box-sizing: border-box;
+  min-height: 325px;
+  padding: 0 8%;
+  position: relative;
+  color: $charcoal;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .4s, color .2s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -3px;
+    border: 3px solid $charcoal;
+    border-top: 3px solid transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 0;
+  }
+
+  &:hover {
+    background: $broo;
+  }
+
+  &:hover h3, &:hover .body-copy {
+    color: white;
+    transition: color .2s;
+  }
+
+  &:hover .go {
+    color: white;
+    background-image: url('../img/right-arrow-hover.svg');
+    transition: background .4s, color .2s;
+  }
+
+  .emb {
+    background-image: url('../img/emb_squiggle_hug.svg');
+    background-size: $emb-squiggles-size;
+    background-position: 0 0;
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+    left: -95px;
+    top: 180px;
+  }
+}
+
+.text {
+  background: $turquoise;
+
+  h3 {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
+.design {
+  background: $orange;
+  border-left: 0;
+}
+
+.sign-type .row {
+  margin-top: -20px;
+}
+
+.sign-type h3 {
+  margin-bottom: 9px;
+}
+
+.sign-type .go {
+  background: url(../img/right-arrow.svg) right 2px no-repeat;
+  background-size: 12px;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 25px);
+  width: 50px;
+  margin: 0 auto;
+}
+
+.create .emb.overall {
+  background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+  background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
+  background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
 }

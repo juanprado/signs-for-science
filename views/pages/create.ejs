@@ -1,11 +1,54 @@
 <% include ../partials/head %>
 <body class="create">
-<h1>Create</h1>
-
 <form action="/signs" method="POST">
+
+<div class="hero create-section">
+  <div class="grid-container">
+    <h1 data-content="Add your sign">Add your sign</h1>
+    <h4>Choose your idea type:</h4>
+
+    <div class="sign-type-container">
+    <a href="" class="sign-type text col-6">
+      <div class="row">
+        <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+        <h3>add a headline or slogan</h3>
+        <span class="body-copy">Copywriter? Comedian? Go here. No designs needed.</span>
+      </div>
+      <div class="go all-caps">Go</div>
+      <div class="emb"></div>
+    </a>
+
+    <a href="" class="sign-type design col-6">
+      <div class="row">
+        <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+        <h3>Add a sketch, illustration or design</h3>
+        <span class="body-copy">No need for perfection. Just great ideas to inspire.</span>
+      </div>
+      <div class="go all-caps">Go</div>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="text-create create-section">
+  <div class="grid-container">
+    <h2 data-content="Say something clever">Say something clever</h2>
+    <ul class="body-copy mini">
+      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
+      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
+      <li><span class="all-caps">Keep it positive</span> No anti-trump stuff or making fun of critics. Read why.</li>
+    </ul>
+
+    <input type="text" placeholder="sign" name="sign" />
+  </div>
+</div>
+
+<div class="overall emb"></div>
+
+
   <input type="text" placeholder="name" name="name" />
   <input type="text" placeholder="url" name="url" />
-  <input type="text" placeholder="sign" name="sign" />
+
   <input type="text" placeholder="tagline" name="tagline" />
   <button type="submit">Submit</button>
 </form>
