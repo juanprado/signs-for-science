@@ -368,7 +368,6 @@ a.all-caps {
 /* * * Elements * * */
 .btn {
   background: #ff7b90;
-  min-width: 110px;
   border: 3px solid #181818;
   padding: 15px 20px;
   position: relative;
@@ -379,7 +378,7 @@ a.all-caps {
   color: #181818;
   text-decoration: none;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 700;
   cursor: pointer;
   -webkit-transition: background .4s, color .2s;
   transition: background .4s, color .2s; }
@@ -416,17 +415,17 @@ a.all-caps {
     margin-left: auto;
     margin-right: auto; }
 
-.icon-link {
-  background: url(../img/icon-link.svg) no-repeat;
+.body-copy a.icon-link {
+  background: url(../img/icon-link.svg) 0 0 no-repeat;
+  background-size: 13px;
   width: 13px;
   height: 13px;
   display: inline-block;
   position: relative;
-  top: 2px;
+  top: 8px;
   margin-left: 3px; }
-
-.icon-link:hover {
-  background-image: url(../img/icon-link-hover.svg); }
+  .body-copy a.icon-link:hover {
+    background-image: url(../img/icon-link-hover.svg); }
 
 .body-copy li {
   list-style-image: url("../img/bullet.svg");
@@ -529,18 +528,9 @@ textarea {
   margin-bottom: 8%; }
 
 .sign-image {
-  background: #4d43ff;
   position: relative;
-  padding: 58% 0;
+  padding: 63% 0;
   border: 8px solid white; }
-  .sign-image.broo {
-    background: #4d43ff; }
-  .sign-image.turquoise {
-    background: #0af5df; }
-  .sign-image.neon-pink {
-    background: #f24561; }
-  .sign-image.charcoal {
-    background: #181818; }
 
 .sign-slogan-container {
   content: '';
@@ -558,7 +548,16 @@ textarea {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: #4d43ff;
   padding: 0 10%; }
+  .sign-slogan-container.broo {
+    background: #4d43ff; }
+  .sign-slogan-container.turquoise {
+    background: #0af5df; }
+  .sign-slogan-container.neon-pink {
+    background: #f24561; }
+  .sign-slogan-container.charcoal {
+    background: #181818; }
 
 .sign-slogan {
   font-family: 'Baloo Bhaina', 'Dosis', sans-serif;
@@ -725,7 +724,7 @@ textarea {
   height: 700px;
   padding-top: 60px;
   border-bottom: 3px solid black; }
-  .create-section.hero .emb.overall {
+  .create-section.hero .emb.overall, .create-section.create-details .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
     background-size: 22px, 22px, 22px, 161px;
     background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px; }
@@ -733,6 +732,10 @@ textarea {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles_vt.svg");
     background-size: 22px, 22px, 22px, 161px, 64px;
     background-position: 40.5vw 125px, 50px 500px, top 380px right 80px, top 120px right -30px, 44vw -70px; }
+  .create-section.create-details .emb.overall {
+    background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
+    background-size: 22px, 22px, 22px, 161px;
+    background-position: 40vw 80px, bottom 20px left 5vw, top 450px right 80px, top 110px right -50px; }
 
 .create h1:after, .create h2:after {
   color: #ff7b90; }
@@ -830,16 +833,6 @@ textarea {
     color: white;
     background-image: url("../img/icon-left-arrow-hover.svg"); }
 
-.sign-image-req {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  width: 100%;
-  text-align: center; }
-
-.sign-image-req h4 {
-  margin-bottom: 2px; }
-
 .instructions {
   margin-top: 22px; }
 
@@ -867,8 +860,18 @@ textarea {
     opacity: .2;
     pointer-events: none; }
 
-.create-design .sign-image {
+.create-design .sign-slogan-container {
   background: #f0f0f0; }
+
+.create-design .sign-image-req {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+
+.create-design .sign-image-req h4 {
+  margin-bottom: 2px; }
 
 .create-design .sign-slogan {
   margin-top: -25px;
@@ -877,7 +880,7 @@ textarea {
   font-weight: 600;
   opacity: .3; }
 
-input[type=file] {
+.create-design input[type=file] {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -885,18 +888,18 @@ input[type=file] {
   position: absolute;
   z-index: -1; }
 
-.file-label {
+.create-design .file-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 30px; }
-  .file-label:hover .btn {
+  .create-design .file-label:hover .btn {
     background: #4d43ff;
     color: white;
     -webkit-transition: all .3s;
     transition: all .3s; }
 
-.file-name {
+.create-design .file-name {
   height: 54px;
   width: 70%;
   border: 3px solid #181818;
@@ -907,13 +910,13 @@ input[type=file] {
   cursor: pointer;
   color: #181818; }
 
-.file-label .btn {
+.create-design .file-label .btn {
   height: 54px;
   display: inline-block;
   box-sizing: border-box;
   line-height: 20px;
   text-align: center; }
-  .file-label .btn:after {
+  .create-design .file-label .btn:after {
     display: none; }
 
 .create-details .form-field {
@@ -937,3 +940,28 @@ input[type=file] {
 
 .create-details button {
   margin-top: 30px; }
+
+/* * * Thank you * * */
+.thank-you {
+  background: #0af5df; }
+
+.your-sign {
+  margin: 50px 0 120px; }
+
+.your-sign .sign-image {
+  border-width: 15px; }
+
+.your-sign .sign-info {
+  padding-top: 12%; }
+
+.your-sign .sign-creds {
+  height: 100px; }
+
+.your-sign .sign-creds .all-caps {
+  display: block;
+  margin-top: 5px;
+  font-size: 20px; }
+
+.your-sign .make-another {
+  margin-top: 40px;
+  display: block; }
