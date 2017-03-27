@@ -102,12 +102,47 @@
   <div class="overall emb"></div>
 </section>
 
+<section class="create-details create-section">
+  <div class="grid-container">
+    <div class="col-4 sign-item">
+      <div href="" class="back all-caps">Back</div>
+      <div class="sign-image">
+        <div class="sign-slogan-container">
+          <div class="sign-slogan">
+            <img src="../assets/img/divider_charcoal.svg" alt="----" class="divider center" />
+            Your positive, provocative, non-cliché sketch or design here
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-offset-1 instructions">
+      <h2 data-content="Woooooo!">Woooooo!</h2>
+      <h4>Add your info, or stay anonymous.</h4>
+      <img src="../assets/img/divider.svg" alt="----" class="divider" />
 
-  <input type="text" placeholder="name" name="name" />
-  <input type="text" placeholder="url" name="url" />
+      <div class="form-field">
+        <label for="name" class="all-caps">Name</label>
+        <input type="text" placeholder="Real or nick (optional)" name="name" />
+      </div>
 
-  <input type="text" placeholder="tagline" name="tagline" />
-  <button type="submit">Submit</button>
+      <div class="form-field">
+        <label for="tagline" class="all-caps">Tagline</label>
+        <input type="text" placeholder="Copywriter in NYC (optional)" name="tagline" />
+      </div>
+
+      <div class="form-field url">
+        <label for="url" class="all-caps">Website</label>
+        <input type="text" placeholder="Where to find more (optional)" name="url" />
+      </div>
+
+      <button class="btn secondary disabled" type="submit">Submit</button>
+    </div>
+  </div>
+  <div class="overall emb"></div>
+</section>
+
+
+
 </form>
 
 <% include ../partials/footer %>
