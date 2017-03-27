@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Dosis:700,800i|Open+Sans:400i,700|Baloo+Bhaina");
+@import url("https://fonts.googleapis.com/css?family=Dosis:600,700,800i|Open+Sans:400i,700|Baloo+Bhaina");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -243,6 +243,7 @@ h1, h1:after {
   position: relative;
   width: 100%;
   font-family: 'Dosis', sans-serif;
+  font-weight: 800;
   font-size: 36px;
   text-align: center;
   text-transform: uppercase;
@@ -272,6 +273,7 @@ h2, h2:after {
   width: 100%;
   font-family: 'Dosis', sans-serif;
   font-size: 45px;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .3em;
   line-height: 1.4em;
@@ -302,7 +304,7 @@ h3 {
   color: #181818;
   text-decoration: none;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal; }
 
 h4, .all-caps {
@@ -313,7 +315,7 @@ h4, .all-caps {
   color: #181818;
   text-decoration: none;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 700;
   font-style: normal; }
 
 h4 {
@@ -719,15 +721,14 @@ textarea {
   display: none; }
 
 .create-section {
-  height: 100vh;
+  height: 700px;
   padding-top: 60px;
   border-bottom: 3px solid black; }
   .create-section.hero .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
     background-size: 22px, 22px, 22px, 161px;
     background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px; }
-  .create-section.create-text .emb.overall {
-    top: calc(100vh + 120px);
+  .create-section.create-text .emb.overall, .create-section.create-design .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles_vt.svg");
     background-size: 22px, 22px, 22px, 161px, 64px;
     background-position: 40.5vw 125px, 50px 500px, top 380px right 80px, top 120px right -30px, 44vw -70px; }
@@ -828,6 +829,16 @@ textarea {
     color: white;
     background-image: url("../img/icon-left-arrow-hover.svg"); }
 
+.sign-image-req {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+
+.sign-image-req h4 {
+  margin-bottom: 2px; }
+
 .instructions {
   margin-top: 22px; }
 
@@ -854,3 +865,48 @@ textarea {
   .instructions .btn.disabled {
     opacity: .2;
     pointer-events: none; }
+
+.create-design .sign-image {
+  background: #f0f0f0; }
+
+.create-design .sign-slogan {
+  margin-top: -25px;
+  color: #181818;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+  opacity: .3; }
+
+input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.file-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .file-label:hover .btn {
+    background: #4d43ff;
+    color: white; }
+
+.file-name {
+  height: 50px;
+  width: 70%;
+  border: 3px solid #181818;
+  border-right: 0;
+  padding: 7px 15px;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 30px;
+  color: #181818; }
+
+.file-label .btn {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30%; }
+  .file-label .btn:after {
+    display: none; }

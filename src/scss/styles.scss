@@ -1,6 +1,6 @@
 @import "reset";
 
-@import url('https://fonts.googleapis.com/css?family=Dosis:700,800i|Open+Sans:400i,700|Baloo+Bhaina');
+@import url('https://fonts.googleapis.com/css?family=Dosis:600,700,800i|Open+Sans:400i,700|Baloo+Bhaina');
 
 /* * * Variables * * */
 $turquoise: #0af5df;
@@ -219,6 +219,7 @@ h1, h1:after {
   position: relative;
   width: 100%;
   font-family: 'Dosis', sans-serif;
+  font-weight: 800;
   font-size: 36px;
   text-align: center;
   text-transform: uppercase;
@@ -252,6 +253,7 @@ h2, h2:after {
   width: 100%;
   font-family: 'Dosis', sans-serif;
   font-size: 45px;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .3em;
   line-height: 1.4em;
@@ -286,7 +288,7 @@ h3 {
   color: $charcoal;
   text-decoration: none;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -298,7 +300,7 @@ h4, .all-caps {
   color: $charcoal;
   text-decoration: none;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -808,7 +810,7 @@ textarea {
 }
 
 .create-section {
-  height: 100vh;
+  height: 700px;
   padding-top: 60px;
   border-bottom: 3px solid black;
 
@@ -818,8 +820,7 @@ textarea {
     background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
   }
 
-  &.create-text .emb.overall {
-    top: calc(100vh + 120px);
+  &.create-text .emb.overall, &.create-design .emb.overall {
     background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
     background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-vt-size;
     background-position: 40.5vw 125px, 50px 500px, top 380px right 80px, top 120px right -30px, 44vw -70px;
@@ -934,6 +935,18 @@ textarea {
   }
 }
 
+.sign-image-req {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.sign-image-req h4 {
+  margin-bottom: 2px;
+}
+
 .instructions {
   margin-top: 22px;
 }
@@ -967,3 +980,62 @@ textarea {
     pointer-events: none;
   }
 }
+
+.create-design .sign-image {
+  background: $light-gray;
+}
+
+.create-design .sign-slogan {
+  margin-top: -25px;
+  color: $charcoal;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+  opacity: .3;
+}
+
+input[type=file] {
+
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-label {
+  display: flex;
+
+  &:hover .btn {
+    background: $broo;
+    color: white;
+  }
+}
+
+.file-name {
+  height: 50px;
+  width: 70%;
+  border: 3px solid $charcoal;
+  border-right: 0;
+  padding: 7px 15px;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 30px;
+  color: $charcoal;
+}
+
+.file-label .btn {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30%;
+
+  &:after {
+    display: none;
+  }
+}
+
+// input[type=file]:focus + .file-label,
+// input[type=file] + .file-label:hover {
+//     background-color: red;
+// }
