@@ -43,5 +43,4 @@ else if(document.getElementById("file")) {
     }
   }
 }
-
 }, false);

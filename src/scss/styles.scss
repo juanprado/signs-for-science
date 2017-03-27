@@ -1005,37 +1005,35 @@ input[type=file] {
 
 .file-label {
   display: flex;
+  margin-bottom: 30px;
 
   &:hover .btn {
     background: $broo;
     color: white;
+    transition: all .3s;
   }
 }
 
 .file-name {
-  height: 50px;
+  height: 54px;
   width: 70%;
   border: 3px solid $charcoal;
   border-right: 0;
-  padding: 7px 15px;
+  padding: 12px 15px;
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  line-height: 30px;
   color: $charcoal;
 }
 
 .file-label .btn {
+  height: 54px;
   display: inline-block;
   box-sizing: border-box;
-  width: 30%;
+  line-height: 20px;
+  text-align: center;
 
   &:after {
     display: none;
   }
 }
-
-// input[type=file]:focus + .file-label,
-// input[type=file] + .file-label:hover {
-//     background-color: red;
-// }
