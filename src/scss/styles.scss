@@ -1059,7 +1059,6 @@ textarea {
 }
 
 .create-design input[type=file] {
-
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -1071,12 +1070,6 @@ textarea {
 .create-design .file-label {
   display: flex;
   margin-bottom: 30px;
-
-  &:hover .btn {
-    background: $broo;
-    color: white;
-    transition: all .3s;
-  }
 }
 
 .create-design .file-name {
@@ -1121,6 +1114,9 @@ textarea {
   width: 80%;
   border: 0;
   padding: 15px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: $charcoal;
 }
 
 .create-details button {

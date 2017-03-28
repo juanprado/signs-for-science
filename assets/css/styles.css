@@ -941,11 +941,6 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 30px; }
-  .create-design .file-label:hover .btn {
-    background: #4d43ff;
-    color: white;
-    -webkit-transition: all .3s;
-    transition: all .3s; }
 
 .create-design .file-name {
   height: 54px;
@@ -984,7 +979,10 @@ textarea {
 .create-details input {
   width: 80%;
   border: 0;
-  padding: 15px 20px; }
+  padding: 15px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #181818; }
 
 .create-details button {
   margin-top: 30px; }
