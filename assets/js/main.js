@@ -33,10 +33,14 @@ function getFile(evt) {
 
 function showPreview(file) {
   const reader = new FileReader();
-  const preview = document.querySelector('.preview-sign-image');
+  const previews = document.querySelectorAll('.create-image-preview');
+  const rules = document.querySelector('.sign-slogan-rules');
 
   reader.addEventListener('load', () => {
-    preview.src = reader.result;
+    for (let preview of previews) {
+      preview.src = reader.result;
+    }
+    rules.classList.add('_hide');
   });
   reader.readAsDataURL(file);
 }

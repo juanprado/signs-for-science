@@ -47,7 +47,8 @@ gulp.task('server', function (cb) {
       'gulpfile.js',
       'node_modules/',
       'views/',
-      'src/'
+      'src/',
+      'assets/'
     ]
   })
   .on('start', function () {
