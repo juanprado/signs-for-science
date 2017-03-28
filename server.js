@@ -21,6 +21,8 @@ app.set('port', (process.env.PORT || 5000));
 // Index
 app.get('/', (req, res) => {
   Sign.find()
+    .sort({ featured: -1 })
+    .limit(10)
     .then(signs => { res.render(`pages/index`, { signs }); })
     .catch(error => { console.log('Error finding list of signs') });
 });
