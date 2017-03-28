@@ -1,6 +1,6 @@
 @import "reset";
 
-@import url('https://fonts.googleapis.com/css?family=Dosis:600,700,800i|Open+Sans:400i,700|Baloo+Bhaina');
+@import url('https://fonts.googleapis.com/css?family=Dosis:600,700,800i|Open+Sans:400i,700|Permanent+Marker');
 
 /* * * Variables * * */
 $turquoise: #0af5df;
@@ -587,7 +587,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $broo;
+  background: $light-gray;
   padding: 0 10%;
 
   &.broo {
@@ -608,11 +608,13 @@ textarea {
 }
 
 .sign-slogan {
-  font-family: 'Baloo Bhaina', 'Dosis', sans-serif;
-  font-size: 26px;
-  line-height: 1.4em;
+  font-family: 'Permanent Marker', 'Dosis', sans-serif;
+  font-size: 22px;
+  line-height: 1.3em;
+  letter-spacing: 0.015em;
+  text-transform: all-caps;
   text-align: center;
-  color: white;
+  color: $charcoal;
 }
 
 .sign-creds {
@@ -864,6 +866,20 @@ textarea {
   cursor: pointer;
   transition: background .4s, color .2s;
 
+  &.text {
+    background: $turquoise;
+
+    h3 {
+      max-width: 220px;
+      margin: 0 auto;
+    }
+  }
+
+  &.design {
+    background: $orange;
+    border-left: 0;
+  }
+
   &:after {
     content: '';
     position: absolute;
@@ -891,20 +907,6 @@ textarea {
     background-image: url('../img/icon-right-arrow-hover.svg');
     transition: background .4s, color .2s;
   }
-}
-
-.text {
-  background: $turquoise;
-
-  h3 {
-    max-width: 220px;
-    margin: 0 auto;
-  }
-}
-
-.design {
-  background: $orange;
-  border-left: 0;
 }
 
 .sign-type .row {
@@ -983,6 +985,10 @@ textarea {
     opacity: .2;
     pointer-events: none;
   }
+}
+
+.create-text .sign-slogan {
+  font-size: 28px;
 }
 
 .create-design .sign-slogan-container {

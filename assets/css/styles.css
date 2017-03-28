@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Dosis:600,700,800i|Open+Sans:400i,700|Baloo+Bhaina");
+@import url("https://fonts.googleapis.com/css?family=Dosis:600,700,800i|Open+Sans:400i,700|Permanent+Marker");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -557,7 +557,7 @@ textarea {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #4d43ff;
+  background: #f0f0f0;
   padding: 0 10%; }
   .sign-slogan-container.broo {
     background: #4d43ff; }
@@ -569,11 +569,13 @@ textarea {
     background: #181818; }
 
 .sign-slogan {
-  font-family: 'Baloo Bhaina', 'Dosis', sans-serif;
-  font-size: 26px;
-  line-height: 1.4em;
+  font-family: 'Permanent Marker', 'Dosis', sans-serif;
+  font-size: 22px;
+  line-height: 1.3em;
+  letter-spacing: 0.015em;
+  text-transform: all-caps;
   text-align: center;
-  color: white; }
+  color: #181818; }
 
 .sign-creds {
   background: url(../img/divider-vertical.svg) 0 7px no-repeat;
@@ -771,6 +773,14 @@ textarea {
   cursor: pointer;
   -webkit-transition: background .4s, color .2s;
   transition: background .4s, color .2s; }
+  .sign-type.text {
+    background: #0af5df; }
+    .sign-type.text h3 {
+      max-width: 220px;
+      margin: 0 auto; }
+  .sign-type.design {
+    background: #ffb72d;
+    border-left: 0; }
   .sign-type:after {
     content: '';
     position: absolute;
@@ -793,16 +803,6 @@ textarea {
     background-image: url("../img/icon-right-arrow-hover.svg");
     -webkit-transition: background .4s, color .2s;
     transition: background .4s, color .2s; }
-
-.text {
-  background: #0af5df; }
-  .text h3 {
-    max-width: 220px;
-    margin: 0 auto; }
-
-.design {
-  background: #ffb72d;
-  border-left: 0; }
 
 .sign-type .row {
   margin-top: -20px; }
@@ -868,6 +868,9 @@ textarea {
   .instructions .btn.disabled {
     opacity: .2;
     pointer-events: none; }
+
+.create-text .sign-slogan {
+  font-size: 28px; }
 
 .create-design .sign-slogan-container {
   background: #f0f0f0; }
