@@ -588,15 +588,46 @@ textarea {
     line-height: 1.8em; }
 
 .sign-buttons {
-  display: block; }
+  display: block;
+  position: relative; }
 
 .sign-buttons .btn {
   width: calc(50% - 45px);
   display: inline-block;
   text-align: center; }
 
-.sign-url {
+.sign-buttons .get-url {
   margin-left: -7px; }
+
+.sign-buttons .copy-url {
+  background: #0af5df;
+  position: absolute;
+  top: 35px;
+  width: calc(100% - 1px);
+  border-top: 0;
+  box-sizing: border-box;
+  text-align: left;
+  opacity: 0;
+  cursor: text;
+  pointer-events: none;
+  -webkit-transition: top .1s ease-out;
+  transition: top .1s ease-out; }
+  .sign-buttons .copy-url:hover {
+    background: #0af5df;
+    color: #181818; }
+  .sign-buttons .copy-url.visible {
+    opacity: 1;
+    top: 50px;
+    pointer-events: auto; }
+
+.sign-buttons span {
+  max-width: 650px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #181818; }
 
 .sign-cta {
   background: #0af5df;
@@ -970,7 +1001,7 @@ textarea {
   border-width: 15px; }
 
 .your-sign .sign-info {
-  padding-top: 12%; }
+  padding-top: 10%; }
 
 .your-sign .sign-creds {
   height: 100px; }
@@ -980,6 +1011,15 @@ textarea {
   margin-top: 5px;
   font-size: 20px; }
 
+.your-sign .copy-url {
+  position: relative;
+  top: -15px; }
+  .your-sign .copy-url.visible {
+    top: 0;
+    left: 0; }
+
+.your-sign .divider {
+  margin: 25px 0 20px; }
+
 .your-sign .make-another {
-  margin-top: 40px;
   display: block; }

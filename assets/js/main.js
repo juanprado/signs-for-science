@@ -57,6 +57,16 @@ console.log('we got us some javascript');
 
 window.addEventListener("DOMContentLoaded", function () {
 
+  var urlBtn = document.getElementsByClassName("get-url");
+
+  for (var i = 0; i < urlBtn.length; i++) {
+    urlBtn[i].addEventListener('click', function () {
+      var after = this.nextSibling;
+      var urlField = after.nextSibling;
+      urlField.classList.add("visible");
+    }, false);
+  }
+
   if (document.getElementById("filter")) {
     var h = document.getElementById("filter");
     var stuck = false;

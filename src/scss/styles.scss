@@ -632,6 +632,7 @@ textarea {
 
 .sign-buttons {
   display: block;
+  position: relative;
 }
 
 .sign-buttons .btn {
@@ -640,8 +641,43 @@ textarea {
   text-align: center;
 }
 
-.sign-url {
+.sign-buttons .get-url {
   margin-left: -7px;
+}
+
+.sign-buttons .copy-url {
+  background: $turquoise;
+  position: absolute;
+  top: 35px;
+  width: calc(100% - 1px);
+  border-top: 0;
+  box-sizing: border-box;
+  text-align: left;
+  opacity: 0;
+  cursor: text;
+  pointer-events: none;
+  transition: top .1s ease-out;
+
+  &:hover {
+    background: $turquoise;
+    color: $charcoal;
+  }
+
+  &.visible {
+    opacity: 1;
+    top: 50px;
+    pointer-events: auto;
+  }
+}
+
+.sign-buttons span {
+  max-width: 650px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: $charcoal;
 }
 
 .sign-cta {
@@ -1106,7 +1142,7 @@ textarea {
 }
 
 .your-sign .sign-info {
-  padding-top: 12%;
+  padding-top: 10%;
 }
 
 .your-sign .sign-creds {
@@ -1119,7 +1155,20 @@ textarea {
   font-size: 20px;
 }
 
+.your-sign .copy-url {
+  position: relative;
+  top: -15px;
+
+  &.visible {
+    top: 0;
+    left: 0;
+  }
+}
+
+.your-sign .divider {
+  margin: 25px 0 20px;
+}
+
 .your-sign .make-another {
-  margin-top: 40px;
   display: block;
 }
