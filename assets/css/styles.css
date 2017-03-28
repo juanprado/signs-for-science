@@ -530,7 +530,13 @@ textarea {
 .sign-image {
   position: relative;
   padding: 63% 0;
-  border: 8px solid white; }
+  border: 8px solid white;
+  background: #f0f0f0; }
+
+.image-file {
+  position: absolute;
+  top: 0;
+  width: 100%; }
 
 .sign-slogan-container {
   content: '';

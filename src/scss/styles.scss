@@ -566,6 +566,13 @@ textarea {
   position: relative;
   padding: 63% 0;
   border: 8px solid white;
+  background: $light-gray;
+}
+
+.image-file {
+  position: absolute;
+  top:0;
+  width: 100%;
 }
 
 .sign-slogan-container {
