@@ -1,3 +1,7 @@
+import imageUpload from './imageUpload';
+
+imageUpload();
+
 console.log('we got us some javascript');
 
 window.addEventListener("DOMContentLoaded", function() {
