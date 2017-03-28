@@ -1,144 +1,147 @@
 <% include ../partials/head %>
 <body class="create">
-
 <form action="/signs" method="POST">
 
-  <section class="hero create-section">
-    <div class="grid-container">
-      <h1 data-content="Add your sign">Add your sign</h1>
-      <h4>Choose your idea type:</h4>
+<section class="hero create-section">
+  <div class="grid-container">
+    <h1 data-content="Add your sign">Add your sign</h1>
+    <h4>Choose your idea type:</h4>
 
-      <div class="sign-type-container">
-      <a href="" class="sign-type text col-6">
-        <div class="row">
-          <img src="../assets/img/divider.svg" alt="----" class="divider center" />
-          <h3>add a headline or slogan</h3>
-          <span class="body-copy">Copywriter? Comedian? Go here. No designs needed.</span>
-        </div>
-        <div class="go all-caps">Go</div>
-        <div class="emb"></div>
-      </a>
-
-      <a href="" class="sign-type design col-6">
-        <div class="row">
-          <img src="../assets/img/divider.svg" alt="----" class="divider center" />
-          <h3>Add a sketch, illustration or design</h3>
-          <span class="body-copy">No need for perfection. Just great ideas to inspire.</span>
-        </div>
-        <div class="go all-caps">Go</div>
-      </a>
+    <div class="sign-type-container">
+    <a href="" class="sign-type text col-6">
+      <div class="row">
+        <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+        <h3>add a headline or slogan</h3>
+        <span class="body-copy">Copywriter? Comedian? Go here. No designs needed.</span>
       </div>
-    </div>
-    <div class="overall emb"></div>
-  </section>
+      <div class="go all-caps">Go</div>
+      <div class="emb"></div>
+    </a>
 
-  <section class="create-text create-section">
-    <div class="grid-container">
-      <div class="col-4 sign-item">
-        <div href="" class="back all-caps">Back</div>
-        <div class="sign-image turquoise">
-          <div class="sign-slogan-container">
-            <div class="sign-slogan">
-              <img src="../assets/img/divider.svg" alt="----" class="divider center" />
-              Your positive, funny, non-partisan slogan here
-            </div>
+    <a href="" class="sign-type design col-6">
+      <div class="row">
+        <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+        <h3>Add a sketch, illustration or design</h3>
+        <span class="body-copy">No need for perfection. Just great ideas to inspire.</span>
+      </div>
+      <div class="go all-caps">Go</div>
+    </a>
+    </div>
+  </div>
+  <div class="overall emb"></div>
+</section>
+
+<section class="create-text create-section">
+  <div class="grid-container">
+    <div class="col-4 sign-item">
+      <div href="" class="back all-caps">Back</div>
+      <div class="sign-image turquoise">
+        <div class="sign-slogan-container">
+          <div class="sign-slogan">
+            <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+            Your positive, funny, non-partisan slogan here
           </div>
         </div>
       </div>
-      <div class="col-6 col-offset-1 instructions">
-        <h2 data-content="Say something clever">Say something clever</h2>
+    </div>
+    <div class="col-6 col-offset-1 instructions">
+      <h2 data-content="Say something clever">Say something clever</h2>
 
-        <ul class="body-copy mini">
-          <li><span class="all-caps">Keep it positive.</span> No anti-Trump stuff or doom & gloom. <a href="about#creative-considerations" target="_blank">Read why.</a></li>
-          <li><span class="all-caps">Be inclusive.</span> Scientists aren’t just a bunch of old white guys.</li>
-          <li><span class="all-caps">Celebrate science.</span> Talk about why science is awesome, or <a href="about#talking-points" target="_blank">these topics.</a></li>
-        </ul>
-        <img src="../assets/img/divider.svg" alt="----" class="divider" />
+      <ul class="body-copy mini">
+        <li><span class="all-caps">Keep it positive.</span> No anti-Trump stuff or doom & gloom. <a href="about#creative-considerations" target="_blank">Read why.</a></li>
+        <li><span class="all-caps">Be inclusive.</span> Scientists aren’t just a bunch of old white guys.</li>
+        <li><span class="all-caps">Celebrate science.</span> Talk about why science is awesome, or <a href="about#talking-points" target="_blank">these topics.</a></li>
+      </ul>
+      <img src="../assets/img/divider.svg" alt="----" class="divider" />
 
-        <textarea placeholder="Your positive, funny, non-partisan slogan here" name="sign" class="body-copy" maxlength="150"></textarea>
+      <textarea placeholder="Your positive, funny, non-partisan slogan here" name="sign" class="body-copy" maxlength="150"></textarea>
 
-        <div class="btn secondary disabled">Continue</div>
+      <div class="btn secondary disabled">Continue</div>
+    </div>
+  </div>
+  <div class="overall emb"></div>
+</section>
+
+<section class="create-design create-section">
+  <div class="grid-container">
+    <div class="col-4 sign-item">
+      <div href="" class="back all-caps">Back</div>
+      <div class="sign-image">
+        <div class="sign-slogan-container">
+          <div class="sign-slogan">
+            <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
+            Your positive, provocative, non-cliché sketch or design here
+          </div>
+        </div>
+        <div class="sign-image-req">
+          <h4>Image file guidelines</h4>
+          <div class="body-copy mini">22 X 28 inches   |   at least 200dpi</div>
+        </div>
       </div>
     </div>
-    <div class="overall emb"></div>
-  </section>
+    <div class="col-6 col-offset-1 instructions">
+      <h2 data-content="Say something clever">Say something clever</h2>
 
-  <section class="create-design create-section">
-    <div class="grid-container">
-      <div class="col-4 sign-item">
-        <div href="" class="back all-caps">Back</div>
-        <div class="sign-image">
-          <img class="image-file create-image-preview" src="" alt="your sign preview">
-          <div class="sign-slogan-rules">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider_charcoal.svg" alt="----" class="divider center" />
-                Your positive, provocative, non-cliché sketch or design here
-              </div>
-            </div>
-            <div class="sign-image-req">
-              <h4>Image file guidelines</h4>
-              <div class="body-copy mini">22 X 28 inches   |   at least 200dpi</div>
-            </div>
+      <ul class="body-copy mini">
+        <li><span class="all-caps">Messy is okay.</span> Standout ideas are more important than pixel perfect designs.</li>
+        <li><span class="all-caps">Keep it positive.</span> No anti-Trump stuff or doom & gloom. <a href="about#creative-considerations" target="_blank">Read why.</a></li>
+        <li><span class="all-caps">Be inclusive.</span> Scientists aren’t just a bunch of old white guys.</li>
+        <li><span class="all-caps">Celebrate science.</span> Talk about why science is awesome, or <a href="about#talking-points" target="_blank">these topics.</a></li>
+      </ul>
+      <img src="../assets/img/divider.svg" alt="----" class="divider" />
+
+      <input type="file" name="file" id="file" accept="image/*" class="input-file" data-multiple-caption="{count} files selected" multiple>
+      <label for="file" id="file-label" class="file-label">
+        <div class="file-name body-copy mini" id="file-name">No file selected</div>
+        <div class="btn secondary">Choose file</div>
+      </label>
+
+      <div class="btn secondary disabled">Continue</div>
+    </div>
+  </div>
+  <div class="overall emb"></div>
+</section>
+
+<section class="create-details create-section">
+  <div class="grid-container">
+    <div class="col-4 sign-item">
+      <div href="" class="back all-caps">Back</div>
+      <div class="sign-image">
+        <div class="sign-slogan-container">
+          <div class="sign-slogan">
+            <img src="../assets/img/divider_charcoal.svg" alt="----" class="divider center" />
+            Your positive, provocative, non-cliché sketch or design here
           </div>
         </div>
       </div>
-      <div class="col-6 col-offset-1 instructions">
-        <h2 data-content="Say something clever">Say something clever</h2>
-
-        <ul class="body-copy mini">
-          <li><span class="all-caps">Messy is okay.</span> Standout ideas are more important than pixel perfect designs.</li>
-          <li><span class="all-caps">Keep it positive.</span> No anti-Trump stuff or doom & gloom. <a href="about#creative-considerations" target="_blank">Read why.</a></li>
-          <li><span class="all-caps">Be inclusive.</span> Scientists aren’t just a bunch of old white guys.</li>
-          <li><span class="all-caps">Celebrate science.</span> Talk about why science is awesome, or <a href="about#talking-points" target="_blank">these topics.</a></li>
-        </ul>
-        <img src="../assets/img/divider.svg" alt="----" class="divider" />
-
-        <input type="file" name="file" id="file" accept="image/*" class="input-file" data-multiple-caption="{count} files selected" multiple>
-        <label for="file" id="file-label" class="file-label">
-          <div class="file-name body-copy mini" id="file-name">No file selected</div>
-          <div class="btn secondary">Choose file</div>
-        </label>
-
-        <div class="btn secondary disabled">Continue</div>
-      </div>
     </div>
-    <div class="overall emb"></div>
-  </section>
+    <div class="col-6 col-offset-1 instructions">
+      <h2 data-content="Woooooo!">Woooooo!</h2>
+      <h4>Add your info, or stay anonymous.</h4>
+      <img src="../assets/img/divider.svg" alt="----" class="divider" />
 
-  <section class="create-details create-section">
-    <div class="grid-container">
-      <div class="col-4 sign-item">
-        <div href="" class="back all-caps">Back</div>
-        <div class="sign-image">
-          <img class="image-file create-image-preview" src="" alt="your sign preview">
-        </div>
+      <div class="form-field">
+        <label for="name" class="all-caps">Name</label>
+        <input type="text" placeholder="Real or nick (optional)" name="name" />
       </div>
-      <div class="col-6 col-offset-1 instructions">
-        <h2 data-content="Woooooo!">Woooooo!</h2>
-        <h4>Add your info, or stay anonymous.</h4>
-        <img src="../assets/img/divider.svg" alt="----" class="divider" />
 
-        <div class="form-field">
-          <label for="name" class="all-caps">Name</label>
-          <input type="text" placeholder="Real or nick (optional)" name="name" />
-        </div>
-
-        <div class="form-field">
-          <label for="tagline" class="all-caps">Tagline</label>
-          <input type="text" placeholder="Copywriter in NYC (optional)" name="tagline" />
-        </div>
-
-        <div class="form-field url">
-          <label for="url" class="all-caps">Website</label>
-          <input type="text" placeholder="Where to find more (optional)" name="url" />
-        </div>
-
-        <button class="btn secondary disabled" type="submit">Submit</button>
+      <div class="form-field">
+        <label for="tagline" class="all-caps">Tagline</label>
+        <input type="text" placeholder="Copywriter in NYC (optional)" name="tagline" />
       </div>
+
+      <div class="form-field url">
+        <label for="url" class="all-caps">Website</label>
+        <input type="text" placeholder="Where to find more (optional)" name="url" />
+      </div>
+
+      <button class="btn secondary disabled" type="submit">Submit</button>
     </div>
-    <div class="overall emb"></div>
-  </section>
+  </div>
+  <div class="overall emb"></div>
+</section>
+
+
 
 </form>
 
