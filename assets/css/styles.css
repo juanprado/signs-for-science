@@ -526,6 +526,9 @@ textarea {
   display: inline-block;
   margin-bottom: 8%; }
 
+.gallery .sign-item {
+  float: none; }
+
 .sign-image {
   position: relative;
   padding: 63% 0;
@@ -536,9 +539,10 @@ textarea {
   position: absolute;
   max-width: 100%;
   max-height: 100%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  top: 50%; }
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%; }
 
 .sign-slogan-container {
   content: '';
@@ -602,7 +606,6 @@ textarea {
   background: #0af5df;
   position: absolute;
   top: 35px;
-  left: 0;
   width: calc(100% - 1px);
   border-top: 0;
   box-sizing: border-box;

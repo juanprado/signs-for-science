@@ -21,144 +21,34 @@
     <a href="create" class="btn square">Add your sign</a>
   </div>
   <div class="grid-container">
-    <div class="sign-container">
-      <div class="row">
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <img src="../assets/img/sign-example-1.jpg" class="image-file" />
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-
-        <div class="col-3 col-offset-1 sign-item">
+    <ul class="sign-container">
+      <% signs.forEach(function(sign) { %>
+        <li class="col-3 col-offset-1 sign-item">
           <div class="sign-image">
             <div class="sign-slogan-container">
               <div class="sign-slogan">
                 <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
+                <%= sign.sign %>
               </div>
             </div>
           </div>
           <div class="sign-creds">
             <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
+            <span class="all-caps"><%= sign.name %></span>
+            <div class="body-copy mini"><%= sign.tagline %>
+              <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
             </div>
           </div>
           <div class="sign-buttons">
             <a href="" class="btn secondary">Download</a>
             <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
+            <div class="btn secondary copy-url">URL:
+              <span>signsforscience.com/sign/<%= sign.slug %></span>
             </div>
           </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </li>
+      <% }); %>
+    </ul>
   </div>
   <div class="sign-cta">
     <div class="grid-container">
@@ -171,148 +61,7 @@
   </div>
 
   <div class="grid-container">
-    <div class="sign-container">
-      <div class="row">
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
 
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-
-        <div class="col-3 col-offset-1 sign-item">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
-              </div>
-            </div>
-          </div>
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
-            </div>
-          </div>
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div class="sign-cta">
@@ -325,11 +74,5 @@
     <div class="emb"></div>
   </div>
 </div>
-
-<ul>
-  <% signs.forEach(function(sign) { %>
-    <li><%= sign.name %> - <%= sign.url %> - <%= sign.sign %>< - <%= sign.slug %></li>
-  <% }); %>
-</ul>
 
 <% include ../partials/footer %>
