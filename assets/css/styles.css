@@ -602,6 +602,7 @@ textarea {
   background: #0af5df;
   position: absolute;
   top: 35px;
+  left: 0;
   width: calc(100% - 1px);
   border-top: 0;
   box-sizing: border-box;
