@@ -1,6 +1,9 @@
 import imageUpload from './imageUpload';
+import getSigns from './getSigns';
 
 imageUpload();
+getSigns();
+
 
 console.log('we got us some javascript');
 

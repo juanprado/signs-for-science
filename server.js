@@ -20,11 +20,27 @@ app.set('port', (process.env.PORT || 5000));
 
 // Index
 app.get('/', (req, res) => {
+  const limit = 12;
+
   Sign.find()
     .sort({ featured: -1 })
-    .limit(10)
+    .limit(limit)
     .then(signs => { res.render(`pages/index`, { signs }); })
     .catch(error => { console.log('Error finding list of signs') });
+});
+
+//Ajax pagination
+app.get('/get-signs', (req, res) => {
+  const page = req.query.page;
+  const limit = 12;
+  const skip = page * limit;
+
+  Sign.find()
+    .sort({ featured: -1 })
+    .skip(skip)
+    .limit(limit)
+    .then(signs => { res.render('partials/sign-list', { signs }); })
+    .catch(error => { res.send(JSON.stringify({ error })); })
 });
 
 // Post

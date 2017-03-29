@@ -1,0 +1,44 @@
+<% if (signs.length > 0) { %>
+
+  <div class="grid-container">
+      <ul class="sign-container">
+        <% signs.forEach(function(sign) { %>
+          <li class="col-3 col-offset-1 sign-item">
+            <div class="sign-image">
+              <div class="sign-slogan-container">
+                <div class="sign-slogan">
+                  <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
+                  <%= sign.sign %>
+                </div>
+              </div>
+            </div>
+            <div class="sign-creds">
+              <span class="body-copy mini">idea by</span>
+              <span class="all-caps"><%= sign.name %></span>
+              <div class="body-copy mini"><%= sign.tagline %>
+                <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
+              </div>
+            </div>
+            <div class="sign-buttons">
+              <a href="" class="btn secondary">Download</a>
+              <div class="btn secondary get-url">Share</div>
+              <div class="btn secondary copy-url">URL:
+                <span>signsforscience.com/sign/<%= sign.slug %></span>
+              </div>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+    <div class="sign-cta">
+      <div class="grid-container">
+        <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+        <h2 data-content="OK now it's your turn">OK now it’s your turn</h2>
+        <p class="body-copy">Upload your own celebratory, funny, non-doom & gloomy sign idea here.</p>
+        <a href="create" class="btn">Add your sign</a>
+      </div>
+      <div class="emb"></div>
+    </div>
+  </div
+
+<% } %>
