@@ -469,11 +469,11 @@ textarea {
   margin-right: 25px;
   display: inline-block; }
 
-.hero .emb {
-  background-image: url("../img/emb_signs.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_microscope.png");
-  background-size: 139px, 22px, 22px, 22px, 22px, 161px, 161px, 71px;
+.homepage .hero .emb {
+  background-image: url("../img/emb_signs.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_microscope.png");
+  background-size: 139px, 22px, 22px, 22px, 161px, 161px, 71px;
   background-repeat: no-repeat;
-  background-position: top 18vh right 30px, 31vw 20px, top 18vh right 138px, 3vw 450px, 89vw 65vh, -60px 27vh, 91vw 43px, 75px 21.5vh;
+  background-position: top 270px right 30px, top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 27vh left -60px, top 43px right -40px, top 21.5vh left 75px;
   z-index: -1; }
 
 /* * * Gallery * * */
@@ -491,6 +491,15 @@ textarea {
     top: -29px;
     left: calc(50% - 9px);
     margin: 0 auto; }
+  .gallery:after {
+    content: '';
+    width: 81px;
+    height: 97px;
+    background: url("../img/emb_lightning.png") no-repeat;
+    background-size: 81px;
+    position: absolute;
+    top: -60px;
+    right: 17vw; }
 
 .filter {
   background: #0af5df;
@@ -774,10 +783,10 @@ textarea {
   height: 700px;
   padding-top: 60px;
   border-bottom: 3px solid black; }
-  .create-section.hero .emb.overall, .create-section.create-details .emb.overall {
-    background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
-    background-size: 22px, 22px, 22px, 161px;
-    background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px; }
+  .create-section.hero .emb.overall {
+    background-image: url("../img/emb_plant.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
+    background-size: 116px, 22px, 22px, 22px, 161px;
+    background-position: top 30px right 20vw, 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px; }
   .create-section.create-text .emb.overall, .create-section.create-design .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles_vt.svg");
     background-size: 22px, 22px, 22px, 161px, 64px;

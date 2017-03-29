@@ -15,7 +15,7 @@ $emb-circle-size: 22px;
 $emb-squiggles-size: 161px;
 $emb-squiggles-vt-size: 64px;
 $emb-signs-size: 139px;
-$emb-lightning-size: 69px;
+$emb-lightning-size: 81px;
 $emb-microscope-size: 71px;
 $emb-plant-size: 116px;
 $emb-thermometer-size: 44px;
@@ -497,11 +497,11 @@ textarea {
   display: inline-block;
 }
 
-.hero .emb {
-  background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
-  background-size: $emb-signs-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-microscope-size;
+.homepage .hero .emb {
+  background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
+  background-size: $emb-signs-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-microscope-size;
   background-repeat: no-repeat;
-  background-position: top 18vh right 30px, 31vw 20px, top 18vh right 138px, 3vw 450px, 89vw 65vh, -60px 27vh, 91vw 43px, 75px 21.5vh;
+  background-position: top 270px right 30px, top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 27vh left -60px, top 43px right -40px, top 21.5vh left 75px;
   z-index: -1;
 }
 
@@ -521,6 +521,17 @@ textarea {
     top: -29px;
     left: calc(50% - 9px);
     margin: 0 auto;
+  }
+
+  &:after {
+    content: '';
+    width: 81px;
+    height: 97px;
+    background: url('../img/emb_lightning.png') no-repeat;
+    background-size: 81px;
+    position: absolute;
+    top: -60px;
+    right: 17vw;
   }
 }
 
@@ -879,10 +890,10 @@ textarea {
   padding-top: 60px;
   border-bottom: 3px solid black;
 
-  &.hero .emb.overall, &.create-details .emb.overall {
-    background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
-    background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
-    background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
+  &.hero .emb.overall {
+    background-image: url('../img/emb_plant.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+    background-size: $emb-plant-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
+    background-position: top 30px right 20vw, 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
   }
 
   &.create-text .emb.overall, &.create-design .emb.overall {
