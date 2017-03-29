@@ -14,6 +14,12 @@ $neon-pink: #f24561;
 $emb-circle-size: 22px;
 $emb-squiggles-size: 161px;
 $emb-squiggles-vt-size: 64px;
+$emb-signs-size: 139px;
+$emb-lightning-size: 69px;
+$emb-microscope-size: 71px;
+$emb-plant-size: 116px;
+$emb-thermometer-size: 44px;
+$emb-iceburg-size: 165px;
 
 /* * * Grid * * */
 @mixin breakpoint($point) {
@@ -492,10 +498,10 @@ textarea {
 }
 
 .hero .emb {
-  background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg');
-  background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size;
+  background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
+  background-size: $emb-signs-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-microscope-size;
   background-repeat: no-repeat;
-  background-position: 31vw 20px, 3vw 350px, 89vw 65vh, -60px 40px, 91vw 330px;
+  background-position: top 18vh right 30px, 31vw 20px, top 18vh right 138px, 3vw 450px, 89vw 65vh, -60px 27vh, 91vw 43px, 75px 21.5vh;
   z-index: -1;
 }
 
@@ -707,10 +713,17 @@ textarea {
 }
 
 .sign-cta .emb {
-  background-image: url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
-  background-size: $emb-circle-size, $emb-squiggles-size;
-  background-position: 15vw 200px, 90vw 50px;
+  background-image: url('../img/emb_iceburg.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles_vt.svg'), url('../img/emb_squiggles.svg');
+  background-size: $emb-iceburg-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-vt-size, $emb-squiggles-size;
+  background-position: top 270px left 200px, top 240px left 280px, top 142px right 102px, top -70px left 30vw, top 170px right -20px;
   z-index: 0;
+
+  &.emb-1 {
+    background-image: url('../img/emb_plant.png'), url('../img/emb_thermometer.png'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+    background-size: $emb-plant-size, $emb-thermometer-size, $emb-circle-size, $emb-squiggles-size;
+    background-position: top 125px right -5px, top 210px left 200px, top 200px right 80px, top 280px left 150px;
+    z-index: 0;
+  }
 }
 
 /* * * About * * */
