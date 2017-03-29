@@ -332,6 +332,7 @@ h4 {
   background: url(../img/underline.svg) -50px 20px no-repeat;
   background-size: 530px;
   display: inline-block;
+  padding-bottom: 1px;
   text-decoration: none;
   cursor: pointer;
   color: $charcoal;
@@ -854,9 +855,9 @@ textarea {
   margin-top: 30vh;
 
   .emb {
-    background-image: url('../img/emb_circle.svg');
-    background-size: $emb-circle-size;
-    background-position: 0px 0px;
+    background-image: url('../img/emb_circle.svg'), url('../img/emb_iceburg.png');
+    background-size: $emb-circle-size, $emb-iceburg-size;
+    background-position: top 0 left 0, top 20px left 20px;
     top: -60px;
   }
 
@@ -867,9 +868,9 @@ textarea {
 }
 
 .about .emb.overall {
-  background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg');
-  background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-squiggles-size;
-  background-position: 64.3vw 80px, 20vw 100px, bottom 40px left 30vw, 80vw 230px, -75px 580px, 59.4vw 3000px;
+  background-image: url('../img/emb_plant.png'), url('../img/emb_microscope.png'), url('../img/emb_thermometer.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_signs.png');
+  background-size: $emb-plant-size, $emb-microscope-size, $emb-thermometer-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-squiggles-size, $emb-signs-size;
+  background-position: bottom 0 right -10px, top 3000px left -5px, top 510px left 50px, top 80px left 64.3vw, top 3082px left 55px, top 100px left 20vw, bottom 40px left 30vw, top 230px right 30px, top 580px left -75px, top 3000px left 59.4vw, top 140px right 140px;
 }
 
 /* * * Create * * */
@@ -897,9 +898,9 @@ textarea {
   }
 
   &.create-text .emb.overall, &.create-design .emb.overall {
-    background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
-    background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-vt-size;
-    background-position: 40.5vw 125px, 50px 500px, top 380px right 80px, top 120px right -30px, 44vw -70px;
+    background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
+    background-size: $emb-lightning-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-vt-size;
+    background-position: top 365px right 12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 80px, top 120px right -30px, top -70px left 44vw;
   }
 
   &.create-details .emb.overall {
@@ -1167,6 +1168,14 @@ textarea {
 /* * * Thank you * * */
 .thank-you {
   background: $turquoise;
+}
+
+.thank-you .hero .emb {
+  background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
+  background-size: $emb-signs-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-microscope-size;
+  background-repeat: no-repeat;
+  background-position: top 270px right 30px, top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 27vh left -60px, top 43px right -40px, top 21.5vh left 75px;
+  z-index: -1;
 }
 
 .your-sign {
