@@ -784,9 +784,9 @@ textarea {
   padding-top: 60px;
   border-bottom: 3px solid black; }
   .create-section.hero .emb.overall {
-    background-image: url("../img/emb_plant.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
-    background-size: 116px, 22px, 22px, 22px, 161px;
-    background-position: top 30px right 20vw, 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px; }
+    background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
+    background-size: 22px, 22px, 22px, 161px;
+    background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px; }
   .create-section.create-text .emb.overall, .create-section.create-design .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles_vt.svg");
     background-size: 22px, 22px, 22px, 161px, 64px;
@@ -828,7 +828,17 @@ textarea {
       margin: 0 auto; }
   .sign-type.design {
     background: #ffb72d;
-    border-left: 0; }
+    border-left: 0;
+    position: relative; }
+    .sign-type.design .emb {
+      content: '';
+      width: 116px;
+      height: 111px;
+      background: url("../img/emb_plant.png") no-repeat;
+      background-size: 116px;
+      position: absolute;
+      top: -50px;
+      left: calc(100% - 114px); }
   .sign-type:after {
     content: '';
     position: absolute;

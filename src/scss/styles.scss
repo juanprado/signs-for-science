@@ -891,9 +891,9 @@ textarea {
   border-bottom: 3px solid black;
 
   &.hero .emb.overall {
-    background-image: url('../img/emb_plant.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
-    background-size: $emb-plant-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
-    background-position: top 30px right 20vw, 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
+    background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+    background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
+    background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
   }
 
   &.create-text .emb.overall, &.create-design .emb.overall {
@@ -942,6 +942,18 @@ textarea {
   &.design {
     background: $orange;
     border-left: 0;
+    position: relative;
+
+    .emb {
+      content: '';
+      width: 116px;
+      height: 111px;
+      background: url('../img/emb_plant.png') no-repeat;
+      background-size: $emb-plant-size;
+      position: absolute;
+      top: -50px;
+      left: calc(100% - 114px);
+    }
   }
 
   &:after {
