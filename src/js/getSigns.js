@@ -1,7 +1,7 @@
 import axios from 'axios/dist/axios';
 
-let currentPage = 1;
 let gallery = document.getElementById('gallery');
+let currentPage = gallery.getAttribute('data-initial-page');
 let checking = false;
 
 export default function init() {

@@ -1602,8 +1602,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 });
 
-let currentPage = 1;
 let gallery = document.getElementById('gallery');
+let currentPage = gallery.getAttribute('data-initial-page');
 let checking = false;
 
 function init() {

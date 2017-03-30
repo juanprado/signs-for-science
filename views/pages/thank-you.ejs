@@ -4,6 +4,8 @@
   <div class="grid-container">
     <h1 data-content="Amazing!">Amazing!</h1>
     <h4>The scientists and climate marchers thank you.</h4>
+    
+    <% if (sign) { %>
     <div class="row your-sign">
       <div class="col-5 col-offset-1">
         <div class="sign-image">
@@ -35,17 +37,18 @@
         <a href="create" class="btn make-another">Make another sign</a>
       </div>
     </div>
+    <% } %>
+  
   </div>
   <div class="emb"></div>
 </div>
 
-<div class="row gallery" id="gallery">
+<div class="row gallery" id="gallery" data-initial-page="0">
   <div class="filter" id="filter">
     <img src="../assets/img/divider.svg" alt="----" class="divider center" />
     <div class="body-copy mini">Join in the fight!</div>
     <a href="create" class="btn square">Add your sign</a>
   </div>
-  <% include ../partials/sign-list %>
 </div>
 
 <% include ../partials/footer %>

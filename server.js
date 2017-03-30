@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 
 //Ajax pagination
 app.get('/get-signs', (req, res) => {
-  const page = req.query.page;
+  const page = req.query.page || 0;
   const limit = 12;
   const skip = page * limit;
 
@@ -48,7 +48,7 @@ app.post('/signs', (req, res) => {
   const newSign = Sign(req.body);
 
   newSign.save()
-    .then(sign => { res.redirect('/') })
+    .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
     .catch(error => { console.log('Error saving sign') })
 });
 
@@ -73,7 +73,11 @@ app.get('/create', (req, res) => {
 
 // Thank-you
 app.get('/thank-you', (req, res) => {
-  res.render('pages/thank-you')
+  const slug = req.query.slug;
+
+  Sign.findOne({ slug })
+    .then(sign => { res.render('pages/thank-you', { sign }); })
+    .catch(error => { console.log('is this an error?') })
 });
 
 // Listening to port
