@@ -1,7 +1,50 @@
 <% include ../partials/head %>
-<body class="sign-page">
-<h1>Individual Sign Page</h1>
+<body class="sign-page thank-you">
+<div class="hero">
+  <div class="grid-container">
+    <h1 data-content="They march, we make">They march, we make</h1>
+    <div class="row your-sign">
+      <div class="col-5 col-offset-1">
+        <div class="sign-image">
+          <div class="sign-slogan-container">
+            <div class="sign-slogan">
+              <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
+              <%= sign.sign %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<%= sign.name %> - <%= sign.url %> - <%= sign.sign %>
+      <div class="col-3 col-offset-1 sign-info">
+        <div class="sign-creds">
+          <span class="body-copy mini">idea by</span>
+          <span class="all-caps"><%= sign.name %></span>
+          <div class="body-copy mini"><%= sign.tagline %>
+            <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
+          </div>
+        </div>
+
+        <div class="sign-buttons">
+          <a href="" class="btn secondary">Download</a>
+          <div class="btn secondary get-url">Share</div>
+          <div class="btn secondary copy-url">URL:
+            <span>signsforscience.com/sign/<%= sign.slug %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="emb"></div>
+</div>
+
+<div class="sign-cta">
+  <div class="grid-container">
+    <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+    <h2 data-content="Feeling inspired?">Feeling inspired?</h2>
+    <p class="body-copy">Come up with your own sign idea for the <a href="marchforscience.com" target="_blank">March for Science</a> on April 22, and the <a href="https://peoplesclimate.org" target="_blank">People’s Climate March</a> on April 29. Make them clever, provocative and inclusive.</p>
+    <a href="create" class="btn">Add your sign</a>
+  </div>
+  <div class="emb emb-1"></div>
+</div>
 
 <% include ../partials/footer %>
