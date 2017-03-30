@@ -1,5 +1,8 @@
+import axios from 'axios/dist/axios';
+
 let currentPage = 1;
 let gallery = document.getElementById('gallery');
+let checking = false;
 
 export default function init() {
   if (gallery) {
@@ -9,24 +12,22 @@ export default function init() {
 }
 
 function getSign(page) {
-  const request = new XMLHttpRequest();
   const url = `/get-signs?page=${page}`
   
-  request.open('GET', url, true);
-  request.onload = function() {
-    if (request.status >= 200 && request.status < 400) {
-      renderSigns(request.responseText)
-    } else {
-      console.log('error fetch more stuff');
-    }
-  }
-  request.onerror = function() {
-    console.log('error fetching stuff as well');
-  }
-  request.send();
+  checking = true;
+  axios.get(url)
+    .then(response => { renderSigns(response.data); })
+    .catch(error => { onError(error) });
+}
+
+function onError(error) {
+  console.log(error);
+  checking = false;
 }
 
 function renderSigns(signs) {
+  checking = false;
+  
   if (signs.length > 0) {
     const signElements = document.createElement('div');
 
@@ -41,9 +42,10 @@ function renderSigns(signs) {
 function checkBottom(evt) {
   const innerHeight = window.innerHeight;
   const scrollY = window.scrollY;
-  const offset = document.body.offsetHeight;
+  const offsetHeight = document.body.offsetHeight - 700;
+  const scrollPosition = (innerHeight + scrollY);
 
-  if ((innerHeight + scrollY) >= offset) {
+  if ((scrollPosition >= offsetHeight) && !checking) {
     getSign(currentPage);
   }
 }
