@@ -78,30 +78,19 @@ $emb-iceburg-mini-size: 165px;
   @include breakpoint(med) {
     padding: 0 10px;
 
-    &.col-1{width: 16.666666%;}
-    &.col-2{width: 16.666666%;}
-    &.col-3{width: 33.333332%;}
-    &.col-4{width: 33.333332%;}
-    &.col-5{width: 41.666665%;}
-    &.col-6{width: 49.999998%;}
-    &.col-7{width: 58.333331%;}
-    &.col-8 {width: 66.666664%;}
-    &.col-9{width: 74.999997%;}
-    &.col-10{width: 83.333333%;}
-    &.col-11{width: 91.666663%;}
-    &.col-12{width: 100%;}
+    &.col-1, &.col-2 {width: 16.666666%;}
+    &.col-3, &.col-4{width: 33.333332%;}
+    &.col-5, &.col-6{width: 49.999998%;}
+    &.col-7, &.col-8{width: 66.666664%;}
+    &.col-9, &.col-10{width: 83.333333%;}
+    &.col-11, &.col-12{width: 100%;}
 
     &.col-offset-1{margin-left: calc(16.666666% - 3px);}
     &.col-offset-2{margin-left: 16.666666%;}
-    &.col-offset-3{margin-left: 24.999999%;}
-    &.col-offset-4{margin-left: 33.333332%;}
-    &.col-offset-5{margin-left: 41.666665%;}
-    &.col-offset-6{margin-left: 49.999998%;}
-    &.col-offset-7{margin-left: 58.333331%;}
-    &.col-offset-8{margin-left: 100%;}
-    &.col-offset-9{margin-left: 74.999997%;}
-    &.col-offset-10{margin-left: 83.333333%;}
-    &.col-offset-11{margin-left: 91.666663%;}
+    &.col-offset-3, &.col-offset-4{margin-left: 33.333332%;}
+    &.col-offset-5, &.col-offset-6{margin-left: 49.999998%;}
+    &.col-offset-7, &.col-offset-8{margin-left: 66.666664%;}
+    &.col-offset-9, &.col-offset-10{margin-left: 83.333333%;}
   }
 
   @include breakpoint(lrg) {
@@ -406,7 +395,7 @@ h4 {
 }
 
 .body-copy a {
-  background: url(../img/underline.svg) -50px 14  px no-repeat;
+  background: url(../img/underline.svg) -50px 14px no-repeat;
   background-size: 530px;
   display: inline-block;
   padding-bottom: 1px;
@@ -1199,7 +1188,7 @@ textarea {
   transition: background .2s, color .2s;
 
   &:hover {
-    color: white;
+    color: $broo;
     background-image: url('../img/icon-left-arrow-hover.svg');
   }
 }
