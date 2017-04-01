@@ -192,27 +192,40 @@ body {
     margin-bottom: 35px;
   }
 }
-
 /* * * Nav * * */
 nav {
-  padding-top: 25px;
+  height: 60px;
   position: relative;
+
+  @include breakpoint(med) {
+    height: 90px;
+  }
+}
+
+nav .grid-container {
+  // background: rgba(0, 246, 223, .95);
+  height: 60px;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+
+  @include breakpoint(med) {
+    position: relative;
+    height: 90px;
+  }
 }
 
 nav .logo {
-  text-align: center;
   margin-right: auto;
-  width: 100%;
+}
 
-  img {
-    width: 200px;
-  }
+nav .logo img {
+  width: 60%;
 
   @include breakpoint(med) {
-    width: auto;
+    width: 200px;
   }
 }
 
@@ -231,8 +244,7 @@ nav .logo {
 }
 
 nav li {
-  display: block;
-  margin-bottom: 30px;
+  display: none;
 
   @include breakpoint(med) {
     display: inline-block;
@@ -260,57 +272,85 @@ nav .btn {
   }
 }
 
-.mobile-menu {
-  position: relative;
+.mobile-hamburger {
+  width: 21px;
+  height: 21px;
 }
 
-nav .sml ul, nav .sml .overlay {
+.mobile-menu {
+  position: relative;
+
+  &._hide {
+    pointer-events: none;
+
+    ul, .emb.overall {
+      left: -100vw;
+    }
+
+    .overlay, .icon-close {
+      opacity: 0;
+    }
+  }
+}
+
+.mobile-menu ul {
+  background: $orange;
+  width: calc(85% - 16px);
+  height: 100vh;
+  padding: 65% 10%;
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-}
-
-nav .sml ul {
-  background: $orange;
-  width: 85%;
-  padding: 65% 10%;
-  box-sizing: border-box;
-  text-align: center;
   z-index: 2;
+  text-align: center;
   box-shadow: 0 4px 59px rgba(0,0,0,.2);
+  transition-delay: .5s;
+  transition: all .5s;
 }
 
-nav .sml li {
+.mobile-menu li {
   margin-bottom: 40px;
+  position: relative;
+  list-style-type: none;
+  z-index: 3;
 }
 
-nav .sml .overlay {
+.mobile-menu .overlay {
   content: '';
   background: $pink;
   width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1;
-  opacity: .9;
+  opacity: .97;
+  transition: all .5s;
 }
 
-nav .sml .icon-close {
+.mobile-menu .icon-close {
   background: url('../img/icon-close.svg') center center no-repeat;
   background-size: 16px;
-  width: 15%;
+  width: 16px;
   height: 16px;
   position: fixed;
-  top: 5vw;
-  right: 0;
+  top: 20px;
+  right: 7.5%;
   z-index: 2;
+  opacity: 1;
+  transition: all .2s;
 }
 
-nav .sml .emb.overall {
+.mobile-menu .emb.overall {
   height: 100vh;
   position: fixed;
   background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
   background-size: $emb-signs-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size;
   background-position: bottom 8vh left 20px, top 100px left 40px, bottom 20vh right 25vw, bottom 10vh left -60px;
-  z-index: 5;
+  z-index: 2;
+  left: 0;
+  transition: all .5s;
 }
 
 
@@ -614,9 +654,10 @@ textarea {
 
 .intro-copy .btn {
   display: block;
+  margin: 10px 0 30px;
 
   @include breakpoint(sml) {
-    margin-right: 25px;
+    margin: 0 25px 25px 0;
     display: inline-block;
   }
 }
@@ -1083,10 +1124,6 @@ textarea {
 }
 
 /* * * Create * * */
-// .create .hero, .create-text, .create-design {
-//   display: none;
-// }
-
 .create {
   background: $pink;
 }

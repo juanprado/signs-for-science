@@ -29,21 +29,24 @@
   <meta name="msapplication-square310x310logo" content="../assets/img/favicon/mstile-310x310.png" />
 </head>
 
-<nav class="grid-container nav">
-  <a href="../" class="logo"><img src="../assets/img/logo.svg" alt="Signs for Science"></a>
-  <div class="lrg">
-    <ul>
-      <li><a href="about" class="all-caps">The brief</a></li>
-      <li class="create-btn"><a href="create" class="btn mini">Add your sign</a></li>
-    </ul>
-  </div>
-  <div class="sml">
-    <ul>
-      <li><a href="about" class="all-caps">The brief</a></li>
-      <li class="create-btn"><a href="create" class="btn mini">Add your sign</a></li>
-    </ul>
-    <div class="icon-close"></div>
-    <div class="emb overall"></div>
-    <div class="overlay"></div>
+<nav class="nav">
+  <div class="grid-container">
+    <a href="../" class="logo"><img src="../assets/img/logo.svg" alt="Signs for Science"></a>
+    <div>
+      <ul>
+        <li><a href="about" class="all-caps">The brief</a></li>
+        <li class="create-btn"><a href="create" class="btn mini">Add your sign</a></li>
+      </ul>
+      <img src="../assets/img/icon-menu.svg" class="sml mobile-hamburger" id="mobile-hamburger" />
+    </div>
   </div>
 </nav>
+<div class="mobile-menu _hide" id="mobile-menu">
+  <ul>
+    <li><a href="about" class="all-caps">The brief</a></li>
+    <li class="create-btn"><a href="create" class="btn mini">Add your sign</a></li>
+        <div class="emb overall"></div>
+  </ul>
+  <div class="icon-close" id="nav-close"></div>
+  <div class="overlay"></div>
+</div>

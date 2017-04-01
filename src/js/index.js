@@ -20,6 +20,14 @@ for (var i = 0; i < urlBtn.length; i++) {
     }, false);
 };
 
+document.getElementById("nav-close").addEventListener('click', function() {
+      document.getElementById("mobile-menu").classList.add("_hide");
+  }, false);
+
+document.getElementById("mobile-hamburger").addEventListener('click', function() {
+      document.getElementById("mobile-menu").classList.remove("_hide");
+  }, false);
+
 if (document.getElementById("filter")) {
   var h = document.getElementById("filter");
   var stuck = false;
@@ -42,7 +50,7 @@ if (document.getElementById("filter")) {
     }
   }
 }
-else if(document.getElementById("file")) {
+if(document.getElementById("file")) {
   document.getElementById("file").onchange = function () {
     var input = document.getElementById("file");
     var label  = document.getElementById("file-name");
