@@ -126,7 +126,7 @@ table {
     [class*='col-'].col-x-sml-12 {
       width: 100%; }
     [class*='col-'].col-x-sml-offset-1 {
-      margin-left: 8.333333%; }
+      margin-left: calc(8.333333% - 3px); }
     [class*='col-'].col-x-sml-offset-2 {
       margin-left: 16.666666%; }
     [class*='col-'].col-x-sml-offset-3 {
@@ -173,7 +173,7 @@ table {
     [class*='col-'].col-sml-12 {
       width: 100%; }
     [class*='col-'].col-sml-offset-1 {
-      margin-left: 8.333333%; }
+      margin-left: calc(8.333333% - 3px); }
     [class*='col-'].col-sml-offset-2 {
       margin-left: 16.666666%; }
     [class*='col-'].col-sml-offset-3 {
@@ -220,7 +220,7 @@ table {
     [class*='col-'].col-med-12 {
       width: 100%; }
     [class*='col-'].col-med-offset-1 {
-      margin-left: 8.333333%; }
+      margin-left: calc(8.333333% - 3px); }
     [class*='col-'].col-med-offset-2 {
       margin-left: 16.666666%; }
     [class*='col-'].col-med-offset-3 {
@@ -267,7 +267,7 @@ table {
     [class*='col-'].col-lrg-12 {
       width: 100%; }
     [class*='col-'].col-lrg-offset-1 {
-      margin-left: 8.333333%; }
+      margin-left: calc(8.333333% - 3px); }
     [class*='col-'].col-lrg-offset-2 {
       margin-left: 16.666666%; }
     [class*='col-'].col-lrg-offset-3 {
@@ -314,7 +314,7 @@ table {
     [class*='col-'].col-x-lrg-12 {
       width: 100%; }
     [class*='col-'].col-x-lrg-offset-1 {
-      margin-left: 8.333333%; }
+      margin-left: calc(8.333333% - 3px); }
     [class*='col-'].col-x-lrg-offset-2 {
       margin-left: 16.666666%; }
     [class*='col-'].col-x-lrg-offset-3 {
@@ -902,10 +902,14 @@ textarea {
   margin: 0 auto; }
 
 .sign-container {
-  padding: 7vw 0 3vw 2vw; }
+  padding: 7vw 0 3vw 0; }
+  @media (min-width: 650px) {
+    .sign-container {
+      padding: 7vw 0 3vw 8vw; } }
   @media (min-width: 900px) {
     .sign-container {
-      padding: 7vw 0 3vw; } }
+      margin-left: 30px;
+      padding: 7vw 0 3vw 0; } }
 
 .sign-item {
   display: inline-block;
@@ -987,22 +991,14 @@ textarea {
   position: relative; }
 
 .sign-buttons .btn {
-  width: calc(50% + 1px);
+  width: 100%;
   display: inline-block;
   text-align: center; }
-  @media (min-width: 650px) {
-    .sign-buttons .btn {
-      width: 100%; } }
-  @media (min-width: 1280px) {
-    .sign-buttons .btn {
-      width: calc(50% + 1px); } }
+  .sign-buttons .btn:first-child {
+    display: none; }
 
 .sign-buttons .get-url {
   margin-left: -7px; }
-  @media (min-width: 650px) {
-    .sign-buttons .get-url {
-      margin-left: 0;
-      border-top: none; } }
   @media (min-width: 1280px) {
     .sign-buttons .get-url {
       margin-left: -7px;
