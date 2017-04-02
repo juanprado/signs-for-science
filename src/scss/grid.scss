@@ -60,7 +60,7 @@
   &.col-11{width: 91.666663%;}
   &.col-12{width: 100%;}
 
-  &.col-offset-1{margin-left: 8.333333%;}
+  &.col-offset-1{margin-left: calc(8.333333% - 3px);}
   &.col-offset-2{margin-left: 16.666666%;}
   &.col-offset-3{margin-left: 24.999999%;}
   &.col-offset-4{margin-left: 33.333332%;}
@@ -73,8 +73,6 @@
   &.col-offset-11{margin-left: 91.666663%;}
 
   @include breakpoint(sml) {
-    padding: 0 10px;
-
     &.col-sml-1{width: 8.333333%;}
     &.col-sml-2{width: 16.666666%;}
     &.col-sml-3{width: 24.999999%;}
@@ -102,8 +100,6 @@
   }
 
   @include breakpoint(med) {
-    padding: 0 10px;
-
     &.col-med-1{width: 8.333333%;}
     &.col-med-2{width: 16.666666%;}
     &.col-med-3{width: 24.999999%;}
@@ -131,8 +127,6 @@
   }
 
   @include breakpoint(lrg) {
-    padding: 0 10px;
-
     &.col-lrg-1{width: 8.333333%;}
     &.col-lrg-2{width: 16.666666%;}
     &.col-lrg-3{width: 24.999999%;}
@@ -157,5 +151,32 @@
     &.col-lrg-offset-9{margin-left: 74.999997%;}
     &.col-lrg-offset-10{margin-left: 83.333333%;}
     &.col-lrg-offset-11{margin-left: 91.666663%;}
+  }
+
+@include breakpoint(x-lrg) {
+    &.col-x-lrg-1{width: 8.333333%;}
+    &.col-x-lrg-2{width: 16.666666%;}
+    &.col-x-lrg-3{width: 24.999999%;}
+    &.col-x-lrg-4{width: 33.333332%;}
+    &.col-x-lrg-5{width: 41.666665%;}
+    &.col-x-lrg-6{width: 49.999998%;}
+    &.col-x-lrg-7{width: 58.333331%;}
+    &.col-x-lrg-8 {width: 66.666664%;}
+    &.col-x-lrg-9{width: 74.999997%;}
+    &.col-x-lrg-10{width: 83.333333%;}
+    &.col-x-lrg-11{width: 91.666663%;}
+    &.col-x-lrg-12{width: 100%;}
+
+    &.col-x-lrg-offset-1{margin-left: 8.333333%;}
+    &.col-x-lrg-offset-2{margin-left: 16.666666%;}
+    &.col-x-lrg-offset-3{margin-left: 24.999999%;}
+    &.col-x-lrg-offset-4{margin-left: 33.333332%;}
+    &.col-x-lrg-offset-5{margin-left: 41.666665%;}
+    &.col-x-lrg-offset-6{margin-left: 49.999998%;}
+    &.col-x-lrg-offset-7{margin-left: 58.333331%;}
+    &.col-x-lrg-offset-8{margin-left: 66.666664%;}
+    &.col-x-lrg-offset-9{margin-left: 74.999997%;}
+    &.col-x-lrg-offset-10{margin-left: 83.333333%;}
+    &.col-x-lrg-offset-11{margin-left: 91.666663%;}
   }
 }
