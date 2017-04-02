@@ -1800,12 +1800,12 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 
 let gallery = document.getElementById('gallery');
+let currentPage;
 let checking = false;
 
 function init() {
   if (gallery) {
-    let currentPage = gallery.getAttribute('data-initial-page');
-
+    currentPage = gallery.getAttribute('data-initial-page') || 1;
     getSign(currentPage);
     window.addEventListener('scroll', checkBottom);
   }
