@@ -320,7 +320,7 @@ nav .btn {
   &._hide {
     pointer-events: none;
 
-    ul, .emb.overall {
+    ul, .emb {
       left: -100vw;
       opacity: 0;
     }

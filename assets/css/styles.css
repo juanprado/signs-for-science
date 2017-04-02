@@ -297,7 +297,7 @@ nav .btn:after {
   position: relative; }
   .mobile-menu._hide {
     pointer-events: none; }
-    .mobile-menu._hide ul, .mobile-menu._hide .emb.overall {
+    .mobile-menu._hide ul, .mobile-menu._hide .emb {
       left: -100vw;
       opacity: 0; }
     .mobile-menu._hide .overlay, .mobile-menu._hide .icon-close {
