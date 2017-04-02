@@ -24,7 +24,17 @@ function getFile(evt) {
   const isValid = validateFile(file);
 
   if (isValid) {
+    styleLabel(file)
     showPreview(file);
+  }
+}
+
+function styleLabel(file) {
+  const label  = document.getElementById("file-name");
+  const fileName = file.name;
+
+  if (fileName) {
+    label.innerHTML = fileName;
   }
 }
 
