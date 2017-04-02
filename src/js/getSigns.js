@@ -1,11 +1,12 @@
 import axios from 'axios/dist/axios';
 
 let gallery = document.getElementById('gallery');
-let currentPage = gallery.getAttribute('data-initial-page');
 let checking = false;
 
 export default function init() {
   if (gallery) {
+    let currentPage = gallery.getAttribute('data-initial-page');
+
     getSign(currentPage);
     window.addEventListener('scroll', checkBottom);
   }
