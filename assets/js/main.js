@@ -34,6 +34,7 @@ function getFile(evt) {
     styleLabel(file);
     showPreview(file);
     fileForUpload = file;
+    // go to the next step
   }
 }
 
@@ -70,6 +71,41 @@ function bind() {
   const fileInput = document.getElementById('file');
 
   fileInput && fileInput.addEventListener('change', getFile);
+}
+
+let textForUpload = false;
+let text = false;
+
+// Previews the text on change
+function previewText(evt) {
+  const preview = document.getElementById('text-sign-preview');
+  console.log(' is this working? ');
+
+  text = evt.target.value;
+  preview.innerHTML = text;
+}
+
+// validates Text
+function validateText() {
+  const isValid = validateText(text);
+
+  if (isValid) {
+    textForUpload = text;
+    // go to the next step
+  }
+}
+
+// Returns text if the text has been validated, false if not
+
+
+// Bind file input
+function bind$1() {
+  console.log('binding');
+  const textInput = document.getElementById('text-sign');
+  const textSubmit = document.getElementById('text-sign-submit');
+
+  textInput && textInput.addEventListener('keyup', previewText);
+  textSubmit && textSubmit.addEventListener('click', validateText);
 }
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -1676,6 +1712,7 @@ function checkBottom(evt) {
   }
 }
 
+bind$1();
 bind();
 init();
 

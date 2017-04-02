@@ -9,7 +9,7 @@
     <h4>Choose your idea type:</h4>
 
     <input type="radio" id="sign-type-text" name="sign-type" value="text">
-    <input type="radio" id="sign-type-text" name="sign-type"  value="image">
+    <input type="radio" id="sign-type-image" name="sign-type"  value="image">
 
     <div class="sign-type-container">
     <a href="" class="sign-type text col-lrg-6">
@@ -44,7 +44,7 @@
         <div class="sign-slogan-container">
           <div class="sign-slogan">
             <img src="../assets/img/divider.svg" alt="----" class="divider center" />
-            Your positive, funny, non-partisan slogan here
+            <span id="text-sign-preview">Your positive, funny, non-partisan slogan here</span>
           </div>
         </div>
       </div>
@@ -59,9 +59,9 @@
       </ul>
       <img src="../assets/img/divider.svg" alt="----" class="divider" />
 
-      <textarea placeholder="Your positive, funny, non-partisan slogan here" name="sign" class="body-copy" maxlength="150"></textarea>
+      <textarea id="text-sign" placeholder="Your positive, funny, non-partisan slogan here" name="sign" class="body-copy" maxlength="150"></textarea>
 
-      <div class="btn secondary disabled">Continue</div>
+      <button type="button" id="text-sign-submit" class="btn secondary disabled">Continue</button>
     </div>
   </div>
   <div class="overall emb"></div>
@@ -104,7 +104,7 @@
         <div class="btn secondary">Choose file</div>
       </label>
 
-      <div class="btn secondary disabled">Continue</div>
+      <button type="button" class="btn secondary disabled">Continue</button>
     </div>
   </div>
   <div class="overall emb"></div>
@@ -125,20 +125,20 @@
 
       <div class="form-field">
         <label for="name" class="all-caps">Name</label>
-        <input type="text" placeholder="Real or nick (optional)" name="name" />
+        <input type="text" id="name" placeholder="Real or nick (optional)" name="name" />
       </div>
 
       <div class="form-field">
         <label for="tagline" class="all-caps">Tagline</label>
-        <input type="text" placeholder="Ex: Designer in NYC (optional)" name="tagline" />
+        <input type="text" id="tagline" placeholder="Ex: Designer in NYC (optional)" name="tagline" />
       </div>
 
       <div class="form-field url">
         <label for="url" class="all-caps">Website</label>
-        <input type="text" placeholder="Where people can find you (optional)" name="url" />
+        <input type="text" id="url" placeholder="Where people can find you (optional)" name="url" />
       </div>
 
-      <button class="btn secondary disabled" type="submit">Submit</button>
+      <button id="create-submit-btn" class="btn secondary disabled" type="submit">Submit</button>
     </div>
   </div>
   <div class="overall emb"></div>

@@ -31,6 +31,7 @@ function getFile(evt) {
     styleLabel(file);
     showPreview(file);
     fileForUpload = file;
+    // go to the next step
   }
 }
 

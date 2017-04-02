@@ -1,6 +1,8 @@
 import imageValidation from './imageValidation';
+import textValidation from './textValidation';
 import getSigns from './getSigns';
 
+textValidation();
 imageValidation();
 getSigns();
 
