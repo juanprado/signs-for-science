@@ -747,28 +747,6 @@ textarea {
   background: $orange;
 }
 
-.about .col-7, .about .col-8 {
-  width: 100%;
-  margin: 0 auto;
-
-  @include breakpoint(med) {
-    width: 90%;
-    float: none;
-  }
-
-  @include breakpoint(lrg) {
-    margin: 0;
-
-    &.col-7 {
-      width: 58.333331%;
-    }
-
-    &.col-8 {
-      width: 66.66667%;
-    }
-  }
-}
-
 .about h1 {
   padding-top: 30px;
   margin-bottom: 35px;
@@ -932,7 +910,7 @@ textarea {
 }
 
 /* * * Create * * */
-// .create-text, .create-design, .create-details {
+// .create .hero, .create-design, .create-details {
 //   display: none;
 // }
 
@@ -967,7 +945,7 @@ textarea {
 
   &.create-text .emb.overall, &.create-design .emb.overall {
     background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
-    background-size: $emb-lightning-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-vt-size;
+    background-size: $emb-lightning-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size, $emb-squiggles-vt-mini-size;
     background-position: top 365px right 12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 80px, top 120px right -30px, top -70px left 44vw;
 
     @include breakpoint(med) {
@@ -1002,6 +980,7 @@ textarea {
   border: 3px solid $charcoal;
   box-sizing: border-box;
   min-height: 265px;
+  height: 28vh;
   padding: 0 7%;
   position: relative;
   color: $charcoal;
@@ -1013,8 +992,8 @@ textarea {
     min-height: 325px;
   }
 
-  &.col-6 {
-    width: 100%;
+  @include breakpoint(giant) {
+    min-height: 405px;
   }
 
   &.text {
@@ -1159,7 +1138,7 @@ textarea {
 }
 
 .instructions li {
-  height: 30px;
+  min-height: 30px;
 }
 
 .instructions .btn {
