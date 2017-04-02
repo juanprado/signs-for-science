@@ -1180,6 +1180,9 @@ textarea {
       background-position: bottom 0 right -10px, top 3000px left -5px, top 510px left 50px, top 80px left 64.3vw, top 3082px left 55px, top 100px left 20vw, bottom 40px left 30vw, top 230px right 30px, top 580px left -75px, top 3000px left 59.4vw, top 140px right 140px; } }
 
 /* * * Create * * */
+.create-text, .create-design, .create-details {
+  display: none; }
+
 .create {
   background: #ff7b90; }
 
@@ -1219,6 +1222,13 @@ textarea {
 
 .create h1:after, .create h2:after {
   color: #ff7b90; }
+
+.create input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0; }
 
 .sign-type {
   display: -webkit-box;

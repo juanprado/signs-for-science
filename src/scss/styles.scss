@@ -910,9 +910,9 @@ textarea {
 }
 
 /* * * Create * * */
-// .create .hero, .create-design, .create-details {
-//   display: none;
-// }
+.create-text, .create-design, .create-details {
+  display: none;
+}
 
 .create {
   background: $pink;
@@ -965,6 +965,14 @@ textarea {
 
 .create h1:after, .create h2:after {
   color: $pink;
+}
+
+.create input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
 }
 
 .sign-type {
