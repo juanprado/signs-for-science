@@ -3,6 +3,7 @@ import textValidation from './textValidation';
 import form from './form';
 import getSigns from './getSigns';
 
+form();
 textValidation();
 imageValidation();
 getSigns();

@@ -1,4 +1,16 @@
+import { goToNextStep } from './form';
+
+const imageSubmit = document.getElementById('image-sign-submit');
+
 let fileForUpload = false;
+
+// Bind file input
+export default function bind() {
+  const fileInput = document.getElementById('file');
+
+  imageSubmit && imageSubmit.addEventListener('click', nextStep);
+  fileInput && fileInput.addEventListener('change', getFile);
+}
 
 // Image validation rules
 function validateFile(file) {
@@ -31,18 +43,25 @@ function getFile(evt) {
     styleLabel(file);
     showPreview(file);
     fileForUpload = file;
-    // go to the next step
+    imageSubmit.classList.remove('disabled');
+  } else {
+    imageSubmit.classList.add('disabled');
   }
 }
 
 // Gives label the name of the file
 function styleLabel(file) {
-  const label  = document.getElementById("file-name");
+  const label = document.getElementById("file-name");
   const fileName = file.name;
 
   if (fileName) {
     label.innerHTML = fileName;
   }
+}
+
+// Goes to the final step
+function nextStep() {
+  goToNextStep(3);
 }
 
 // Populates previews with file
@@ -62,13 +81,5 @@ function showPreview(file) {
 
 // Returns file if the file has been validated, false if not
 export function getFileForUpload() {
-  return fileForUplad;
-}
-
-
-// Bind file input
-export default function bind() {
-  const fileInput = document.getElementById('file');
-
-  fileInput && fileInput.addEventListener('change', getFile);
+  return fileForUpload;
 }
