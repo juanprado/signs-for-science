@@ -1,8 +1,8 @@
-// import imageUpload from './imageUpload';
-// import getSigns from './getSigns';
+import imageUpload from './imageUpload';
+import getSigns from './getSigns';
 
-// imageUpload();
-// getSigns();
+imageUpload();
+getSigns();
 
 // Gallery URL Button
 

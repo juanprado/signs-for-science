@@ -46,10 +46,13 @@ $emb-iceburg-mini-size: 165px;
      @media (min-width: 900px) { @content ; }
   }
   @else if $point == x-lrg {
-     @media (min-width: 1150px) { @content ; }
+     @media (min-width: 1280px) { @content ; }
   }
   @else if $point == giant {
      @media (min-width: 1800px) { @content ; }
+  }
+  @else if $point == ridiculous {
+     @media (min-width: 2600px) { @content ; }
   }
 }
 
@@ -149,7 +152,7 @@ body .page-container {
   height: 100%;
 
   &:after {
-    content: 'Your screen is too small, dude!';
+    content: 'Stop trying to test if our site is responsive enough.';
     background: $turquoise;
     width: 100%;
     height: 100%;
@@ -158,9 +161,12 @@ body .page-container {
     left: 0;
     right: 0;
     bottom: 0;
-    text-align: center;
-    padding: 45vh 0 0;
+    z-index: 10;
+    padding: 45vh 40px 0;
+    box-sizing: border-box;
     font-style: italic;
+    line-height: 1.6em;
+    text-align: center;
 
     @include breakpoint(x-sml) {
       display: none;
@@ -168,7 +174,7 @@ body .page-container {
   }
 
   &:before {
-    content: 'Your screen is too large, dude!';
+    content: 'This is not a normal screen size.';
     background: $turquoise;
     width: 100%;
     height: 100%;
@@ -184,7 +190,7 @@ body .page-container {
     font-size: 30px;
     display: none;
 
-    @include breakpoint(giant) {
+    @include breakpoint(ridiculous) {
       display: block;
     }
   }
@@ -901,7 +907,7 @@ textarea {
     width: 100%;
   }
 
-  @include breakpoint(lrg) {
+  @include breakpoint(x-lrg) {
     width: calc(50% + 1px);
   }
 }
@@ -914,7 +920,7 @@ textarea {
     border-top: none;
   }
 
-  @include breakpoint(lrg) {
+  @include breakpoint(x-lrg) {
     margin-left: -7px;
     border-top: 3px solid $charcoal;
   }
@@ -933,6 +939,7 @@ textarea {
   cursor: text;
   pointer-events: none;
   transition: top .1s ease-out;
+  word-wrap: break-word;
 
   &:hover {
     background: $turquoise;
@@ -950,7 +957,7 @@ textarea {
       width: 100%;
     }
 
-    @include breakpoint(lrg) {
+    @include breakpoint(x-lrg) {
       top: 50px;
       width: calc(100% - 1px);
     }

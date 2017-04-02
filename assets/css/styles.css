@@ -151,7 +151,7 @@ body .page-container {
   width: 100%;
   height: 100%; }
   body .page-container:after {
-    content: 'Your screen is too small, dude!';
+    content: 'Stop trying to test if our site is responsive enough.';
     background: #0af5df;
     width: 100%;
     height: 100%;
@@ -160,14 +160,17 @@ body .page-container {
     left: 0;
     right: 0;
     bottom: 0;
-    text-align: center;
-    padding: 45vh 0 0;
-    font-style: italic; }
+    z-index: 10;
+    padding: 45vh 40px 0;
+    box-sizing: border-box;
+    font-style: italic;
+    line-height: 1.6em;
+    text-align: center; }
     @media (min-width: 250px) {
       body .page-container:after {
         display: none; } }
   body .page-container:before {
-    content: 'Your screen is too large, dude!';
+    content: 'This is not a normal screen size.';
     background: #0af5df;
     width: 100%;
     height: 100%;
@@ -182,7 +185,7 @@ body .page-container {
     font-style: italic;
     font-size: 30px;
     display: none; }
-    @media (min-width: 1800px) {
+    @media (min-width: 2600px) {
       body .page-container:before {
         display: block; } }
 
@@ -385,7 +388,7 @@ h1, h1:after {
       font-size: 60px;
       line-height: 1.3em;
       text-shadow: black 3px 0px 0px, black 2.83487px 0.98158px 0px, black 2.35766px 1.85511px 0px, black 1.62091px 2.52441px 0px, black 0.70571px 2.91581px 0px, black -0.28717px 2.98622px 0px, black -1.24844px 2.72789px 0px, black -2.07227px 2.16926px 0px, black -2.66798px 1.37182px 0px, black -2.96998px 0.42336px 0px, black -2.94502px -0.5717px 0px, black -2.59586px -1.50383px 0px, black -1.96093px -2.27041px 0px, black -1.11013px -2.78704px 0px, black -0.13712px -2.99686px 0px, black 0.85099px -2.87677px 0px, black 1.74541px -2.43999px 0px, black 2.44769px -1.73459px 0px, black 2.88051px -0.83825px 0px; } }
-  @media (min-width: 1150px) {
+  @media (min-width: 1280px) {
     h1, h1:after {
       font-size: 75px;
       line-height: 1.3em;
@@ -787,7 +790,7 @@ textarea {
   @media (min-width: 650px) {
     .sign-buttons .btn {
       width: 100%; } }
-  @media (min-width: 900px) {
+  @media (min-width: 1280px) {
     .sign-buttons .btn {
       width: calc(50% + 1px); } }
 
@@ -797,7 +800,7 @@ textarea {
     .sign-buttons .get-url {
       margin-left: 0;
       border-top: none; } }
-  @media (min-width: 900px) {
+  @media (min-width: 1280px) {
     .sign-buttons .get-url {
       margin-left: -7px;
       border-top: 3px solid #181818; } }
@@ -815,7 +818,8 @@ textarea {
   cursor: text;
   pointer-events: none;
   -webkit-transition: top .1s ease-out;
-  transition: top .1s ease-out; }
+  transition: top .1s ease-out;
+  word-wrap: break-word; }
   .sign-buttons .copy-url:hover {
     background: #0af5df;
     color: #181818; }
@@ -828,7 +832,7 @@ textarea {
       .sign-buttons .copy-url.visible {
         top: 97px;
         width: 100%; } }
-    @media (min-width: 900px) {
+    @media (min-width: 1280px) {
       .sign-buttons .copy-url.visible {
         top: 50px;
         width: calc(100% - 1px); } }
