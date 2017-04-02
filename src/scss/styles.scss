@@ -504,10 +504,15 @@ textarea {
 }
 
 .sign-container {
-  padding: 7vw 0 3vw 2vw;
+  padding: 7vw 0 3vw 0;
+
+  @include breakpoint(med) {
+    padding: 7vw 0 3vw 8vw;
+  }
 
   @include breakpoint(lrg) {
-    padding: 7vw 0 3vw;
+    margin-left: 30px;
+    padding: 7vw 0 3vw 0;
   }
 }
 
@@ -604,26 +609,31 @@ textarea {
 }
 
 .sign-buttons .btn {
-  width: calc(50% + 1px);
+  // width: calc(50% + 1px); //Uncomment when we add back download feature
+  width: 100%;
   display: inline-block;
   text-align: center;
 
-  @include breakpoint(med) {
-    width: 100%;
+  &:first-child {
+    display: none;
   }
 
-  @include breakpoint(x-lrg) {
-    width: calc(50% + 1px);
-  }
+  // @include breakpoint(med) {
+  //   width: 100%; //Uncomment when we add back download feature
+  // }
+
+  // @include breakpoint(x-lrg) {
+  //   width: calc(50% + 1px); //Uncomment when we add back download feature
+  // }
 }
 
 .sign-buttons .get-url {
   margin-left: -7px;
 
-  @include breakpoint(med) {
-    margin-left: 0;
-    border-top: none;
-  }
+  // @include breakpoint(med) { //Uncomment when we add back download feature
+  //   margin-left: 0;
+  //   border-top: none;
+  // }
 
   @include breakpoint(x-lrg) {
     margin-left: -7px;
@@ -1300,15 +1310,31 @@ textarea {
 }
 
 .thank-you .hero .emb {
-  background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
-  background-size: $emb-signs-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-microscope-size;
   background-repeat: no-repeat;
-  background-position: top 270px right 30px, top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 27vh left -60px, top 43px right -40px, top 21.5vh left 75px;
   z-index: -1;
+  background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
+  background-size: $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size, $emb-microscope-mini-size;
+  background-position: top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 43px right -40px, top 150px left -5px;
+
+  @include breakpoint(med) {
+    background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
+    background-size: $emb-signs-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-microscope-size;
+    background-position: top 100px right -40px, top 0 left 31vw, top 105px right 88px, top 450px left 3vw, top 27vh left -80px, top 15vh left 45px;
+  }
+
+  @include breakpoint(lrg) {
+    background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_microscope.png');
+    background-size: $emb-signs-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-microscope-size;
+    background-position: top 270px right 30px, top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 27vh left -60px, top 43px right -40px, top 21.5vh left 75px;
+  }
 }
 
 .your-sign {
-  margin: 50px 0 120px;
+  margin: 50px 0 60px;
+
+  @include breakpoint(med) {
+    margin-bottom: 120px;
+  }
 }
 
 .your-sign .sign-image {
@@ -1316,11 +1342,24 @@ textarea {
 }
 
 .your-sign .sign-info {
-  padding-top: 10%;
+  padding-top: 0%;
+
+  @include breakpoint(lrg) {
+    padding-top: 10%;
+  }
 }
 
 .your-sign .sign-creds {
   height: 100px;
+  margin-top: 20px;
+
+  @include breakpoint(med) {
+    margin-top: 0;
+  }
+
+  @include breakpoint(lrg) {
+    margin-top: 15px;
+  }
 }
 
 .your-sign .sign-creds .all-caps {
@@ -1363,4 +1402,8 @@ textarea {
 
 .sign-page .your-sign .sign-info {
   padding-top: 17%;
+}
+
+.sign-page .sign-cta {
+  padding-left: 0;
 }
