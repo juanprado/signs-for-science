@@ -45,8 +45,11 @@ $emb-iceburg-mini-size: 165px;
   @else if $point == lrg {
      @media (min-width: 900px) { @content ; }
   }
-  @else if $point == giant {
+  @else if $point == x-lrg {
      @media (min-width: 1150px) { @content ; }
+  }
+  @else if $point == giant {
+     @media (min-width: 1800px) { @content ; }
   }
 }
 
@@ -138,6 +141,12 @@ body {
   width: 100%;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
+}
+
+body .page-container {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 
   &:after {
     content: 'Your screen is too small, dude!';
@@ -155,6 +164,28 @@ body {
 
     @include breakpoint(x-sml) {
       display: none;
+    }
+  }
+
+  &:before {
+    content: 'Your screen is too large, dude!';
+    background: $turquoise;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5000;
+    text-align: center;
+    padding: 45vh 0 0;
+    font-style: italic;
+    font-size: 30px;
+    display: none;
+
+    @include breakpoint(giant) {
+      display: block;
     }
   }
 }
@@ -349,7 +380,7 @@ nav .btn {
   transition: all .5s;
 }
 
-.mobile-menu .emb.overall {
+.mobile-menu .emb {
   height: 100vh;
   position: fixed;
   background-image: url('../img/emb_signs.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
@@ -385,7 +416,7 @@ h1, h1:after {
     text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
   }
 
-  @include breakpoint(giant) {
+  @include breakpoint(x-lrg) {
     font-size: 75px;
     line-height: 1.3em;
     text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
@@ -546,6 +577,7 @@ a.all-caps {
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
+  text-align: center;
   cursor: pointer;
   transition: background .4s, color .2s;
 
@@ -1014,8 +1046,11 @@ textarea {
   }
 
   @include breakpoint(lrg) {
-    width: auto;
     margin: 0;
+
+    &.col-7 {
+      width: 58.333331%;
+    }
 
     &.col-8 {
       width: 66.66667%;
@@ -1024,22 +1059,24 @@ textarea {
 }
 
 .about h1 {
-  padding-top: 60px;
+  padding-top: 30px;
   margin-bottom: 35px;
   text-align: center;
 
   @include breakpoint(lrg) {
     text-align: left;
+    padding-top: 60px;
   }
 }
 
 .about h1:after {
-  padding-top: 60px;
+  padding-top: 30px;
   text-align: center;
   color: $orange;
 
   @include breakpoint(lrg) {
     text-align: left;
+    padding-top: 60px;
   }
 }
 
@@ -1085,8 +1122,12 @@ textarea {
     top: 0;
     right: 0;
     z-index: -1;
-    width: 35%;
+    width: 34%;
     height: 100vh;
+
+    @include breakpoint(giant) {
+      width: 39%;
+    }
   }
 }
 
@@ -1101,11 +1142,12 @@ textarea {
 }
 
 .sign-example .sign-creds {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .sign-example .emb {
-    height: 300px;
+  height: 300px;
+  width: 100%;
 }
 
 .sign-example-1 {
@@ -1161,14 +1203,14 @@ textarea {
 }
 
 .about .emb.overall {
-  background-image: url('../img/emb_plant.png'), url('../img/emb_microscope.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_signs.png');
-  background-size: $emb-plant-mini-size, $emb-microscope-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size, $emb-squiggles-mini-size, $emb-squiggles-mini-size, $emb-signs-mini-size;
-  background-position: bottom 0 right -10px, top 3000px left -5px, top 80px left 64.3vw, top 3082px left 55px, top 100px left 20vw, bottom 40px left 30vw, top 230px right -40px, top 580px left -75px, top 3000px left 59.4vw, top 200px right 30px;
+  background-image: url('../img/emb_plant.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_signs.png');
+  background-size: $emb-plant-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size, $emb-squiggles-mini-size, $emb-signs-mini-size;
+  background-position: bottom 0 right -10px, top 230px right -5px, top 80px left 10px, top 1160px right 10px, bottom 40px left 30vw, top 1180px right -40px, top -150px right -70px, top 50px right -10px;
 
   @include breakpoint(med) {
     background-image: url('../img/emb_plant.png'), url('../img/emb_microscope.png'), url('../img/emb_thermometer.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_signs.png');
     background-size: $emb-plant-size, $emb-microscope-size, $emb-thermometer-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size, $emb-squiggles-size, $emb-signs-size;
-    background-position: bottom 0 right -10px, top 3000px left -15px, top 1200px right 50px, top 1200px right 90px, top 2000px left -8px, top 2980px left 10px, top 100px left 20vw, bottom 40px left 30vw, top 300px right -70px, top 580px left -75px, top 2300px right -80px, top 220px right 30px;
+    background-position: bottom 0 right -10px, top 3000px left -15px, top 1200px right 50px, top 1200px right 90px, top 2000px left -8px, top 2980px left 10px, top 100px left 20vw, bottom 40px left 30vw, top 300px right -70px, top 580px left -100px, top 2300px right -80px, top 220px right 30px;
   }
 
   @include breakpoint(lrg) {
@@ -1225,7 +1267,7 @@ textarea {
   border: 3px solid $charcoal;
   box-sizing: border-box;
   min-height: 325px;
-  padding: 0 8%;
+  padding: 0 7%;
   position: relative;
   color: $charcoal;
   text-decoration: none;
@@ -1237,7 +1279,8 @@ textarea {
 
     h3 {
       max-width: 220px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -1288,7 +1331,7 @@ textarea {
 }
 
 .sign-type .row {
-  margin-top: -20px;
+  margin: -20px auto 0;
 }
 
 .sign-type h3 {
@@ -1299,7 +1342,7 @@ textarea {
   background: url(../img/icon-right-arrow.svg) right 2px no-repeat;
   background-size: 12px;
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   left: calc(50% - 25px);
   width: 50px;
   margin: 0 auto;
