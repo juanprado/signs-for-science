@@ -1,56 +1,56 @@
 <% include ../partials/head %>
 <body class="thank-you">
 <div class="page-container">
-<div class="hero">
-  <div class="grid-container">
-    <h1 data-content="Amazing!">Amazing!</h1>
-    <h4>The scientists and climate marchers thank you.</h4>
+  <div class="hero">
+    <div class="grid-container">
+      <h1 data-content="Amazing!">Amazing!</h1>
+      <h4>The scientists and climate marchers thank you.</h4>
 
-    <% if (sign) { %>
-    <div class="row your-sign">
-      <div class="col-5 col-offset-1">
-        <div class="sign-image">
-          <div class="sign-slogan-container">
-            <div class="sign-slogan">
-              <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-              Your positive, funny, non-partisan slogan here
+      <% if (sign) { %>
+      <div class="row your-sign">
+        <div class="col-sml-12 col-med-6 col-lrg-5 col-lrg-offset-1">
+          <div class="sign-image">
+            <div class="sign-slogan-container">
+              <div class="sign-slogan">
+                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
+                Your positive, funny, non-partisan slogan here
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-3 col-offset-1 sign-info">
-        <div class="sign-creds">
-          <span class="body-copy mini">idea by</span>
-          <span class="all-caps">Jesse Mann</span>
-          <div class="body-copy mini">Copywriter in NYC
-            <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
+        <div class="col-sml-12 col-med-4 col-lrg-3 col-med-offset-1 sign-info">
+          <div class="sign-creds">
+            <span class="body-copy mini">idea by</span>
+            <span class="all-caps">Jesse Mann</span>
+            <div class="body-copy mini">Copywriter in NYC
+              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
+            </div>
           </div>
-        </div>
 
-        <div class="sign-buttons">
-          <a href="" class="btn secondary">Download</a>
-          <div class="btn secondary get-url">Share</div>
-            <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
-        </div>
+          <div class="sign-buttons">
+            <a href="" class="btn secondary">Download</a>
+            <div class="btn secondary get-url">Share</div>
+              <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
+          </div>
 
-        <img src="../assets/img/divider.svg" alt="----" class="divider" />
-        <a href="create" class="btn make-another">Make another sign</a>
+          <img src="../assets/img/divider.svg" alt="----" class="divider" />
+          <a href="create" class="btn make-another">Make another sign</a>
+        </div>
       </div>
+      <% } %>
+
     </div>
-    <% } %>
-
+    <div class="emb"></div>
   </div>
-  <div class="emb"></div>
-</div>
 
-<div class="row gallery" id="gallery" data-initial-page="0">
-  <div class="filter" id="filter">
-    <img src="../assets/img/divider.svg" alt="----" class="divider center" />
-    <div class="body-copy mini">Join in the fight!</div>
-    <a href="create" class="btn square">Add your sign</a>
+  <div class="row gallery" id="gallery" data-initial-page="0">
+    <div class="filter" id="filter">
+      <img src="../assets/img/divider.svg" alt="----" class="divider center" />
+      <div class="body-copy mini">Join in the fight!</div>
+      <a href="create" class="btn square">Add your sign</a>
+    </div>
   </div>
-</div>
 </div>
 
 <% include ../partials/footer %>

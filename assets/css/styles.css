@@ -100,6 +100,53 @@ table {
     margin-left: 83.333333%; }
   [class*='col-'].col-offset-11 {
     margin-left: 91.666663%; }
+  @media (min-width: 250px) {
+    [class*='col-'].col-x-sml-1 {
+      width: 8.333333%; }
+    [class*='col-'].col-x-sml-2 {
+      width: 16.666666%; }
+    [class*='col-'].col-x-sml-3 {
+      width: 24.999999%; }
+    [class*='col-'].col-x-sml-4 {
+      width: 33.333332%; }
+    [class*='col-'].col-x-sml-5 {
+      width: 41.666665%; }
+    [class*='col-'].col-x-sml-6 {
+      width: 49.999998%; }
+    [class*='col-'].col-x-sml-7 {
+      width: 58.333331%; }
+    [class*='col-'].col-x-sml-8 {
+      width: 66.666664%; }
+    [class*='col-'].col-x-sml-9 {
+      width: 74.999997%; }
+    [class*='col-'].col-x-sml-10 {
+      width: 83.333333%; }
+    [class*='col-'].col-x-sml-11 {
+      width: 91.666663%; }
+    [class*='col-'].col-x-sml-12 {
+      width: 100%; }
+    [class*='col-'].col-x-sml-offset-1 {
+      margin-left: 8.333333%; }
+    [class*='col-'].col-x-sml-offset-2 {
+      margin-left: 16.666666%; }
+    [class*='col-'].col-x-sml-offset-3 {
+      margin-left: 24.999999%; }
+    [class*='col-'].col-x-sml-offset-4 {
+      margin-left: 33.333332%; }
+    [class*='col-'].col-x-sml-offset-5 {
+      margin-left: 41.666665%; }
+    [class*='col-'].col-x-sml-offset-6 {
+      margin-left: 49.999998%; }
+    [class*='col-'].col-x-sml-offset-7 {
+      margin-left: 58.333331%; }
+    [class*='col-'].col-x-sml-offset-8 {
+      margin-left: 66.666664%; }
+    [class*='col-'].col-x-sml-offset-9 {
+      margin-left: 74.999997%; }
+    [class*='col-'].col-x-sml-offset-10 {
+      margin-left: 83.333333%; }
+    [class*='col-'].col-x-sml-offset-11 {
+      margin-left: 91.666663%; } }
   @media (min-width: 349px) {
     [class*='col-'].col-sml-1 {
       width: 8.333333%; }
@@ -1502,23 +1549,46 @@ textarea {
   background: #0af5df; }
 
 .thank-you .hero .emb {
-  background-image: url("../img/emb_signs.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_microscope.png");
-  background-size: 139px, 22px, 22px, 22px, 161px, 161px, 71px;
   background-repeat: no-repeat;
-  background-position: top 270px right 30px, top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 27vh left -60px, top 43px right -40px, top 21.5vh left 75px;
-  z-index: -1; }
+  z-index: -1;
+  background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_microscope.png");
+  background-size: 20px, 20px, 20px, 120px, 55px;
+  background-position: top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 43px right -40px, top 150px left -5px; }
+  @media (min-width: 650px) {
+    .thank-you .hero .emb {
+      background-image: url("../img/emb_signs.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_microscope.png");
+      background-size: 139px, 22px, 22px, 22px, 161px, 71px;
+      background-position: top 100px right -40px, top 0 left 31vw, top 105px right 88px, top 450px left 3vw, top 27vh left -80px, top 15vh left 45px; } }
+  @media (min-width: 900px) {
+    .thank-you .hero .emb {
+      background-image: url("../img/emb_signs.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_microscope.png");
+      background-size: 139px, 22px, 22px, 22px, 161px, 161px, 71px;
+      background-position: top 270px right 30px, top 20px left 31vw, top 270px right 138px,  top 450px left 3vw, top 27vh left -60px, top 43px right -40px, top 21.5vh left 75px; } }
 
 .your-sign {
-  margin: 50px 0 120px; }
+  margin: 50px 0 60px; }
+  @media (min-width: 650px) {
+    .your-sign {
+      margin-bottom: 120px; } }
 
 .your-sign .sign-image {
   border-width: 15px; }
 
 .your-sign .sign-info {
-  padding-top: 10%; }
+  padding-top: 0%; }
+  @media (min-width: 900px) {
+    .your-sign .sign-info {
+      padding-top: 10%; } }
 
 .your-sign .sign-creds {
-  height: 100px; }
+  height: 100px;
+  margin-top: 20px; }
+  @media (min-width: 650px) {
+    .your-sign .sign-creds {
+      margin-top: 0; } }
+  @media (min-width: 900px) {
+    .your-sign .sign-creds {
+      margin-top: 15px; } }
 
 .your-sign .sign-creds .all-caps {
   display: block;
