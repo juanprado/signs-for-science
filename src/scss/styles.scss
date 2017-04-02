@@ -1,135 +1,9 @@
 @import "reset";
+@import "variables";
+@import "grid";
+@import "typography";
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:600,700,800i|Open+Sans:400i,700|Permanent+Marker');
-
-/* * * Variables * * */
-$turquoise: #0af5df;
-$pink: #ff7b90;
-$broo: #4d43ff;
-$orange: #ffb72d;
-$light-gray: #f0f0f0;
-$charcoal: #181818;
-$neon-pink: #f24561;
-
-$emb-circle-size: 22px;
-$emb-squiggles-size: 161px;
-$emb-squiggles-vt-size: 64px;
-$emb-signs-size: 139px;
-$emb-lightning-size: 81px;
-$emb-microscope-size: 71px;
-$emb-plant-size: 116px;
-$emb-thermometer-size: 44px;
-$emb-iceburg-size: 165px;
-
-$emb-circle-mini-size: 20px;
-$emb-squiggles-mini-size: 120px;
-$emb-squiggles-vt-mini-size: 64px;
-$emb-signs-mini-size: 100px;
-$emb-lightning-mini-size: 65px;
-$emb-microscope-mini-size: 71px;
-$emb-plant-mini-size: 85px;
-$emb-thermometer-mini-size: 44px;
-$emb-iceburg-mini-size: 165px;
-
-/* * * Grid * * */
-@mixin breakpoint($point) {
-  @if $point == x-sml {
-     @media (min-width: 250px) { @content ; }
-  }
-  @else if $point == sml {
-     @media (min-width: 349px) { @content ; }
-  }
-  @else if $point == med {
-     @media (min-width: 650px) { @content ; }
-  }
-  @else if $point == lrg {
-     @media (min-width: 900px) { @content ; }
-  }
-  @else if $point == x-lrg {
-     @media (min-width: 1280px) { @content ; }
-  }
-  @else if $point == giant {
-     @media (min-width: 1800px) { @content ; }
-  }
-  @else if $point == ridiculous {
-     @media (min-width: 2600px) { @content ; }
-  }
-}
-
-.grid-container {
-  width: 100%;
-  max-width: 2000px;
-  margin: 0 auto;
-  padding: 0 7%;
-  box-sizing: border-box;
-
-  @include breakpoint(lrg) {
-    padding: 0 10%;
-  }
-}
-
-.row:before,
-.row:after {
-  content:"";
-  display: table;
-  clear:both;
-}
-
-[class*='col-'] {
-  min-height: 1px;
-  box-sizing: border-box;
-  float: left;
-  width: 100%;
-
-  @include breakpoint(med) {
-    padding: 0 10px;
-
-    &.col-1, &.col-2 {width: 16.666666%;}
-    &.col-3, &.col-4{width: 33.333332%;}
-    &.col-5, &.col-6{width: 49.999998%;}
-    &.col-7, &.col-8{width: 66.666664%;}
-    &.col-9, &.col-10{width: 83.333333%;}
-    &.col-11, &.col-12{width: 100%;}
-
-    &.col-offset-1{margin-left: calc(16.666666% - 3px);}
-    &.col-offset-2{margin-left: 16.666666%;}
-    &.col-offset-3, &.col-offset-4{margin-left: 33.333332%;}
-    &.col-offset-5, &.col-offset-6{margin-left: 49.999998%;}
-    &.col-offset-7, &.col-offset-8{margin-left: 66.666664%;}
-    &.col-offset-9, &.col-offset-10{margin-left: 83.333333%;}
-  }
-
-  @include breakpoint(lrg) {
-    padding: 0 10px;
-
-    &.col-1{width: 8.333333%;}
-    &.col-2{width: 16.666666%;}
-    &.col-3{width: 24.999999%;}
-    &.col-4{width: 33.333332%;}
-    &.col-5{width: 41.666665%;}
-    &.col-6{width: 49.999998%;}
-    &.col-7{width: 58.333331%;}
-    &.col-8 {width: 66.666664%;}
-    &.col-9{width: 74.999997%;}
-    &.col-10{width: 83.333333%;}
-    &.col-11{width: 91.666663%;}
-    &.col-12{width: 100%;}
-
-    &.col-offset-1{margin-left: calc(8.333333% - 3px);}
-    &.col-offset-2{margin-left: 16.666666%;}
-    &.col-offset-3{margin-left: 24.999999%;}
-    &.col-offset-4{margin-left: 33.333332%;}
-    &.col-offset-5{margin-left: 41.666665%;}
-    &.col-offset-6{margin-left: 49.999998%;}
-    &.col-offset-7{margin-left: 58.333331%;}
-    &.col-offset-8{margin-left: 100%;}
-    &.col-offset-9{margin-left: 74.999997%;}
-    &.col-offset-10{margin-left: 83.333333%;}
-    &.col-offset-11{margin-left: 91.666663%;}
-  }
-}
-
-
 
 /* * * Global * * */
 html {
@@ -229,6 +103,7 @@ body .page-container {
     margin-bottom: 35px;
   }
 }
+
 /* * * Nav * * */
 nav {
   height: 60px;
@@ -240,7 +115,6 @@ nav {
 }
 
 nav .grid-container {
-  // background: rgba(0, 246, 223, .95);
   height: 60px;
   position: fixed;
   display: flex;
@@ -395,176 +269,6 @@ nav .btn {
   z-index: 2;
   left: 0;
   transition: all .5s;
-}
-
-
-/* * * Typography * * */
-h1, h1:after {
-  position: relative;
-  width: 100%;
-  font-family: 'Dosis', sans-serif;
-  font-weight: 800;
-  font-size: 36px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: .3em;
-  line-height: 1.4em;
-  color: white;
-  text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
-
-  @include breakpoint(sml) {
-    font-size: 42px;
-  }
-
-  @include breakpoint(med) {
-    font-size: 60px;
-    line-height: 1.3em;
-    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
-  }
-
-  @include breakpoint(x-lrg) {
-    font-size: 75px;
-    line-height: 1.3em;
-    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
-  }
-}
-
-h1:after {
-  content: attr(data-content);
-  position: absolute;
-  top: 3px;
-  left: 0;
-  z-index: -1;
-  color: $turquoise;
-
-  @include breakpoint(sml) {
-    top: 4px;
-  }
-
-  @include breakpoint(med) {
-    top: 5px;
-  }
-}
-
-h2, h2:after {
-  position: relative;
-  width: 100%;
-  font-family: 'Dosis', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .3em;
-  line-height: 1.5em;
-  color: white;
-  z-index: 0;
-  text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
-
-  @include breakpoint(med) {
-    font-size: 45px;
-    line-height: 1.3em;
-  }
-}
-
-h2:after {
-  content: attr(data-content);
-  position: absolute;
-  top: 3px;
-  left: 0;
-  z-index: -1;
-  color: $turquoise;
-
-  @include breakpoint(med) {
-    top: 4px;
-  }
-}
-
-h3 {
-  font-family: 'Dosis', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .25em;
-  line-height: 1.5em;
-  color: $charcoal;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  font-style: normal;
-}
-
-h4, .all-caps {
-  font-family: 'Dosis', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .25em;
-  line-height: 1.2em;
-  color: $charcoal;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
-  font-style: normal;
-}
-
-h4 {
-  margin: 0 0 15px;
-  line-height: 2em;
-}
-
-.body-copy {
-  max-width: 650px;
-  margin-bottom: 15px;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  font-size: 13px;
-  line-height: 2em;
-  color: $charcoal;
-
-  @include breakpoint(med) {
-    font-size: 16px;
-  }
-
-  &.mini {
-    font-size: 12px;
-  }
-}
-
-.body-copy a {
-  background: url(../img/underline.svg) -50px 14px no-repeat;
-  background-size: 530px;
-  display: inline-block;
-  padding-bottom: 1px;
-  text-decoration: none;
-  cursor: pointer;
-  color: $charcoal;
-  transition: background .2s, color .2s;
-
-  @include breakpoint(med) {
-    background-position: -50px 20px;
-  }
-
-  &:hover {
-    background-image: url(../img/underline-broo.svg);
-    color: $broo;
-  }
-}
-
-.body-copy.mini a {
-  background-position: -50px 14px;
-  padding-bottom: 6px;
-}
-
-a.all-caps {
-  height: 25px;
-  margin-top: 10px;
-  background: url(../img/underline.svg) -50px 10px no-repeat;
-  background-size: 530px;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  color: $charcoal;
-  transition: background .2s, color .2s;
-
-  &:hover {
-    background-image: url(../img/underline-broo.svg);
-    color: $broo;
-  }
 }
 
 /* * * Elements * * */
@@ -1228,6 +932,10 @@ textarea {
 }
 
 /* * * Create * * */
+// .create-text, .create-design, .create-details {
+//   display: none;
+// }
+
 .create {
   background: $pink;
 }
@@ -1237,20 +945,36 @@ textarea {
 }
 
 .create-section {
-  height: 700px;
-  padding-top: 60px;
+  height: 100vh;
+  padding-top: 40px;
   border-bottom: 3px solid black;
+
+  @include breakpoint(med) {
+    padding-top: 60px;
+  }
 
   &.hero .emb.overall {
     background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
-    background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
-    background-position: 40vw 80px, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
+    background-size: $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size;
+    background-position: top 20px left 40vw, bottom 20px left 5vw, top 390px right 80px, top 130px right -50px;
+
+    @include breakpoint(med) {
+      background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+      background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
+      background-position: top 20px left 40vw, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px;
+    }
   }
 
   &.create-text .emb.overall, &.create-design .emb.overall {
     background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
     background-size: $emb-lightning-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-vt-size;
     background-position: top 365px right 12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 80px, top 120px right -30px, top -70px left 44vw;
+
+    @include breakpoint(med) {
+      background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
+      background-size: $emb-lightning-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-vt-size;
+      background-position: top 365px right 12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 80px, top 120px right -30px, top -70px left 44vw;
+    }
   }
 
   &.create-details .emb.overall {
@@ -1265,7 +989,11 @@ textarea {
 }
 
 .sign-type-container {
-  display: flex;
+  display: block;
+
+  @include breakpoint(lrg) {
+    display: flex;
+  }
 }
 
 .sign-type {
@@ -1273,13 +1001,21 @@ textarea {
   align-items: center;
   border: 3px solid $charcoal;
   box-sizing: border-box;
-  min-height: 325px;
+  min-height: 265px;
   padding: 0 7%;
   position: relative;
   color: $charcoal;
   text-decoration: none;
   cursor: pointer;
   transition: background .4s, color .2s;
+
+  @include breakpoint(med) {
+    min-height: 325px;
+  }
+
+  &.col-6 {
+    width: 100%;
+  }
 
   &.text {
     background: $turquoise;
@@ -1289,22 +1025,50 @@ textarea {
       margin-left: auto;
       margin-right: auto;
     }
+
+    .emb {
+      background-image: url('../img/emb_squiggle_hug.svg');
+      background-size: $emb-squiggles-mini-size;
+      background-position: 0 0;
+      z-index: 1;
+      width: 100%;
+      height: 100px;
+      left: -71px;
+      top: 220px;
+
+      @include breakpoint(med) {
+        background-size: $emb-squiggles-size;
+        top: 180px;
+        left: -95px;
+      }
+    }
   }
 
   &.design {
     background: $orange;
-    border-left: 0;
+    border-top: 0;
     position: relative;
+
+    @include breakpoint(lrg) {
+      border-top: 3px solid $charcoal;
+      border-left: 0;
+    }
 
     .emb {
       content: '';
       width: 116px;
       height: 111px;
       background: url('../img/emb_plant.png') no-repeat;
-      background-size: $emb-plant-size;
+      background-size: $emb-plant-mini-size;
       position: absolute;
-      top: -50px;
-      left: calc(100% - 114px);
+      top: -40px;
+      left: calc(100% - 84px);
+
+      @include breakpoint(med) {
+        background-size: $emb-plant-size;
+        top: -50px;
+        left: calc(100% - 114px);
+      }
     }
   }
 
@@ -1349,21 +1113,14 @@ textarea {
   background: url(../img/icon-right-arrow.svg) right 2px no-repeat;
   background-size: 12px;
   position: absolute;
-  bottom: 40px;
+  bottom: 25px;
   left: calc(50% - 25px);
   width: 50px;
   margin: 0 auto;
-}
 
-.sign-type .emb {
-  background-image: url('../img/emb_squiggle_hug.svg');
-  background-size: $emb-squiggles-size;
-  background-position: 0 0;
-  z-index: 1;
-  width: 100%;
-  height: 100px;
-  left: -95px;
-  top: 180px;
+  @include breakpoint(med) {
+    bottom: 40px;
+  }
 }
 
 .back {
