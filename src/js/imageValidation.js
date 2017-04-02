@@ -1,5 +1,6 @@
 let fileForUpload = false;
 
+// Image validation rules
 function validateFile(file) {
   const maxLimit = 1024 * 1024 * 2; // 2 MB
 
@@ -21,6 +22,7 @@ function validateFile(file) {
   return true;
 }
 
+// Gets the file from the input after user has selected an image
 function getFile(evt) {
   const file = evt.target.files[0];
   const isValid = validateFile(file);
@@ -32,6 +34,7 @@ function getFile(evt) {
   }
 }
 
+// Gives label the name of the file
 function styleLabel(file) {
   const label  = document.getElementById("file-name");
   const fileName = file.name;
@@ -41,6 +44,7 @@ function styleLabel(file) {
   }
 }
 
+// Populates previews with file
 function showPreview(file) {
   const reader = new FileReader();
   const previews = document.querySelectorAll('.create-image-preview');
@@ -55,12 +59,15 @@ function showPreview(file) {
   reader.readAsDataURL(file);
 }
 
+// Returns file if the file has been validated, false if not
 export function getFileForUpload() {
   return fileForUplad;
 }
 
+
+// Bind file input
 export default function bind() {
-  const fleInput = document.getElementById('file');
+  const fileInput = document.getElementById('file');
 
   fileInput && fileInput.addEventListener('change', getFile);
 }
