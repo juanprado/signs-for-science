@@ -950,13 +950,15 @@ textarea {
   position: relative;
   width: 100vw;
   float: left;
-  min-height: 100vh;
-  padding-top: 40px;
-  padding-bottom: 100px;
-  border-bottom: 3px solid black;
+  padding-top: 20px;
+  padding-bottom: 50px;
 
   @include breakpoint(med) {
-    padding-top: 60px;
+    padding-top: 35px;
+  }
+
+  @include breakpoint(lrg) {
+    padding-bottom: 0;
   }
 
   &.hero .emb.overall {
@@ -971,22 +973,40 @@ textarea {
     }
   }
 
-  &.create-text .emb.overall, &.create-design .emb.overall {
-    background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
-    background-size: $emb-lightning-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size, $emb-squiggles-vt-mini-size;
-    background-position: top 70px right 30px, top 250px left -8px, top 500px right -5px, bottom 10px left 28vw, top 120px right -30px, bottom -50px left 20vw;
+  .create-text .emb.overall, .create-design .emb.overall {
+    background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+    background-size: $emb-lightning-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size;
+    background-position: top 0 right 35px, top 250px left -8px, top 500px right -5px, top 40px right -30px;
 
     @include breakpoint(med) {
-      background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
-      background-size: $emb-lightning-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-vt-size;
-      background-position: top 365px right 12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 80px, top 120px right -30px, top -70px left 44vw;
+      background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+      background-size: $emb-lightning-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
+      background-position: top 255px right 25px, top 125px left 40.5vw, top 500px left 12px, top 260px right 80px, top 120px right -90px;
+    }
+
+    @include breakpoint(lrg) {
+      background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles.svg');
+      background-size: $emb-lightning-size, $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-squiggles-size;
+      background-position: top 365px right -12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 46px, top 40px right -40px, top 350px left -80px;
     }
   }
 
   &.create-details .emb.overall {
     background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
-    background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
-    background-position: 40vw 80px, bottom 20px left 5vw, top 450px right 80px, top 110px right -50px;
+    background-size: $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size;
+    background-position: top 0 left 40vw, bottom 10px left -3px, top 450px right -5px, top 110px right -50px;
+
+    @include breakpoint(med) {
+      background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg');
+      background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size;
+      background-position: top 0 left 40vw, bottom 20px left -2px, top 450px right 80px, top 110px right -50px;
+   }
+
+   @include breakpoint(lrg) {
+      background-image: url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_iceburg.png');
+      background-size: $emb-circle-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-size, $emb-iceburg-size;
+      background-position: top 0 left 40vw, bottom 20px left 5vw, top 450px right 30px, top 110px right -50px, bottom 40px left -15px;
+   }
   }
 }
 
@@ -1130,6 +1150,10 @@ textarea {
   }
 }
 
+.create .sign-item {
+  margin-bottom: 40px;
+}
+
 .back {
   background: url('../img/icon-left-arrow.svg') left 2px no-repeat;
   background-size: 12px;
@@ -1160,16 +1184,20 @@ textarea {
   }
 }
 
-.instructions {
-  margin-top: 0;
-}
-
 .instructions h2 {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+
+  @include breakpoint(med) {
+    margin-bottom: 30px;
+  }
 }
 
 .instructions .divider {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+
+  @include breakpoint(med) {
+    margin-bottom: 40px;
+  }
 }
 
 .instructions textarea {
@@ -1185,8 +1213,13 @@ textarea {
 }
 
 .instructions .btn {
+  width: 100%;
   display: inline-block;
   transition: opacity .5s;
+
+  @include breakpoint(med) {
+    width: auto;
+  }
 
   &.disabled {
     opacity: .2;
@@ -1249,28 +1282,47 @@ textarea {
 }
 
 .create-design .file-label {
-  display: flex;
   margin-bottom: 30px;
+
+  @include breakpoint(med) {
+    display: flex;
+    margin-bottom: 0;
+  }
 }
 
 .create-design .file-name {
   height: 54px;
-  width: 70%;
+  width: 100%;
   border: 3px solid $charcoal;
-  border-right: 0;
-  padding: 12px 15px;
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding: 12px 15px 0 15px;
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   color: $charcoal;
+
+  @include breakpoint(med) {
+    width: 70%;
+    border-right: 0;
+    border-bottom: 3px solid $charcoal;
+    padding: 12px 15px;
+  }
 }
 
 .create-design .file-label .btn {
+  width: 100%;
+  min-width: 150px;
   height: 54px;
+  margin-bottom: 30px;
   display: inline-block;
   box-sizing: border-box;
   line-height: 20px;
   text-align: center;
+
+  @include breakpoint(med) {
+    width: auto;
+  }
 
   &:after {
     display: none;
@@ -1285,7 +1337,7 @@ textarea {
 }
 
 .create-details label {
-  width: 118px;
+  min-width: 108px;
   border-right: 3px solid $charcoal;
   padding: 15px 20px;
   box-sizing: border-box;
@@ -1294,10 +1346,14 @@ textarea {
 .create-details input {
   width: 80%;
   border: 0;
-  padding: 15px 20px;
+  padding: 15px;
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   color: $charcoal;
+
+  @include breakpoint(med) {
+    padding: 15px 20px;
+  }
 }
 
 .create-details button {

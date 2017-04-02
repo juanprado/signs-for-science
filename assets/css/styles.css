@@ -266,6 +266,8 @@ table {
       width: 91.666663%; }
     [class*='col-'].col-lrg-12 {
       width: 100%; }
+    [class*='col-'].col-lrg-offset-0 {
+      margin-left: 0; }
     [class*='col-'].col-lrg-offset-1 {
       margin-left: calc(8.333333% - 3px); }
     [class*='col-'].col-lrg-offset-2 {
@@ -1247,13 +1249,14 @@ textarea {
   position: relative;
   width: 100vw;
   float: left;
-  min-height: 100vh;
-  padding-top: 40px;
-  padding-bottom: 100px;
-  border-bottom: 3px solid black; }
+  padding-top: 20px;
+  padding-bottom: 50px; }
   @media (min-width: 650px) {
     .create-section {
-      padding-top: 60px; } }
+      padding-top: 35px; } }
+  @media (min-width: 900px) {
+    .create-section {
+      padding-bottom: 0; } }
   .create-section.hero .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
     background-size: 20px, 20px, 20px, 120px;
@@ -1263,19 +1266,34 @@ textarea {
         background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
         background-size: 22px, 22px, 22px, 161px;
         background-position: top 20px left 40vw, bottom 20px left 5vw, top 390px right 80px, top 110px right -50px; } }
-  .create-section.create-text .emb.overall, .create-section.create-design .emb.overall {
-    background-image: url("../img/emb_lightning.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles_vt.svg");
-    background-size: 65px, 20px, 20px, 20px, 120px, 45px;
-    background-position: top 70px right 30px, top 250px left -8px, top 500px right -5px, bottom 10px left 28vw, top 120px right -30px, bottom -50px left 20vw; }
+  .create-section .create-text .emb.overall, .create-section .create-design .emb.overall {
+    background-image: url("../img/emb_lightning.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
+    background-size: 65px, 20px, 20px, 120px;
+    background-position: top 0 right 35px, top 250px left -8px, top 500px right -5px, top 40px right -30px; }
     @media (min-width: 650px) {
-      .create-section.create-text .emb.overall, .create-section.create-design .emb.overall {
-        background-image: url("../img/emb_lightning.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles_vt.svg");
-        background-size: 81px, 22px, 22px, 22px, 161px, 64px;
-        background-position: top 365px right 12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 80px, top 120px right -30px, top -70px left 44vw; } }
+      .create-section .create-text .emb.overall, .create-section .create-design .emb.overall {
+        background-image: url("../img/emb_lightning.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
+        background-size: 81px, 22px, 22px, 22px, 161px;
+        background-position: top 255px right 25px, top 125px left 40.5vw, top 500px left 12px, top 260px right 80px, top 120px right -90px; } }
+    @media (min-width: 900px) {
+      .create-section .create-text .emb.overall, .create-section .create-design .emb.overall {
+        background-image: url("../img/emb_lightning.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_squiggles.svg");
+        background-size: 81px, 22px, 22px, 22px, 161px, 161px;
+        background-position: top 365px right -12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 46px, top 40px right -40px, top 350px left -80px; } }
   .create-section.create-details .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
-    background-size: 22px, 22px, 22px, 161px;
-    background-position: 40vw 80px, bottom 20px left 5vw, top 450px right 80px, top 110px right -50px; }
+    background-size: 20px, 20px, 20px, 120px;
+    background-position: top 0 left 40vw, bottom 10px left -3px, top 450px right -5px, top 110px right -50px; }
+    @media (min-width: 650px) {
+      .create-section.create-details .emb.overall {
+        background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
+        background-size: 22px, 22px, 22px, 161px;
+        background-position: top 0 left 40vw, bottom 20px left -2px, top 450px right 80px, top 110px right -50px; } }
+    @media (min-width: 900px) {
+      .create-section.create-details .emb.overall {
+        background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg"), url("../img/emb_iceburg.png");
+        background-size: 22px, 22px, 22px, 161px, 165px;
+        background-position: top 0 left 40vw, bottom 20px left 5vw, top 450px right 30px, top 110px right -50px, bottom 40px left -15px; } }
 
 .create h1:after, .create h2:after {
   color: #ff7b90; }
@@ -1394,6 +1412,9 @@ textarea {
     .sign-type .go {
       bottom: 40px; } }
 
+.create .sign-item {
+  margin-bottom: 40px; }
+
 .back {
   background: url("../img/icon-left-arrow.svg") left 2px no-repeat;
   background-size: 12px;
@@ -1417,14 +1438,17 @@ textarea {
     .create-design .sign-item, .create-text .sign-item {
       display: inline-block; } }
 
-.instructions {
-  margin-top: 0; }
-
 .instructions h2 {
-  margin-bottom: 30px; }
+  margin-bottom: 25px; }
+  @media (min-width: 650px) {
+    .instructions h2 {
+      margin-bottom: 30px; } }
 
 .instructions .divider {
-  margin-bottom: 40px; }
+  margin-bottom: 30px; }
+  @media (min-width: 650px) {
+    .instructions .divider {
+      margin-bottom: 40px; } }
 
 .instructions textarea {
   display: block;
@@ -1437,9 +1461,13 @@ textarea {
   min-height: 30px; }
 
 .instructions .btn {
+  width: 100%;
   display: inline-block;
   -webkit-transition: opacity .5s;
   transition: opacity .5s; }
+  @media (min-width: 650px) {
+    .instructions .btn {
+      width: auto; } }
   .instructions .btn.disabled {
     opacity: .2;
     pointer-events: none; }
@@ -1494,28 +1522,44 @@ textarea {
   z-index: -1; }
 
 .create-design .file-label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-bottom: 30px; }
+  @media (min-width: 650px) {
+    .create-design .file-label {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 0; } }
 
 .create-design .file-name {
   height: 54px;
-  width: 70%;
+  width: 100%;
   border: 3px solid #181818;
-  border-right: 0;
-  padding: 12px 15px;
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding: 12px 15px 0 15px;
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   color: #181818; }
+  @media (min-width: 650px) {
+    .create-design .file-name {
+      width: 70%;
+      border-right: 0;
+      border-bottom: 3px solid #181818;
+      padding: 12px 15px; } }
 
 .create-design .file-label .btn {
+  width: 100%;
+  min-width: 150px;
   height: 54px;
+  margin-bottom: 30px;
   display: inline-block;
   box-sizing: border-box;
   line-height: 20px;
   text-align: center; }
+  @media (min-width: 650px) {
+    .create-design .file-label .btn {
+      width: auto; } }
   .create-design .file-label .btn:after {
     display: none; }
 
@@ -1528,7 +1572,7 @@ textarea {
   margin-top: -3px; }
 
 .create-details label {
-  width: 118px;
+  min-width: 108px;
   border-right: 3px solid #181818;
   padding: 15px 20px;
   box-sizing: border-box; }
@@ -1536,10 +1580,13 @@ textarea {
 .create-details input {
   width: 80%;
   border: 0;
-  padding: 15px 20px;
+  padding: 15px;
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   color: #181818; }
+  @media (min-width: 650px) {
+    .create-details input {
+      padding: 15px 20px; } }
 
 .create-details button {
   margin-top: 30px; }
