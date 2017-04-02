@@ -27,7 +27,17 @@ function getFile(evt) {
   const isValid = validateFile(file);
 
   if (isValid) {
+    styleLabel(file);
     showPreview(file);
+  }
+}
+
+function styleLabel(file) {
+  const label = document.getElementById("file-name");
+  const fileName = file.name;
+
+  if (fileName) {
+    label.innerHTML = fileName;
   }
 }
 
@@ -1707,27 +1717,6 @@ if (document.getElementById("filter")) {
     } else if (stuck && offset <= stickPoint) {
       h.classList.remove("sticky");
       stuck = false;
-    }
-  };
-}
-
-// Form file uploader
-
-if (document.getElementById("file")) {
-  document.getElementById("file").onchange = function () {
-    var input = document.getElementById("file");
-    var label = document.getElementById("file-name");
-    var labelVal = label.innerHTML;
-    var fileName = '';
-
-    if (input.value) {
-      fileName = input.value;
-    }
-
-    if (fileName) {
-      label.innerHTML = fileName;
-    } else {
-      label.innerHTML = labelVal;
     }
   };
 }

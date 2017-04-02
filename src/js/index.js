@@ -56,25 +56,3 @@ if (document.getElementById("filter")) {
     }
   }
 }
-
-// Form file uploader
-
-if(document.getElementById("file")) {
-  document.getElementById("file").onchange = function () {
-    var input = document.getElementById("file");
-    var label  = document.getElementById("file-name");
-    var labelVal = label.innerHTML;
-    var fileName = '';
-
-    if( input.value ) {
-      fileName = input.value;
-    }
-
-    if( fileName ) {
-      label.innerHTML = fileName;
-    }
-    else {
-      label.innerHTML = labelVal;
-    }
-  }
-}
