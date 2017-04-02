@@ -905,7 +905,8 @@ textarea {
       -ms-flex-pack: center;
           justify-content: center;
   background: #f0f0f0;
-  padding: 0 10%; }
+  padding: 0 10%;
+  word-wrap: break-word; }
   .sign-slogan-container.broo {
     background: #4d43ff; }
   .sign-slogan-container.turquoise {
@@ -1180,16 +1181,25 @@ textarea {
       background-position: bottom 0 right -10px, top 3000px left -5px, top 510px left 50px, top 80px left 64.3vw, top 3082px left 55px, top 100px left 20vw, bottom 40px left 30vw, top 230px right 30px, top 580px left -75px, top 3000px left 59.4vw, top 140px right 140px; } }
 
 /* * * Create * * */
-.create-text, .create-design, .create-details {
-  display: none; }
-
 .create {
   background: #ff7b90; }
 
 .create nav .create-btn {
   display: none; }
 
+.create-section-container {
+  width: 300vw; }
+  .create-section-container._step-2 {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw); }
+  .create-section-container._step-3 {
+    -webkit-transform: translateX(-200vw);
+            transform: translateX(-200vw); }
+
 .create-section {
+  position: relative;
+  width: 100vw;
+  float: left;
   min-height: 100vh;
   padding-top: 40px;
   padding-bottom: 100px;
@@ -1341,6 +1351,7 @@ textarea {
   background: url("../img/icon-left-arrow.svg") left 2px no-repeat;
   background-size: 12px;
   width: 50px;
+  float: none;
   padding-left: 18px;
   margin-bottom: 20px;
   cursor: pointer;
@@ -1349,6 +1360,9 @@ textarea {
   .back:hover {
     color: #4d43ff;
     background-image: url("../img/icon-left-arrow-hover.svg"); }
+
+.create-design._hide, .create-text._hide {
+  display: none; }
 
 .create-design .sign-item, .create-text .sign-item {
   display: none; }
