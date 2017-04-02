@@ -1,3 +1,5 @@
+let fileForUpload = false;
+
 function validateFile(file) {
   const maxLimit = 1024 * 1024 * 2; // 2 MB
 
@@ -24,8 +26,9 @@ function getFile(evt) {
   const isValid = validateFile(file);
 
   if (isValid) {
-    styleLabel(file)
+    styleLabel(file);
     showPreview(file);
+    fileForUpload = file;
   }
 }
 
@@ -52,8 +55,12 @@ function showPreview(file) {
   reader.readAsDataURL(file);
 }
 
-export default function bind() {
-  const element = document.getElementById('file');
+export function getFileForUpload() {
+  return fileForUplad;
+}
 
-  element && element.addEventListener('change', getFile);
+export default function bind() {
+  const fleInput = document.getElementById('file');
+
+  fileInput && fileInput.addEventListener('change', getFile);
 }

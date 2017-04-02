@@ -1,7 +1,7 @@
-import imageUpload from './imageUpload';
+import imageValidation from './imageValidation';
 import getSigns from './getSigns';
 
-imageUpload();
+imageValidation();
 getSigns();
 
 // Gallery URL Button
