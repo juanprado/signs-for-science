@@ -26,13 +26,16 @@ function validateSign() {
   let sign;
 
   if (signType === 'text') {
-    //validate text
     sign = getSignForUpload();
   } else {
     sign = getFileForUpload();
   } 
 
   return sign;
+}
+
+function getSignType() {
+  return document.querySelector('input[name="sign-type"]:checked').value;
 }
 
 function validateName() {

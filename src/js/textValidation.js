@@ -9,7 +9,6 @@ function validateText(str) {
 // Previews the text on change
 function previewText(evt) {
   const preview = document.getElementById('text-sign-preview');
-  console.log(' is this working? ')
 
   text = evt.target.value;
   preview.innerHTML = text;
@@ -21,7 +20,6 @@ function validateText() {
 
   if (isValid) {
     textForUpload = text;
-    // go to the next step
   }
 }
 
@@ -32,7 +30,6 @@ export function getTextForUpload() {
 
 // Bind file input
 export default function bind() {
-  console.log('binding');
   const textInput = document.getElementById('text-sign');
   const textSubmit = document.getElementById('text-sign-submit');
 

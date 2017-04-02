@@ -721,7 +721,7 @@ textarea {
       background-size: $emb-iceburg-size, $emb-circle-size, $emb-circle-size, $emb-squiggles-vt-size, $emb-squiggles-size;
       background-position: top 270px left 200px, top 240px left 280px, top 142px right 102px, top -70px left 30vw, top 170px right -20px;
     }
-}
+  }
 }
 
 .sign-cta h2 {
@@ -910,9 +910,9 @@ textarea {
 }
 
 /* * * Create * * */
-// .create .hero, .create-design, .create-details {
-//   display: none;
-// }
+.create-text, .create-design, .create-details {
+  display: none;
+}
 
 .create {
   background: $pink;
@@ -923,8 +923,9 @@ textarea {
 }
 
 .create-section {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 40px;
+  padding-bottom: 100px;
   border-bottom: 3px solid black;
 
   @include breakpoint(med) {
@@ -946,7 +947,7 @@ textarea {
   &.create-text .emb.overall, &.create-design .emb.overall {
     background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
     background-size: $emb-lightning-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-circle-mini-size, $emb-squiggles-mini-size, $emb-squiggles-vt-mini-size;
-    background-position: top 365px right 12px, top 125px left 40.5vw, top 500px left 50px, top 380px right 80px, top 120px right -30px, top -70px left 44vw;
+    background-position: top 70px right 30px, top 250px left -8px, top 500px right -5px, bottom 10px left 28vw, top 120px right -30px, bottom -50px left 20vw;
 
     @include breakpoint(med) {
       background-image: url('../img/emb_lightning.png'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_circle.svg'), url('../img/emb_squiggles.svg'), url('../img/emb_squiggles_vt.svg');
@@ -966,12 +967,12 @@ textarea {
   color: $pink;
 }
 
-.sign-type-container {
-  display: block;
-
-  @include breakpoint(lrg) {
-    display: flex;
-  }
+.create input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
 }
 
 .sign-type {
@@ -1117,8 +1118,16 @@ textarea {
   }
 }
 
+.create-design .sign-item, .create-text .sign-item {
+  display: none;
+
+  @include breakpoint(lrg) {
+    display: inline-block;
+  }
+}
+
 .instructions {
-  margin-top: 22px;
+  margin-top: 0;
 }
 
 .instructions h2 {
@@ -1148,6 +1157,15 @@ textarea {
   &.disabled {
     opacity: .2;
     pointer-events: none;
+  }
+}
+
+.create-text .grid-container, .create-design .grid-container {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(lrg) {
+    display: block;
   }
 }
 

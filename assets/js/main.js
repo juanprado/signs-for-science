@@ -79,7 +79,6 @@ let text = false;
 // Previews the text on change
 function previewText(evt) {
   const preview = document.getElementById('text-sign-preview');
-  console.log(' is this working? ');
 
   text = evt.target.value;
   preview.innerHTML = text;
@@ -91,7 +90,6 @@ function validateText() {
 
   if (isValid) {
     textForUpload = text;
-    // go to the next step
   }
 }
 
@@ -100,7 +98,6 @@ function validateText() {
 
 // Bind file input
 function bind$1() {
-  console.log('binding');
   const textInput = document.getElementById('text-sign');
   const textSubmit = document.getElementById('text-sign-submit');
 
