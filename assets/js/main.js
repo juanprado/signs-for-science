@@ -1896,7 +1896,6 @@ bind();
 init();
 
 // Gallery URL Button
-
 if (document.getElementById("gallery")) {
   var urlBtn = document.getElementsByClassName("get-url");
 
@@ -1910,7 +1909,6 @@ if (document.getElementById("gallery")) {
 }
 
 // Mobile Nav
-
 var menu = document.getElementById("mobile-menu");
 var closeIcon = document.getElementById("nav-close");
 var hamburgerIcon = document.getElementById("mobile-hamburger");
@@ -1947,5 +1945,21 @@ if (document.getElementById("filter")) {
     }
   };
 }
+
+//Scale sign font size
+var slogan = document.getElementsByClassName('sign-slogan-container');
+
+function setScaledFont() {
+  for (var i = 0; i < slogan.length; i++) {
+    var s = slogan[i].offsetWidth,
+        fs = s * .45,
+        is = s * .2;
+
+    slogan[i].style.fontSize = fs + '%';
+  }
+}
+
+window.addEventListener("load", setScaledFont, false);
+window.addEventListener("resize", setScaledFont, false);
 
 }());
