@@ -50,6 +50,7 @@ function getSignature(evt, file) {
   axios.get(url)
     .then(response => {
       console.log('why is this returning an error')
+      console.log(response);
       uploadFile(file, response.signedRequest, response.url, evt)
     })
     .catch(error => { 
