@@ -1599,7 +1599,11 @@ function bind$1() {
   const form = document.getElementById('create-sign-form');
   const imageType = document.getElementById('sign-type-image');
   const textType = document.getElementById('sign-type-text');
+  const backBtns = document.querySelectorAll('.back');
 
+  [...backBtns].forEach(btn => {
+    btn && btn.addEventListener('click', goToPrevStep);
+  });
   imageType && imageType.addEventListener('change', stepTwo);
   textType && textType.addEventListener('change', stepTwo);
   form && form.addEventListener('submit', validateForm);
@@ -1637,21 +1641,29 @@ function getSignature(evt, file) {
 
   axios.get(url).then(response => {
     console.log('why is this returning an error');
-    uploadImage(file, response.signedRequest, response.url, evt);
+    uploadFile(file, response.signedRequest, response.url, evt);
   }).catch(error => {
     console.log(error, 'this is being returned');
     alert('there was an error getting the signature for the image, please try again.');
   });
 }
 
-// Upload image, on success upload form
-function uploadImage(file, signedRequest, url, evt) {
-  axios.put(signedRequest).then(() => {
-    document.querySelector('input[name="image_url"]').value = url;
-    evt.target.submit();
-  }).catch(error => {
-    alert('there was an error uploading the image, please try again.');
-  });
+//Upload image, on success upload form
+// TODO fix this to use axios
+function uploadFile(file, signedRequest, url, evt) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('PUT', signedRequest);
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        document.querySelector('input[name="image_url"]').value = url;
+        evt.target.submit();
+      } else {
+        alert('Could not upload file.');
+      }
+    }
+  };
+  xhr.send(file);
 }
 
 // Go to step two when sign type has been selected
@@ -1685,6 +1697,17 @@ function goToNextStep(num) {
   }
 }
 
+function goToPrevStep(evt) {
+  const btn = evt.target;
+  const num = parseInt(btn.getAttribute('data-step'));
+  const container = document.querySelector('.create-section-container');
+  const current = num + 1;
+
+  container.classList.remove(`_step-${current}`);
+  container.classList.add(`_step-${num}`);
+}
+
+// Return the sign that has been previously validated
 function validateSign() {
   const signType = getSignType();
   let sign;

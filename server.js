@@ -53,13 +53,10 @@ app.post('/signs', (req, res) => {
   const signObj = req.body;
 
   delete signObj['file'];
-  delete signObj['sign-type']
-  console.log(signObj);
-
-  // newSign.save()
-  //   .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
-  //   .catch(error => { console.log('Error saving sign') })
-  res.end();
+  delete signObj['sign-type'];
+  Sign(signObj).save()
+    .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
+    .catch(error => { console.log('Error saving sign') })
 });
 
 
