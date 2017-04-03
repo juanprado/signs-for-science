@@ -266,8 +266,6 @@ table {
       width: 91.666663%; }
     [class*='col-'].col-lrg-12 {
       width: 100%; }
-    [class*='col-'].col-lrg-offset-0 {
-      margin-left: 0; }
     [class*='col-'].col-lrg-offset-1 {
       margin-left: calc(8.333333% - 3px); }
     [class*='col-'].col-lrg-offset-2 {
@@ -958,8 +956,7 @@ textarea {
       -ms-flex-pack: center;
           justify-content: center;
   background: #f0f0f0;
-  padding: 0 10%;
-  word-wrap: break-word; }
+  padding: 0 10%; }
   .sign-slogan-container.broo {
     background: #4d43ff; }
   .sign-slogan-container.turquoise {
@@ -970,13 +967,18 @@ textarea {
     background: #181818; }
 
 .sign-slogan {
+  width: 100%;
   font-family: 'Permanent Marker', 'Dosis', sans-serif;
-  font-size: 22px;
-  line-height: 1.3em;
+  line-height: 1.4em;
   letter-spacing: 0.015em;
-  text-transform: all-caps;
+  text-transform: uppercase;
   text-align: center;
-  color: #181818; }
+  text-transform: uppercase;
+  color: #181818;
+  word-wrap: break-word; }
+
+.sign-slogan .divider {
+  width: 14%; }
 
 .sign-creds {
   background: url(../img/divider-vertical.svg) 0 7px no-repeat;
@@ -999,19 +1001,16 @@ textarea {
   .sign-buttons .btn:first-child {
     display: none; }
 
-.sign-buttons .get-url {
-  margin-left: -7px; }
-  @media (min-width: 1280px) {
-    .sign-buttons .get-url {
-      margin-left: -7px;
-      border-top: 3px solid #181818; } }
+@media (min-width: 1280px) {
+  .sign-buttons .get-url {
+    border-top: 3px solid #181818; } }
 
 .sign-buttons .copy-url {
   background: #0af5df;
   position: absolute;
   top: 35px;
   left: 0;
-  width: calc(100% - 1px);
+  width: 100%;
   border-top: 0;
   box-sizing: border-box;
   text-align: left;
@@ -1031,12 +1030,12 @@ textarea {
     z-index: 2; }
     @media (min-width: 650px) {
       .sign-buttons .copy-url.visible {
-        top: 97px;
+        top: 50px;
         width: 100%; } }
     @media (min-width: 1280px) {
       .sign-buttons .copy-url.visible {
         top: 50px;
-        width: calc(100% - 1px); } }
+        width: 100%; } }
 
 .sign-buttons span {
   max-width: 650px;
@@ -1256,7 +1255,7 @@ textarea {
       padding-top: 35px; } }
   @media (min-width: 900px) {
     .create-section {
-      padding-bottom: 0; } }
+      padding-bottom: 30px; } }
   .create-section.hero .emb.overall {
     background-image: url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
     background-size: 20px, 20px, 20px, 120px;
@@ -1503,8 +1502,10 @@ textarea {
 .create-design .sign-slogan {
   margin-top: -25px;
   color: #181818;
+  font-size: 28px;
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
+  text-transform: none;
   opacity: .3; }
 
 .create-design .sign-slogan-rules {
