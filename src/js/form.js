@@ -52,7 +52,9 @@ function getSignature(evt, file) {
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4){
       if(xhr.status === 200){
-        const response = JSON.parse(xhr.responseText);
+        console.log(xhr.responseText);
+        const response = JSON.parse(xhr.responseText);   
+        console.log(response);
         uploadFile(file, response.signedRequest, response.url);
       }
       else{
