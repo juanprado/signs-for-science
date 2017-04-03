@@ -936,7 +936,7 @@ textarea {
 
 .create-section-container {
   width: 300vw;
-  transition: transform 400ms ease-in;
+  transition: transform 400ms ease-out;
 
   &._step-2 {
     transform: translateX(-100vw);
