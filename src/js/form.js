@@ -46,17 +46,23 @@ function getSignature(evt, file) {
   const name = encodeURIComponent(file.name);
   const type = file.type;
   const url = `/sign-s3?file-name=${file.name}&file-type=${file.type}`
+  const xhr = new XMLHttpRequest();
 
-  axios.get(url)
-    .then(response => {
-      console.log('why is this returning an error')
-      uploadFile(file, response.signedRequest, response.url, evt)
-    })
-    .catch(error => { 
-      console.log(error, 'this is being returned');
-      alert('there was an error getting the signature for the image, please try again.') 
-    });
+  xhr.open('GET', url);
+  xhr.onreadystatechange = () => {
+    if(xhr.readyState === 4){
+      if(xhr.status === 200){
+        const response = JSON.parse(xhr.responseText);
+        uploadFile(file, response.signedRequest, response.url);
+      }
+      else{
+        alert('Could not get signed URL.');
+      }
+    }
+  };
+  xhr.send();
 }
+
 
 //Upload image, on success upload form
 // TODO fix this to use axios

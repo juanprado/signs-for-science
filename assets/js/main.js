@@ -1599,11 +1599,11 @@ function bind$1() {
   const form = document.getElementById('create-sign-form');
   const imageType = document.getElementById('sign-type-image');
   const textType = document.getElementById('sign-type-text');
-  const backBtns = document.querySelectorAll('.back');
+  // const backBtns = document.querySelectorAll('.back');
 
-  [...backBtns].forEach(btn => {
-    btn && btn.addEventListener('click', goToPrevStep);
-  });
+  // [...backBtns].forEach( btn => {
+  //   btn && btn.addEventListener('click', goToPrevStep)
+  // })
   imageType && imageType.addEventListener('change', stepTwo);
   textType && textType.addEventListener('change', stepTwo);
   form && form.addEventListener('submit', validateForm);
@@ -1638,14 +1638,20 @@ function getSignature(evt, file) {
   const name = encodeURIComponent(file.name);
   const type = file.type;
   const url = `/sign-s3?file-name=${file.name}&file-type=${file.type}`;
+  const xhr = new XMLHttpRequest();
 
-  axios.get(url).then(response => {
-    console.log('why is this returning an error');
-    uploadFile(file, response.signedRequest, response.url, evt);
-  }).catch(error => {
-    console.log(error, 'this is being returned');
-    alert('there was an error getting the signature for the image, please try again.');
-  });
+  xhr.open('GET', url);
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        uploadFile(file, response.signedRequest, response.url);
+      } else {
+        alert('Could not get signed URL.');
+      }
+    }
+  };
+  xhr.send();
 }
 
 //Upload image, on success upload form
@@ -1695,16 +1701,6 @@ function goToNextStep(num) {
     container.classList.remove(`_step-${prev}`);
     container.classList.add(`_step-${num}`);
   }
-}
-
-function goToPrevStep(evt) {
-  const btn = evt.target;
-  const num = parseInt(btn.getAttribute('data-step'));
-  const container = document.querySelector('.create-section-container');
-  const current = num + 1;
-
-  container.classList.remove(`_step-${current}`);
-  container.classList.add(`_step-${num}`);
 }
 
 // Return the sign that has been previously validated
