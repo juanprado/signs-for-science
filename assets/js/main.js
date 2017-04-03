@@ -1644,10 +1644,12 @@ function getSignature(evt, file) {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
+        console.log(xhr.responseText);
         const response = JSON.parse(xhr.responseText);
+        console.log(response);
         uploadFile(file, response.signedRequest, response.url);
       } else {
-        alert('Could not get signed URL.');
+        alert('Could not get signed URL for aws bucket.');
       }
     }
   };

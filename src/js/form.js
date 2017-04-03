@@ -58,7 +58,7 @@ function getSignature(evt, file) {
         uploadFile(file, response.signedRequest, response.url);
       }
       else{
-        alert('Could not get signed URL.');
+        alert('Could not get signed URL for aws bucket.');
       }
     }
   };
