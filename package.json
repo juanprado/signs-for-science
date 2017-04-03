@@ -18,7 +18,8 @@
     "express-sanitizer": "^1.0.2",
     "method-override": "^2.3.7",
     "mongoose": "^4.9.1",
-    "mongoose-slug-generator": "^1.0.4"
+    "mongoose-slug-generator": "^1.0.4",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
