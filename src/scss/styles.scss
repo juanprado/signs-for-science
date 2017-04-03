@@ -535,7 +535,7 @@ textarea {
 
 .sign-image {
   position: relative;
-  padding: 63% 0;
+  padding: 61% 0;
   border: 8px solid white;
   background: $light-gray;
 }
@@ -1361,6 +1361,16 @@ textarea {
 
 .create-details button {
   margin-top: 30px;
+}
+
+.create-details .sign-image {
+  &._hide-image .image-file {
+    display: none;
+  }
+
+  &._hide-slogan .sign-slogan-container {
+    display: none;
+  }
 }
 
 /* * * Thank you * * */
