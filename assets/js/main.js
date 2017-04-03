@@ -1638,22 +1638,14 @@ function getSignature(evt, file) {
   const name = encodeURIComponent(file.name);
   const type = file.type;
   const url = `/sign-s3?file-name=${file.name}&file-type=${file.type}`;
-  const xhr = new XMLHttpRequest();
 
-  xhr.open('GET', url);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        console.log(xhr.responseText);
-        const response = JSON.parse(xhr.responseText);
-        console.log(response);
-        uploadFile(file, response.signedRequest, response.url);
-      } else {
-        alert('Could not get signed URL for aws bucket.');
-      }
-    }
-  };
-  xhr.send();
+  axios.get(url).then(response => {
+    console.log('why is this returning an error');
+    uploadFile(file, response.signedRequest, response.url, evt);
+  }).catch(error => {
+    console.log(error, 'this is being returned');
+    alert('there was an error getting the signature for the image, please try again.');
+  });
 }
 
 //Upload image, on success upload form
