@@ -49,9 +49,8 @@ function getSignature(evt, file) {
 
   axios.get(url)
     .then(response => {
-      console.log('why is this returning an error')
-      console.log(response);
-      uploadFile(file, response.signedRequest, response.url, evt)
+      const res = JSON.parse(response.request.response);
+      uploadFile(file, res.signedRequest, res.url, evt)
     })
     .catch(error => { 
       console.log(error, 'this is being returned');
