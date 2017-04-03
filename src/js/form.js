@@ -1,12 +1,17 @@
 import { getFileForUpload } from './imageValidation';
 import { getTextForUpload } from './textValidation';
+import axios from 'axios/dist/axios';
 
 // Kickstarts form validation with submit btn
 export default function bind() {
   const form = document.getElementById('create-sign-form');
   const imageType = document.getElementById('sign-type-image');
   const textType = document.getElementById('sign-type-text');
+  // const backBtns = document.querySelectorAll('.back');
 
+  // [...backBtns].forEach( btn => {
+  //   btn && btn.addEventListener('click', goToPrevStep)
+  // })
   imageType && imageType.addEventListener('change', stepTwo);
   textType && textType.addEventListener('change', stepTwo);
   form && form.addEventListener('submit', validateForm);
@@ -21,9 +26,63 @@ function validateForm(evt) {
 
   evt.preventDefault();
   if (name && tagline && website && sign) {
-    // let's upload some shit!!
-    console.log('ready to upload!!!')
+    submitForm(evt, sign);
   }
+}
+
+// Form submission
+function submitForm(evt, sign) {
+  const type = getSignType();
+  
+  if (type === 'image') {
+    getSignature(evt,sign);
+  } else {
+    evt.target.submit();
+  }
+}
+
+// Get image Signature
+function getSignature(evt, file) {
+  const name = encodeURIComponent(file.name);
+  const type = file.type;
+  const url = `/sign-s3?file-name=${file.name}&file-type=${file.type}`
+  const xhr = new XMLHttpRequest();
+
+  xhr.open('GET', url);
+  xhr.onreadystatechange = () => {
+    if(xhr.readyState === 4){
+      if(xhr.status === 200){
+        console.log(xhr.responseText);
+        const response = JSON.parse(xhr.responseText);   
+        console.log(response);
+        uploadFile(file, response.signedRequest, response.url);
+      }
+      else{
+        alert('Could not get signed URL.');
+      }
+    }
+  };
+  xhr.send();
+}
+
+
+//Upload image, on success upload form
+// TODO fix this to use axios
+function uploadFile(file, signedRequest, url, evt){
+  const xhr = new XMLHttpRequest();
+  xhr.open('PUT', signedRequest);
+  xhr.onreadystatechange = () => {
+    if(xhr.readyState === 4){
+      if(xhr.status === 200){
+        document.querySelector('input[name="image_url"]').value = url;
+        evt.target.submit();
+      }
+      else{
+        alert('Could not upload file.');
+      }
+    }
+  };
+  xhr.send(file);
 }
 
 // Go to step two when sign type has been selected
@@ -31,13 +90,16 @@ function stepTwo(evt) {
   const type = evt.target.value;
   const createText = document.querySelector('.create-text');
   const createDesign = document.querySelector('.create-design');
+  const typeInput = document.querySelector('input[name="is_image"]');
 
   if (type === 'text') {
     createText.classList.remove('_hide');
     createDesign.classList.add('_hide');
+    typeInput.value = false;
   } else if (type === 'image') {
     createText.classList.add('_hide');
     createDesign.classList.remove('_hide');
+    typeInput.value = true;
   }
 
   goToNextStep(2);
@@ -54,6 +116,17 @@ export function goToNextStep(num) {
   }
 }
 
+function goToPrevStep(evt) {
+  const btn = evt.target;
+  const num = parseInt(btn.getAttribute('data-step'));
+  const container = document.querySelector('.create-section-container');
+  const current = num + 1;
+
+  container.classList.remove(`_step-${current}`);
+  container.classList.add(`_step-${num}`);
+}
+
+// Return the sign that has been previously validated
 function validateSign() {
   const signType = getSignType();
   let sign;

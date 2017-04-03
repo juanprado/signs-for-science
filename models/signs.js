@@ -8,7 +8,9 @@ const signSchema = new mongoose.Schema({
   name: { type: String, required: true },
   tagline: String,
   url: String,
-  sign: { type: String, required: true },
+  image_url: { type: String },
+  is_image: { type: Boolean, default: false },
+  sign: { type: String },
   created_at: { type: Date, default: Date.now },
   featured: {type: Boolean, default: false },
   slug: { type: String, slug: ['name'], slug_padding_size: 4,  unique: true }

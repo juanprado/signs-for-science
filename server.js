@@ -1,6 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const sanitizer = require('express-sanitizer');
 const app = express();
+const aws = require('aws-sdk');
+
+//S3 bucket
+const S3_BUCKET = process.env.S3_BUCKET;
 
 // Models
 const db = require('./models/db');
@@ -45,11 +50,42 @@ app.get('/get-signs', (req, res) => {
 
 // Post
 app.post('/signs', (req, res) => {
-  const newSign = Sign(req.body);
+  const signObj = req.body;
 
-  newSign.save()
+  delete signObj['file'];
+  delete signObj['sign-type'];
+  Sign(signObj).save()
     .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
     .catch(error => { console.log('Error saving sign') })
+});
+
+
+// Image Signature
+app.get('/sign-s3', (req, res) => {
+  const s3 = new aws.S3();
+  const fileName = req.query['file-name'];
+  const fileType = req.query['file-type'];
+  
+  const s3Params = {
+    Bucket: S3_BUCKET,
+    Key: fileName,
+    Expires: 60,
+    ContentType: fileType,
+    ACL: 'public-read',
+    signatureVersion: 'v4'
+  };
+
+  s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    if(err){
+      console.log(err);
+      return res.end();
+    }
+    const returnData = {
+      signedRequest: data,
+      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+    };
+    res.send(JSON.stringify(returnData));
+  });
 });
 
 // Sign

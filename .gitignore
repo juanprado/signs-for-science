@@ -27,3 +27,4 @@ benchmarks/graphs
 
 # Config
 config.js
+.env
