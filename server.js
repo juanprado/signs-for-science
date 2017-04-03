@@ -63,7 +63,7 @@ app.post('/signs', (req, res) => {
 
 // Image Signature
 app.get('/sign-s3', (req, res) => {
-  const s3 = new aws.S3({ region: 'eu-central-1', signatureVersion: 'v4' });
+  const s3 = new aws.S3({ region: 'eu-east-2', signatureVersion: 'v4' });
   const name = req.query['file-name'];
   const fileType = req.query['file-type'];
   const uuid = uuidV4();
