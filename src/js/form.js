@@ -1,5 +1,6 @@
 import { getFileForUpload } from './imageValidation';
 import { getTextForUpload } from './textValidation';
+import axios from 'axios/dist/axios';
 
 // Kickstarts form validation with submit btn
 export default function bind() {
@@ -21,9 +22,64 @@ function validateForm(evt) {
 
   evt.preventDefault();
   if (name && tagline && website && sign) {
-    // let's upload some shit!!
-    console.log('ready to upload!!!')
+    submitForm(evt, sign);
   }
+}
+
+// Form submission
+function submitForm(evt, sign) {
+  const type = getSignType();
+  
+  if (type === 'image') {
+    getSignature(evt,sign);
+  } else {
+    evt.target.submit();
+  }
+}
+
+// Get image Signature
+function getSignature(evt, file) {
+  const name = encodeURIComponent(file.name);
+  const type = file.type;
+  const url = `/sign-s3?file-name=${file.name}&file-type=${file.type}`
+
+  axios.get(url)
+    .then(response => {
+      console.log('why is this returning an error')
+      uploadImage(file, response.signedRequest, response.url, evt)
+    })
+    .catch(error => { 
+      console.log(error, 'this is being returned');
+      alert('there was an error getting the signature for the image, please try again.') 
+    });
+}
+
+// Upload image, on success upload form
+// function uploadImage(file, signedRequest, url, evt) {
+//   axios.put(signedRequest, file)
+//     .then(() => {
+//       document.querySelector('input[name="image_url"]').value = url;
+//       evt.target.submit();
+//     }).catch(error => {
+//       alert('there was an error uploading the image, please try again.')
+//     })
+// }
+
+function uploadFile(file, signedRequest, url, evt){
+  const xhr = new XMLHttpRequest();
+  xhr.open('PUT', signedRequest);
+  xhr.onreadystatechange = () => {
+    if(xhr.readyState === 4){
+      if(xhr.status === 200){
+        document.querySelector('input[name="image_url"]').value = url;
+        evt.target.submit();
+      }
+      else{
+        alert('Could not upload file.');
+      }
+    }
+  };
+  xhr.send(file);
 }
 
 // Go to step two when sign type has been selected
@@ -31,13 +87,16 @@ function stepTwo(evt) {
   const type = evt.target.value;
   const createText = document.querySelector('.create-text');
   const createDesign = document.querySelector('.create-design');
+  const typeInput = document.querySelector('input[name="is_image"]');
 
   if (type === 'text') {
     createText.classList.remove('_hide');
     createDesign.classList.add('_hide');
+    typeInput.value = false;
   } else if (type === 'image') {
     createText.classList.add('_hide');
     createDesign.classList.remove('_hide');
+    typeInput.value = true;
   }
 
   goToNextStep(2);
