@@ -30,7 +30,9 @@
             <span class="body-copy mini">idea by</span>
             <span class="all-caps"><%= sign.name %></span>
             <div class="body-copy mini"><%= sign.tagline %>
-              <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
+                <% if (sign.url) { %>
+                  <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
+                <% } %>
             </div>
           </div>
 
