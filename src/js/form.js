@@ -33,7 +33,7 @@ function validateForm(evt) {
 // Form submission
 function submitForm(evt, sign) {
   const type = getSignType();
-  
+
   if (type === 'image') {
     getSignature(evt,sign);
   } else {
@@ -52,9 +52,9 @@ function getSignature(evt, file) {
       const res = JSON.parse(response.request.response);
       uploadFile(file, res.signedRequest, res.url, evt)
     })
-    .catch(error => { 
+    .catch(error => {
       console.log(error, 'this is being returned');
-      alert('there was an error getting the signature for the image, please try again.') 
+      alert('there was an error getting the signature for the image, please try again.')
     });
 }
 
@@ -127,7 +127,7 @@ function validateSign() {
     sign = getTextForUpload();
   } else {
     sign = getFileForUpload();
-  } 
+  }
 
   return sign;
 }
@@ -143,7 +143,7 @@ function validateName() {
   const isValid = isValidString(name) || name.length === 0;
 
   if (!isValid) {
-    alert('The name does not seem to be a valid name, please enter a correct name')
+    alert('No special characters in your name please!')
   }
 
   return isValid;
@@ -151,11 +151,11 @@ function validateName() {
 
 //Validates website
 function validateURL() {
-  const website = document.getElementById('url').value;
+  let website = document.getElementById('url').value;
   const isValid = isValidURL(website) || website.length === 0;
 
   if (!isValid) {
-    alert('The website does not seem to be a correct url, please enter a valid URL')
+    alert('Make sure your URL has http:// in front of it!')
   }
 
   return isValid;
@@ -167,7 +167,7 @@ function validateTagline() {
   const isValid = isValidString(tagline) || tagline.length === 0;
 
   if (!isValid) {
-    alert('The tagline does not seem to be tagline, please enter a correct tagline')
+    alert('No special characters in your tagline please!')
   }
 
   return isValid;

@@ -1423,7 +1423,8 @@ textarea {
   margin-bottom: 20px;
   cursor: pointer;
   -webkit-transition: background .2s, color .2s;
-  transition: background .2s, color .2s; }
+  transition: background .2s, color .2s;
+  display: none; }
   .back:hover {
     color: #4d43ff;
     background-image: url("../img/icon-left-arrow-hover.svg"); }

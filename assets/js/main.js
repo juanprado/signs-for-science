@@ -1722,7 +1722,7 @@ function validateName() {
   const isValid = isValidString(name) || name.length === 0;
 
   if (!isValid) {
-    alert('The name does not seem to be a valid name, please enter a correct name');
+    alert('No special characters in your name please!');
   }
 
   return isValid;
@@ -1730,11 +1730,11 @@ function validateName() {
 
 //Validates website
 function validateURL() {
-  const website = document.getElementById('url').value;
+  let website = document.getElementById('url').value;
   const isValid = isValidURL(website) || website.length === 0;
 
   if (!isValid) {
-    alert('The website does not seem to be a correct url, please enter a valid URL');
+    alert('Make sure your URL has http:// in front of it!');
   }
 
   return isValid;
@@ -1746,7 +1746,7 @@ function validateTagline() {
   const isValid = isValidString(tagline) || tagline.length === 0;
 
   if (!isValid) {
-    alert('The tagline does not seem to be tagline, please enter a correct tagline');
+    alert('No special characters in your tagline please!');
   }
 
   return isValid;

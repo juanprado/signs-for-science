@@ -1164,6 +1164,7 @@ textarea {
   margin-bottom: 20px;
   cursor: pointer;
   transition: background .2s, color .2s;
+  display: none;
 
   &:hover {
     color: $broo;
