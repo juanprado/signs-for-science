@@ -20,6 +20,7 @@ app.use('/assets', express.static('assets'))
 
 // Body Parser for forms
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(sanitizer());
 
 // Setting local port
 app.set('port', (process.env.PORT || 5000));
@@ -55,6 +56,7 @@ app.post('/signs', (req, res) => {
 
   delete signObj['file'];
   delete signObj['sign-type'];
+  signObj.sign = req.sanitize(req.body.sign);
   Sign(signObj).save()
     .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
     .catch(error => { console.log('Error saving sign') })
