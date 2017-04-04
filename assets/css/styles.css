@@ -1593,11 +1593,14 @@ textarea {
 .create-details button {
   margin-top: 30px; }
 
-.create-details .sign-image._hide-image .image-file {
+.create-details .sign-image-preview .image-file {
   display: none; }
 
-.create-details .sign-image._hide-slogan .sign-slogan-container {
+.create-details .sign-image-preview._hide-slogan .sign-slogan-container {
   display: none; }
+
+.create-details .sign-image-preview._hide-slogan .image-file {
+  display: block; }
 
 /* * * Thank you * * */
 .thank-you {

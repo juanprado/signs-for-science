@@ -69,12 +69,14 @@ function showPreview(file) {
   const reader = new FileReader();
   const previews = document.querySelectorAll('.create-image-preview');
   const rules = document.querySelector('.sign-slogan-rules');
+  const container = document.querySelector('.sign-image-preview');
 
   reader.addEventListener('load', () => {
     for (let preview of previews) {
       preview.src = reader.result;
     }
     rules.classList.add('_hide');
+    container.classList.add('_hide-slogan');
   });
   reader.readAsDataURL(file);
 }
