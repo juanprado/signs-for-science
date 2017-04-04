@@ -21,10 +21,14 @@ function validateText(str) {
 
 // Previews the text on change
 function previewText(evt) {
-  const preview = document.getElementById('text-sign-preview');
+  const previews = document.querySelectorAll('.text-sign-preview');
+  const container = document.querySelector('.sign-image-preview');
 
   text = evt.target.value;
-  preview.innerHTML = text;
+  for (let preview of previews) {
+    preview.innerHTML = text;
+  }
+  container.classList.remove('_hide-slogan');
   if (validateText(text)) {
     textSubmit.classList.remove('disabled');
   } else {
@@ -1643,7 +1647,6 @@ function getSignature(evt, file) {
     const res = JSON.parse(response.request.response);
     uploadFile(file, res.signedRequest, res.url, evt);
   }).catch(error => {
-    console.log(error, 'this is being returned');
     alert('there was an error getting the signature for the image, please try again.');
   });
 }
@@ -1652,6 +1655,7 @@ function getSignature(evt, file) {
 // TODO fix this to use axios
 function uploadFile(file, signedRequest, url, evt) {
   const xhr = new XMLHttpRequest();
+
   xhr.open('PUT', signedRequest);
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
@@ -1835,12 +1839,14 @@ function showPreview(file) {
   const reader = new FileReader();
   const previews = document.querySelectorAll('.create-image-preview');
   const rules = document.querySelector('.sign-slogan-rules');
+  const container = document.querySelector('.sign-image-preview');
 
   reader.addEventListener('load', () => {
     for (let preview of previews) {
       preview.src = reader.result;
     }
     rules.classList.add('_hide');
+    container.classList.add('_hide-slogan');
   });
   reader.readAsDataURL(file);
 }

@@ -53,7 +53,6 @@ function getSignature(evt, file) {
       uploadFile(file, res.signedRequest, res.url, evt)
     })
     .catch(error => {
-      console.log(error, 'this is being returned');
       alert('there was an error getting the signature for the image, please try again.')
     });
 }
@@ -62,6 +61,8 @@ function getSignature(evt, file) {
 // TODO fix this to use axios
 function uploadFile(file, signedRequest, url, evt){
   const xhr = new XMLHttpRequest();
+
+
   xhr.open('PUT', signedRequest);
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4){

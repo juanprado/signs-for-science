@@ -1364,13 +1364,19 @@ textarea {
   margin-top: 30px;
 }
 
-.create-details .sign-image {
-  &._hide-image .image-file {
+.create-details .sign-image-preview {
+  .image-file {
     display: none;
   }
 
-  &._hide-slogan .sign-slogan-container {
-    display: none;
+  &._hide-slogan {
+    .sign-slogan-container {
+      display: none;
+    }
+
+    .image-file {
+      display: block;
+    }
   }
 }
 

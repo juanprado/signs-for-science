@@ -5,36 +5,47 @@
 <div class="hero">
   <div class="grid-container">
     <h1 data-content="They march, we make">They march, we make</h1>
-    <div class="row your-sign">
-      <div class="col-sml-12 col-med-6 col-lrg-5 col-lrg-offset-1">
-        <div class="sign-image">
-          <div class="sign-slogan-container">
-            <div class="sign-slogan">
-              <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-              <%= sign.sign %>
+    <% if (sign) { %>
+      <div class="row your-sign">
+        <div class="col-sml-12 col-med-6 col-lrg-5 col-lrg-offset-1">
+          <div class="sign-image">
+
+            <% if (sign.is_image) { %>
+              <img class="image-file" src="<%= sign.image_url %>" alt="<%= sign.name %>'s image" />
+            <% } else { %>
+              <div class="sign-slogan-container">
+                <div class="sign-slogan">
+                  <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
+                  <%= sign.sign %>
+                </div>
+              </div>
+            <% } %>
+          
+          </div>
+
+        </div>
+
+        <div class="col-sml-12 col-med-4 col-lrg-3 col-med-offset-1 sign-info">
+          <div class="sign-creds">
+            <span class="body-copy mini">idea by</span>
+            <span class="all-caps"><%= sign.name %></span>
+            <div class="body-copy mini"><%= sign.tagline %>
+                <% if (sign.url) { %>
+                  <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
+                <% } %>
+            </div>
+          </div>
+
+          <div class="sign-buttons">
+            <a href="" class="btn secondary">Download</a>
+            <div class="btn secondary get-url">Share</div>
+            <div class="btn secondary copy-url">URL:
+              <span>signsforscience.com/sign/<%= sign.slug %></span>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col-sml-12 col-med-4 col-lrg-3 col-med-offset-1 sign-info">
-        <div class="sign-creds">
-          <span class="body-copy mini">idea by</span>
-          <span class="all-caps"><%= sign.name %></span>
-          <div class="body-copy mini"><%= sign.tagline %>
-            <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
-          </div>
-        </div>
-
-        <div class="sign-buttons">
-          <a href="" class="btn secondary">Download</a>
-          <div class="btn secondary get-url">Share</div>
-          <div class="btn secondary copy-url">URL:
-            <span>signsforscience.com/sign/<%= sign.slug %></span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <% } %>
   </div>
   <div class="emb"></div>
 </div>

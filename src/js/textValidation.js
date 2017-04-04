@@ -20,10 +20,14 @@ function validateText(str) {
 
 // Previews the text on change
 function previewText(evt) {
-  const preview = document.getElementById('text-sign-preview');
+  const previews = document.querySelectorAll('.text-sign-preview');
+  const container = document.querySelector('.sign-image-preview');
 
   text = evt.target.value;
-  preview.innerHTML = text;
+  for (let preview of previews) {
+    preview.innerHTML = text;
+  }
+  container.classList.remove('_hide-slogan');
   if (validateText(text)) {
     textSubmit.classList.remove('disabled');
   } else {
