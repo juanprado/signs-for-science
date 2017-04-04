@@ -50,6 +50,7 @@ function getSignature(evt, file) {
   axios.get(url)
     .then(response => {
       const res = JSON.parse(response.request.response);
+      console.log(res.signedRequest, res.url, res)
       uploadFile(file, res.signedRequest, res.url, evt)
     })
     .catch(error => {
@@ -62,6 +63,8 @@ function getSignature(evt, file) {
 // TODO fix this to use axios
 function uploadFile(file, signedRequest, url, evt){
   const xhr = new XMLHttpRequest();
+
+  console.log('upload to:', signedRequest, url)
   xhr.open('PUT', signedRequest);
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4){
