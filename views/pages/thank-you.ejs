@@ -7,37 +7,43 @@
       <h4>The scientists and climate marchers thank you.</h4>
 
       <% if (sign) { %>
-      <div class="row your-sign">
-        <div class="col-sml-12 col-med-6 col-lrg-5 col-lrg-offset-1">
-          <div class="sign-image">
-            <div class="sign-slogan-container">
-              <div class="sign-slogan">
-                <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
-                Your positive, funny, non-partisan slogan here
+        <div class="row your-sign">
+          <div class="col-sml-12 col-med-6 col-lrg-5 col-lrg-offset-1">
+            <div class="sign-image">
+
+              <% if (sign.is_image) { %>
+                <img class="image-file" src="<%= sign.image_url %>" alt="<%= sign.name %>'s image" />
+              <% } else { %>
+                <div class="sign-slogan-container">
+                  <div class="sign-slogan">
+                    <img src="../assets/img/divider-charcoal.svg" alt="----" class="divider center" />
+                    <%= sign.sign %>
+                  </div>
+                </div>
+              <% } %>
+            
+            </div>
+          </div>
+
+          <div class="col-sml-12 col-med-4 col-lrg-3 col-med-offset-1 sign-info">
+            <div class="sign-creds">
+              <span class="body-copy mini">idea by</span>
+              <span class="all-caps"><%= sign.name %></span>
+              <div class="body-copy mini"><%= sign.tagline %>
+                <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-sml-12 col-med-4 col-lrg-3 col-med-offset-1 sign-info">
-          <div class="sign-creds">
-            <span class="body-copy mini">idea by</span>
-            <span class="all-caps">Jesse Mann</span>
-            <div class="body-copy mini">Copywriter in NYC
-              <a href="" target="_blank" class="icon-link" title="Go to their website"></a>
+            <div class="sign-buttons">
+              <a href="" class="btn secondary">Download</a>
+              <div class="btn secondary get-url">Share</div>
+                <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
             </div>
-          </div>
 
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <div class="btn secondary get-url">Share</div>
-              <div class="btn secondary copy-url">URL: <span>signsforscience.com/0001</span></div>
+            <img src="../assets/img/divider.svg" alt="----" class="divider" />
+            <a href="create" class="btn make-another">Make another sign</a>
           </div>
-
-          <img src="../assets/img/divider.svg" alt="----" class="divider" />
-          <a href="create" class="btn make-another">Make another sign</a>
         </div>
-      </div>
       <% } %>
 
     </div>
