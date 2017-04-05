@@ -28,11 +28,12 @@ app.set('port', (process.env.PORT || 5000));
 // Index
 app.get('/', (req, res) => {
   const limit = 12;
+  const title = 'home';
 
   Sign.find()
     .sort({ featured: -1 })
     .limit(limit)
-    .then(signs => { res.render(`pages/index`, { signs }); })
+    .then(signs => { res.render(`pages/index`, { signs, title }); })
     .catch(error => { console.log('Error finding list of signs') });
 });
 
@@ -98,28 +99,34 @@ app.get('/sign-s3', (req, res) => {
 // Sign
 app.get('/sign/:slug', (req, res) => {
   const slug = req.params.slug;
+  const title = 'sign';
 
   Sign.findOne({ slug })
-    .then(sign => { res.render('pages/sign', { sign }); })
+    .then(sign => { res.render('pages/sign', { sign, title }); })
     .catch(error => { console.log('is this an error?') })
 });
 
 // About
 app.get('/about', (req, res) => {
-  res.render('pages/about')
+  const title = 'about';
+  
+  res.render('pages/about', { title })
 });
 
 // Sign
 app.get('/create', (req, res) => {
-  res.render('pages/create')
+  const title = 'create';
+
+  res.render('pages/create', { title })
 });
 
 // Thank-you
 app.get('/thank-you', (req, res) => {
   const slug = req.query.slug;
+  const title = 'thank-you';
 
   Sign.findOne({ slug })
-    .then(sign => { res.render('pages/thank-you', { sign }); })
+    .then(sign => { res.render('pages/thank-you', { sign, title }); })
     .catch(error => { console.log('is this an error?') })
 });
 
