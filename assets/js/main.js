@@ -1894,6 +1894,7 @@ function getSign(page) {
 }
 
 function onError(error) {
+  alert(error);
   checking = false;
 }
 
