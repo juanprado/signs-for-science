@@ -5,10 +5,24 @@ let currentPage;
 let checking = false;
 
 export default function init() {
+  const urlBtns = document.getElementsByClassName('get-url')
+  
+  addingShareToggle(urlBtns);
   if (gallery) {
     currentPage = gallery.getAttribute('data-initial-page') || 1;
     getSign(currentPage);
     window.addEventListener('scroll', checkBottom);
+  }
+}
+
+function addingShareToggle(btnArray) {
+  for (let btn of btnArray) {
+    btn.addEventListener('click', () => {
+      const after = btn.nextSibling;
+      const urlField = after.nextSibling;
+
+      urlField.classList.add('visible')
+    })
   }
 }
 
@@ -22,7 +36,7 @@ function getSign(page) {
 }
 
 function onError(error) {
-  console.log(error);
+  alert(error);
   checking = false;
 }
 
@@ -35,6 +49,7 @@ function renderSigns(signs) {
     currentPage++
     signElements.innerHTML = signs;
     gallery.append(signElements)
+    addingShareToggle(signElements.getElementsByClassName('get-url'))
   } else {
     window.removeEventListener('scroll', checkBottom);
   }
