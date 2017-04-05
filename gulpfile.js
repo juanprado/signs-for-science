@@ -9,6 +9,11 @@ const browserSync = require('browser-sync');
 
 const reload = browserSync.reload;
 
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
+
 // Sass
 gulp.task('sass', () =>
   gulp.src('./src/scss/styles.scss')
@@ -24,6 +29,7 @@ gulp.task('sass', () =>
 // ES6 Modules with Rollup
 gulp.task('rollup', () =>
   rollup('rollup.config.js')
+    .on('error', onError) 
     .pipe(source('main.js', './src/js'))
     .pipe(gulp.dest('./assets/js'))
     .pipe(reload({ stream: true }))

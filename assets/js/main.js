@@ -25,9 +25,9 @@ function previewText(evt) {
   const container = document.querySelector('.sign-image-preview');
 
   text = evt.target.value;
-  for (let preview of previews) {
+  Array.prototype.forEach.call(previews, (preview, i) => {
     preview.innerHTML = text;
-  }
+  });
   container.classList.remove('_hide-slogan');
   if (validateText(text)) {
     textSubmit.classList.remove('disabled');
@@ -1842,9 +1842,9 @@ function showPreview(file) {
   const container = document.querySelector('.sign-image-preview');
 
   reader.addEventListener('load', () => {
-    for (let preview of previews) {
+    Array.prototype.forEach.call(previews, (preview, i) => {
       preview.src = reader.result;
-    }
+    });
     rules.classList.add('_hide');
     container.classList.add('_hide-slogan');
   });
@@ -1871,15 +1871,15 @@ function init() {
   }
 }
 
-function addingShareToggle(btnArray) {
-  for (let btn of btnArray) {
+function addingShareToggle(btns) {
+  Array.prototype.forEach.call(btns, btn => {
     btn.addEventListener('click', () => {
       const after = btn.nextSibling;
       const urlField = after.nextSibling;
 
       urlField.classList.add('visible');
     });
-  }
+  });
 }
 
 function getSign(page) {

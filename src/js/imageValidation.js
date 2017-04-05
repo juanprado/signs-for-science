@@ -72,9 +72,9 @@ function showPreview(file) {
   const container = document.querySelector('.sign-image-preview');
 
   reader.addEventListener('load', () => {
-    for (let preview of previews) {
+    Array.prototype.forEach.call(previews, (preview, i) =>{
       preview.src = reader.result;
-    }
+    })
     rules.classList.add('_hide');
     container.classList.add('_hide-slogan');
   });
