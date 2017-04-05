@@ -488,6 +488,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
   overflow-x: hidden;
   width: 100%;
   height: 100%;
@@ -665,7 +666,7 @@ nav .btn:after {
   position: fixed;
   top: 50%;
   left: 0;
-  z-index: 2;
+  z-index: 200;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   opacity: 1;
@@ -680,7 +681,7 @@ nav .btn:after {
   margin-bottom: 40px;
   position: relative;
   list-style-type: none;
-  z-index: 3; }
+  z-index: 300; }
 
 .mobile-menu .overlay {
   content: '';
@@ -690,7 +691,7 @@ nav .btn:after {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
   opacity: .97;
   -webkit-transition: all .4s;
   transition: all .4s; }
@@ -703,7 +704,7 @@ nav .btn:after {
   position: fixed;
   top: 20px;
   right: 7.5%;
-  z-index: 2;
+  z-index: 200;
   opacity: 1;
   -webkit-transition: all .5s;
   transition: all .5s; }
@@ -714,7 +715,7 @@ nav .btn:after {
   background-image: url("../img/emb_signs.png"), url("../img/emb_circle.svg"), url("../img/emb_circle.svg"), url("../img/emb_squiggles.svg");
   background-size: 100px, 20px, 20px, 120px;
   background-position: bottom 8vh left 20px, top 100px left 40px, bottom 20vh right 25vw, bottom 10vh left -60px;
-  z-index: 2;
+  z-index: 200;
   left: 0;
   -webkit-transition: all .5s;
   transition: all .5s; }
