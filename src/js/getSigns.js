@@ -15,15 +15,15 @@ export default function init() {
   }
 }
 
-function addingShareToggle(btnArray) {
-  for (let btn of btnArray) {
+function addingShareToggle(btns) {
+  Array.prototype.forEach.call(btns, (btn) => {
     btn.addEventListener('click', () => {
       const after = btn.nextSibling;
       const urlField = after.nextSibling;
 
       urlField.classList.add('visible')
     })
-  }
+  })
 }
 
 function getSign(page) {

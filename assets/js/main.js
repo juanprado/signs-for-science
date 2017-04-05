@@ -25,31 +25,9 @@ function previewText(evt) {
   var container = document.querySelector('.sign-image-preview');
 
   text = evt.target.value;
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = previews[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var preview = _step.value;
-
-      preview.innerHTML = text;
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-
+  Array.prototype.forEach.call(previews, function (preview, i) {
+    preview.innerHTML = text;
+  });
   container.classList.remove('_hide-slogan');
   if (validateText(text)) {
     textSubmit.classList.remove('disabled');
@@ -1864,31 +1842,9 @@ function showPreview(file) {
   var container = document.querySelector('.sign-image-preview');
 
   reader.addEventListener('load', function () {
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = previews[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var preview = _step.value;
-
-        preview.src = reader.result;
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-
+    Array.prototype.forEach.call(previews, function (preview, i) {
+      preview.src = reader.result;
+    });
     rules.classList.add('_hide');
     container.classList.add('_hide-slogan');
   });
@@ -1915,40 +1871,15 @@ function init() {
   }
 }
 
-function addingShareToggle(btnArray) {
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
+function addingShareToggle(btns) {
+  Array.prototype.forEach.call(btns, function (btn) {
+    btn.addEventListener('click', function () {
+      var after = btn.nextSibling;
+      var urlField = after.nextSibling;
 
-  try {
-    var _loop = function _loop() {
-      var btn = _step.value;
-
-      btn.addEventListener('click', function () {
-        var after = btn.nextSibling;
-        var urlField = after.nextSibling;
-
-        urlField.classList.add('visible');
-      });
-    };
-
-    for (var _iterator = btnArray[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      _loop();
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
+      urlField.classList.add('visible');
+    });
+  });
 }
 
 function getSign(page) {

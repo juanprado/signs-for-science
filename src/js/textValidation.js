@@ -24,9 +24,9 @@ function previewText(evt) {
   const container = document.querySelector('.sign-image-preview');
 
   text = evt.target.value;
-  for (let preview of previews) {
+  Array.prototype.forEach.call(previews, (preview, i) =>{
     preview.innerHTML = text;
-  }
+  })
   container.classList.remove('_hide-slogan');
   if (validateText(text)) {
     textSubmit.classList.remove('disabled');
