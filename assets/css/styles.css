@@ -917,6 +917,11 @@ textarea {
   margin: 0 auto; }
 
 .sign-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 7vw 0 3vw 0; }
   @media (min-width: 650px) {
     .sign-container {
@@ -1013,12 +1018,6 @@ textarea {
   width: 100%;
   display: inline-block;
   text-align: center; }
-  .sign-buttons .btn:first-child {
-    display: none; }
-
-@media (min-width: 1280px) {
-  .sign-buttons .get-url {
-    border-top: 3px solid #181818; } }
 
 .sign-buttons .copy-url {
   background: #0af5df;
@@ -1043,14 +1042,40 @@ textarea {
     top: 50px;
     pointer-events: auto;
     z-index: 2; }
+
+.sign-buttons-image .btn {
+  width: calc(50% + 1px); }
+  @media (min-width: 650px) {
+    .sign-buttons-image .btn {
+      width: 100%; } }
+  @media (min-width: 1280px) {
+    .sign-buttons-image .btn {
+      width: calc(50% + 1px); } }
+
+.sign-buttons-image .get-url {
+  margin-left: -7px; }
+  @media (min-width: 650px) {
+    .sign-buttons-image .get-url {
+      margin-left: 0;
+      border-top: none; } }
+  @media (min-width: 1280px) {
+    .sign-buttons-image .get-url {
+      margin-left: -7px;
+      border-top: 3px solid #181818; } }
+
+.sign-buttons-image .copy-url {
+  top: 35px; }
+  .sign-buttons-image .copy-url.visible {
+    top: 50px;
+    width: calc(100% - 1px); }
     @media (min-width: 650px) {
-      .sign-buttons .copy-url.visible {
-        top: 50px;
+      .sign-buttons-image .copy-url.visible {
+        top: 97px;
         width: 100%; } }
     @media (min-width: 1280px) {
-      .sign-buttons .copy-url.visible {
+      .sign-buttons-image .copy-url.visible {
         top: 50px;
-        width: 100%; } }
+        width: calc(100%-1px); } }
 
 .sign-buttons span {
   max-width: 650px;

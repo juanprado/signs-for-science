@@ -35,13 +35,22 @@
             </div>
           </div>
 
-          <div class="sign-buttons">
-            <a href="" class="btn secondary">Download</a>
-            <button class="btn secondary get-url">Share</button>
-            <div class="btn secondary copy-url">URL:
-              <span>signsforscience.com/sign/<%= sign.slug %></span>
+          <% if (sign.is_image) { %>
+            <div class="sign-buttons sign-buttons-image">
+              <a href="" class="btn secondary">Download</a>
+              <button class="btn secondary get-url">Share</button>
+              <div class="btn secondary copy-url">URL:
+                <span>signsforscience.com/sign/<%= sign.slug %></span>
+              </div>
             </div>
-          </div>
+          <% } else { %>
+            <div class="sign-buttons">
+              <button class="btn secondary get-url">Share</button>
+              <div class="btn secondary copy-url">URL:
+                <span>signsforscience.com/sign/<%= sign.slug %></span>
+              </div>
+            </div>
+          <% } %>
         </div>
       </div>
     <% } %>

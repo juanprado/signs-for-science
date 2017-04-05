@@ -520,6 +520,8 @@ textarea {
 }
 
 .sign-container {
+  display: flex;
+  flex-wrap: wrap;
   padding: 7vw 0 3vw 0;
 
   @include breakpoint(med) {
@@ -630,36 +632,9 @@ textarea {
 }
 
 .sign-buttons .btn {
-  // width: calc(50% + 1px); //Uncomment when we add back download feature
   width: 100%;
   display: inline-block;
   text-align: center;
-
-  &:first-child {
-    display: none;
-  }
-
-  // @include breakpoint(med) {
-  //   width: 100%; //Uncomment when we add back download feature
-  // }
-
-  // @include breakpoint(x-lrg) {
-  //   width: calc(50% + 1px); //Uncomment when we add back download feature
-  // }
-}
-
-.sign-buttons .get-url {
-  // margin-left: -7px;
-
-  // @include breakpoint(med) { //Uncomment when we add back download feature
-  //   margin-left: 0;
-  //   border-top: none;
-  // }
-
-  @include breakpoint(x-lrg) {
-    // margin-left: -7px;
-    border-top: 3px solid $charcoal;
-  }
 }
 
 .sign-buttons .copy-url {
@@ -667,7 +642,7 @@ textarea {
   position: absolute;
   top: 35px;
   left: 0;
-  width: 100%; //Make calc(50%-1px) when we add back download feature
+  width: 100%;
   border-top: 0;
   box-sizing: border-box;
   text-align: left;
@@ -684,18 +659,55 @@ textarea {
 
   &.visible {
     opacity: 1;
-    top: 50px; //Make 97px when we add back download feature
+    top: 50px;
     pointer-events: auto;
     z-index: 2;
+  }
+}
+
+.sign-buttons-image {
+  .btn {
+    width: calc(50% + 1px);
 
     @include breakpoint(med) {
-      top: 50px;
       width: 100%;
     }
 
     @include breakpoint(x-lrg) {
+      width: calc(50% + 1px);
+    }
+  }
+
+  .get-url {
+     margin-left: -7px;
+
+    @include breakpoint(med) {
+      margin-left: 0;
+      border-top: none;
+    }
+
+    @include breakpoint(x-lrg) {
+      margin-left: -7px;
+      border-top: 3px solid $charcoal;
+    }
+  }
+
+  .copy-url {
+    top: 35px;
+
+    &.visible {
       top: 50px;
-      width: 100%; //Make calc(100%-1px) when we add back download feature
+      width: calc(100% - 1px);
+
+      @include breakpoint(med) {
+        top: 97px;
+        width: 100%;
+      }
+
+      @include breakpoint(x-lrg) {
+        top: 50px;
+        width: calc(100%-1px);
+      }
     }
   }
 }
