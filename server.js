@@ -57,6 +57,7 @@ app.post('/signs', (req, res) => {
   delete signObj['file'];
   delete signObj['sign-type'];
   signObj.sign = req.sanitize(req.body.sign);
+  signObj.name = signObj.name === '' ? 'Anonymous' : req.body.name
   Sign(signObj).save()
     .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
     .catch(error => { console.log('Error saving sign') })

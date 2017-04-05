@@ -22,12 +22,14 @@
               <span class="body-copy mini">idea by</span>
               <span class="all-caps"><%= sign.name %></span>
               <div class="body-copy mini"><%= sign.tagline %>
-                <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
+                <% if (sign.url) { %>
+                  <a href="<%= sign.url %>" target="_blank" class="icon-link" title="Go to their website"></a>
+                <% } %>
               </div>
             </div>
             <div class="sign-buttons">
               <a href="" class="btn secondary">Download</a>
-              <div class="btn secondary get-url">Share</div>
+              <a href="/sign/<%= sign.slug %>" class="btn secondary get-url">Share</a>
               <div class="btn secondary copy-url">URL:
                 <span>signsforscience.com/sign/<%= sign.slug %></span>
               </div>
