@@ -9,19 +9,18 @@ imageValidation();
 getSigns();
 
 // Gallery URL Button
-document.addEventListener("DOMContentLoaded", function(){
-  if(document.getElementById("gallery")) {
-    var urlBtn = document.getElementsByClassName("get-url");
+if(document.getElementById("gallery")) {
+  var urlBtn = document.getElementsByClassName("get-url");
 
-    for (let i = 0; i < urlBtn.length; i++) {
-        urlBtn[i].addEventListener('click', function() {
-            var after = this.nextSibling;
-            var urlField = after.nextSibling;
-            urlField.classList.add("visible");
-        }, false);
-    };
-  }
-});
+  for (let i = 0; i < urlBtn.length; i++) {
+      urlBtn[i].addEventListener('click', function() {
+          var after = this.nextSibling;
+          var urlField = after.nextSibling;
+          urlField.classList.add("visible");
+      }, false);
+  };
+}
+
 // Mobile Nav
 var menu = document.getElementById("mobile-menu");
 var closeIcon = document.getElementById("nav-close");
