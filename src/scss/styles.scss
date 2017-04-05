@@ -191,6 +191,10 @@ nav .btn {
 .mobile-menu {
   position: relative;
 
+  @include breakpoint(med) {
+    display: none;
+  }
+
   &._hide {
     pointer-events: none;
 
@@ -217,9 +221,10 @@ nav .btn {
   padding: 65% 10%;
   box-sizing: border-box;
   position: fixed;
-  top: 0;
+  top: 50%;
   left: 0;
   z-index: 2;
+  transform: translate(0, -50%);
   opacity: 1;
   text-align: center;
   box-shadow: 0 4px 59px rgba(0,0,0,.2);
@@ -272,6 +277,12 @@ nav .btn {
 }
 
 /* * * Elements * * */
+input {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    border-radius: 0;
+}
 .btn {
   background: $pink;
   width: 100%;
@@ -1206,6 +1217,7 @@ textarea {
   display: block;
   margin-bottom: 30px;
   width: 100%;
+  max-width: 100%;
   min-height: 135px;
   max-height: 135px;
 }
@@ -1349,6 +1361,7 @@ textarea {
 
 .create-details input {
   width: 80%;
+  height: 100%;
   border: 0;
   padding: 15px;
   font-family: 'Open Sans', sans-serif;
