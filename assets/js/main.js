@@ -1973,8 +1973,7 @@ var slogan = document.getElementsByClassName('sign-slogan-container');
 function setScaledFont() {
   for (var i = 0; i < slogan.length; i++) {
     var s = slogan[i].offsetWidth,
-        fs = s * .45,
-        is = s * .2;
+        fs = s * .45;
 
     slogan[i].style.fontSize = fs + '%';
   }

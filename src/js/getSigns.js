@@ -6,7 +6,7 @@ let checking = false;
 
 export default function init() {
   const urlBtns = document.getElementsByClassName('get-url')
-  
+
   addingShareToggle(urlBtns);
   if (gallery) {
     currentPage = gallery.getAttribute('data-initial-page') || 1;
@@ -28,7 +28,7 @@ function addingShareToggle(btnArray) {
 
 function getSign(page) {
   const url = `/get-signs?page=${page}`
-  
+
   checking = true;
   axios.get(url)
     .then(response => { renderSigns(response.data); })
@@ -42,7 +42,7 @@ function onError(error) {
 
 function renderSigns(signs) {
   checking = false;
-  
+
   if (signs.length > 0) {
     const signElements = document.createElement('div');
 
