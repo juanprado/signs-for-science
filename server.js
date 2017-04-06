@@ -29,11 +29,12 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/', (req, res) => {
   const limit = 12;
   const title = 'home';
+  const page = 0;
 
   Sign.find()
     .sort({ featured: -1 })
     .limit(limit)
-    .then(signs => { res.render(`pages/index`, { signs, title }); })
+    .then(signs => { res.render(`pages/index`, { signs, title, page }); })
     .catch(error => { console.log('Error finding list of signs') });
 });
 
@@ -47,7 +48,7 @@ app.get('/get-signs', (req, res) => {
     .sort({ featured: -1 })
     .skip(skip)
     .limit(limit)
-    .then(signs => { res.render('partials/sign-list', { signs }); })
+    .then(signs => { res.render('partials/sign-list', { signs, page }); })
     .catch(error => { res.send(JSON.stringify({ error })); })
 });
 

@@ -1906,7 +1906,7 @@ function renderSigns(signs) {
 
     currentPage++;
     signElements.innerHTML = signs;
-    gallery.append(signElements);
+    gallery.appendChild(signElements);
     addingShareToggle(signElements.getElementsByClassName('get-url'));
   } else {
     window.removeEventListener('scroll', checkBottom);
