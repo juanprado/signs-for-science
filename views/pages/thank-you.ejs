@@ -38,7 +38,7 @@
 
             <% if (sign.is_image) { %>
               <div class="sign-buttons sign-buttons-image">
-                <a href="" class="btn secondary">Download</a>
+                <a href="<%= sign.image_url %>" download class="btn secondary">Download</a>
                 <button class="btn secondary get-url">Share</button>
                 <div class="btn secondary copy-url">URL:
                   <span>signsforscience.com/sign/<%= sign.slug %></span>
