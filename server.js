@@ -28,12 +28,14 @@ app.set('port', (process.env.PORT || 5000));
 // Index
 app.get('/', (req, res) => {
   const limit = 12;
-  const title = 'home';
+  const title = 'Signs for Science - Make Something That Matters';
+  const desc = 'Calling all designers, writers, illustrators & creative types! Share sign ideas here for the March for Science and People’s Climate March on April 22 & 29.';
+  const twDesc = 'Designers, writers, & creative types: we need sign ideas for the @ScienceMarchDC and @Peoples_Climate marches!';
 
   Sign.find()
     .sort({ featured: -1 })
     .limit(limit)
-    .then(signs => { res.render(`pages/index`, { signs, title }); })
+    .then(signs => { res.render(`pages/index`, { signs, title, desc, twDesc }); })
     .catch(error => { console.log('Error finding list of signs') });
 });
 
@@ -72,7 +74,7 @@ app.get('/sign-s3', (req, res) => {
   const fileType = req.query['file-type'];
   const uuid = uuidV4();
   const fileName = `${uuid}-${name}`;
-  
+
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
@@ -99,34 +101,40 @@ app.get('/sign-s3', (req, res) => {
 // Sign
 app.get('/sign/:slug', (req, res) => {
   const slug = req.params.slug;
-  const title = 'sign';
+  const title = 'Signs for Science - Check out this awesome sign';
+  const desc = 'This sign was made to support everyone marching for science & the climate! Check it out and make your own too.';
+  const twDesc = 'Check out this badass sign made to support the the @ScienceMarchDC and @Peoples_Climate marches.';
 
   Sign.findOne({ slug })
-    .then(sign => { res.render('pages/sign', { sign, title }); })
+    .then(sign => { res.render('pages/sign', { sign, title, desc, twDesc }); })
     .catch(error => { console.log('is this an error?') })
 });
 
 // About
 app.get('/about', (req, res) => {
-  const title = 'about';
-  
-  res.render('pages/about', { title })
+  const title = 'Signs for Science - Read the brief';
+  const desc = 'We need positive, provocative, and inclusive sign ideas for the March for Science and People’s Climate March on April 22 & 29. See more tips & inspiration.';
+  const twDesc = 'We need positive, provocative, & inclusive sign ideas for the @ScienceMarchDC and @Peoples_Climate marches. Read the brief';
+  res.render('pages/about', { title, desc, twDesc })
 });
 
 // Sign
 app.get('/create', (req, res) => {
-  const title = 'create';
-
-  res.render('pages/create', { title })
+  const title = 'Signs for Science - Create Your Sign';
+  const desc = 'Add a headline, upload a sketch, or even a full design to support the March for Science and People’s Climate March on April 22 & 29.';
+  const twDesc = 'Add a headline, upload a sketch, or even a full design to support the the @ScienceMarchDC and @Peoples_Climate marches.';
+  res.render('pages/create', { title, desc, twDesc })
 });
 
 // Thank-you
 app.get('/thank-you', (req, res) => {
   const slug = req.query.slug;
-  const title = 'thank-you';
+  const title = 'Signs for Science - Check out this awesome sign';
+  const desc = 'Calling all designers, writers, illustrators & creative types! Share sign ideas here for the March for Science and People’s Climate March on April 22 & 29.';
+  const twDesc = 'Designers, writers, & creative types: we need sign ideas for the @ScienceMarchDC and @Peoples_Climate marches!';
 
   Sign.findOne({ slug })
-    .then(sign => { res.render('pages/thank-you', { sign, title }); })
+    .then(sign => { res.render('pages/thank-you', { sign, title, desc, twDesc }); })
     .catch(error => { console.log('is this an error?') })
 });
 
