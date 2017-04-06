@@ -1,18 +1,18 @@
 (function () {
 'use strict';
 
-const textSubmit = document.getElementById('text-sign-submit');
+var textSubmit = document.getElementById('text-sign-submit');
 
 // Bind file input
 function bind$2() {
-  const textInput = document.getElementById('text-sign');
+  var textInput = document.getElementById('text-sign');
 
   textInput && textInput.addEventListener('keyup', previewText);
   textSubmit && textSubmit.addEventListener('click', submitText);
 }
 
-let textForUpload = false;
-let text = false;
+var textForUpload = false;
+var text = false;
 
 // Text validation rules
 function validateText(str) {
@@ -21,11 +21,11 @@ function validateText(str) {
 
 // Previews the text on change
 function previewText(evt) {
-  const previews = document.querySelectorAll('.text-sign-preview');
-  const container = document.querySelector('.sign-image-preview');
+  var previews = document.querySelectorAll('.text-sign-preview');
+  var container = document.querySelector('.sign-image-preview');
 
   text = evt.target.value;
-  Array.prototype.forEach.call(previews, (preview, i) => {
+  Array.prototype.forEach.call(previews, function (preview, i) {
     preview.innerHTML = text;
   });
   container.classList.remove('_hide-slogan');
@@ -1600,9 +1600,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 // Kickstarts form validation with submit btn
 function bind$1() {
-  const form = document.getElementById('create-sign-form');
-  const imageType = document.getElementById('sign-type-image');
-  const textType = document.getElementById('sign-type-text');
+  var form = document.getElementById('create-sign-form');
+  var imageType = document.getElementById('sign-type-image');
+  var textType = document.getElementById('sign-type-text');
   // const backBtns = document.querySelectorAll('.back');
 
   // [...backBtns].forEach( btn => {
@@ -1615,10 +1615,10 @@ function bind$1() {
 
 // Validates entire form
 function validateForm(evt) {
-  const name = validateName();
-  const tagline = validateTagline();
-  const website = validateURL();
-  const sign = validateSign();
+  var name = validateName();
+  var tagline = validateTagline();
+  var website = validateURL();
+  var sign = validateSign();
 
   evt.preventDefault();
   if (name && tagline && website && sign) {
@@ -1628,7 +1628,7 @@ function validateForm(evt) {
 
 // Form submission
 function submitForm(evt, sign) {
-  const type = getSignType();
+  var type = getSignType();
 
   if (type === 'image') {
     getSignature(evt, sign);
@@ -1639,14 +1639,14 @@ function submitForm(evt, sign) {
 
 // Get image Signature
 function getSignature(evt, file) {
-  const name = encodeURIComponent(file.name);
-  const type = file.type;
-  const url = `/sign-s3?file-name=${file.name}&file-type=${file.type}`;
+  var name = encodeURIComponent(file.name);
+  var type = file.type;
+  var url = '/sign-s3?file-name=' + file.name + '&file-type=' + file.type;
 
-  axios.get(url).then(response => {
-    const res = JSON.parse(response.request.response);
+  axios.get(url).then(function (response) {
+    var res = JSON.parse(response.request.response);
     uploadFile(file, res.signedRequest, res.url, evt);
-  }).catch(error => {
+  }).catch(function (error) {
     alert('there was an error getting the signature for the image, please try again.');
   });
 }
@@ -1654,10 +1654,10 @@ function getSignature(evt, file) {
 //Upload image, on success upload form
 // TODO fix this to use axios
 function uploadFile(file, signedRequest, url, evt) {
-  const xhr = new XMLHttpRequest();
+  var xhr = new XMLHttpRequest();
 
   xhr.open('PUT', signedRequest);
-  xhr.onreadystatechange = () => {
+  xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         document.querySelector('input[name="image_url"]').value = url;
@@ -1672,10 +1672,10 @@ function uploadFile(file, signedRequest, url, evt) {
 
 // Go to step two when sign type has been selected
 function stepTwo(evt) {
-  const type = evt.target.value;
-  const createText = document.querySelector('.create-text');
-  const createDesign = document.querySelector('.create-design');
-  const typeInput = document.querySelector('input[name="is_image"]');
+  var type = evt.target.value;
+  var createText = document.querySelector('.create-text');
+  var createDesign = document.querySelector('.create-design');
+  var typeInput = document.querySelector('input[name="is_image"]');
 
   if (type === 'text') {
     createText.classList.remove('_hide');
@@ -1692,19 +1692,19 @@ function stepTwo(evt) {
 
 // Goes to the next step provided
 function goToNextStep(num) {
-  const prev = num - 1;
-  const container = document.querySelector('.create-section-container');
+  var prev = num - 1;
+  var container = document.querySelector('.create-section-container');
 
   if (num > 1) {
-    container.classList.remove(`_step-${prev}`);
-    container.classList.add(`_step-${num}`);
+    container.classList.remove('_step-' + prev);
+    container.classList.add('_step-' + num);
   }
 }
 
 // Return the sign that has been previously validated
 function validateSign() {
-  const signType = getSignType();
-  let sign;
+  var signType = getSignType();
+  var sign = void 0;
 
   if (signType === 'text') {
     sign = getTextForUpload();
@@ -1722,8 +1722,8 @@ function getSignType() {
 
 //Validates Name
 function validateName() {
-  const name = document.getElementById('name').value;
-  const isValid = isValidString(name) || name.length === 0;
+  var name = document.getElementById('name').value;
+  var isValid = isValidString(name) || name.length === 0;
 
   if (!isValid) {
     alert('No special characters in your name please!');
@@ -1734,8 +1734,8 @@ function validateName() {
 
 //Validates website
 function validateURL() {
-  let website = document.getElementById('url').value;
-  const isValid = isValidURL(website) || website.length === 0;
+  var website = document.getElementById('url').value;
+  var isValid = isValidURL(website) || website.length === 0;
 
   if (!isValid) {
     alert('Make sure your URL has http:// in front of it!');
@@ -1746,8 +1746,8 @@ function validateURL() {
 
 //Validates tagline
 function validateTagline() {
-  const tagline = document.getElementById('tagline').value;
-  const isValid = isValidString(tagline) || tagline.length === 0;
+  var tagline = document.getElementById('tagline').value;
+  var isValid = isValidString(tagline) || tagline.length === 0;
 
   if (!isValid) {
     alert('No special characters in your tagline please!');
@@ -1758,25 +1758,25 @@ function validateTagline() {
 
 // Regex to validate string
 function isValidString(str) {
-  const pattern = /^[a-z ,.'-]+$/i;
+  var pattern = /^[a-z ,.'-]+$/i;
 
   return pattern.test(str);
 }
 
 // Regex to validate url
 function isValidURL(str) {
-  const pattern = /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+  var pattern = /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
 
   return pattern.test(str);
 }
 
-const imageSubmit = document.getElementById('image-sign-submit');
+var imageSubmit = document.getElementById('image-sign-submit');
 
-let fileForUpload = false;
+var fileForUpload = false;
 
 // Bind file input
 function bind() {
-  const fileInput = document.getElementById('file');
+  var fileInput = document.getElementById('file');
 
   imageSubmit && imageSubmit.addEventListener('click', nextStep);
   fileInput && fileInput.addEventListener('change', getFile);
@@ -1784,7 +1784,7 @@ function bind() {
 
 // Image validation rules
 function validateFile(file) {
-  const maxLimit = 1024 * 1024 * 2; // 2 MB
+  var maxLimit = 1024 * 1024 * 2; // 2 MB
 
   if (file === null) {
     alert('No file was selected');
@@ -1806,8 +1806,8 @@ function validateFile(file) {
 
 // Gets the file from the input after user has selected an image
 function getFile(evt) {
-  const file = evt.target.files[0];
-  const isValid = validateFile(file);
+  var file = evt.target.files[0];
+  var isValid = validateFile(file);
 
   if (isValid) {
     styleLabel(file);
@@ -1821,8 +1821,8 @@ function getFile(evt) {
 
 // Gives label the name of the file
 function styleLabel(file) {
-  const label = document.getElementById("file-name");
-  const fileName = file.name;
+  var label = document.getElementById("file-name");
+  var fileName = file.name;
 
   if (fileName) {
     label.innerHTML = fileName;
@@ -1836,13 +1836,13 @@ function nextStep() {
 
 // Populates previews with file
 function showPreview(file) {
-  const reader = new FileReader();
-  const previews = document.querySelectorAll('.create-image-preview');
-  const rules = document.querySelector('.sign-slogan-rules');
-  const container = document.querySelector('.sign-image-preview');
+  var reader = new FileReader();
+  var previews = document.querySelectorAll('.create-image-preview');
+  var rules = document.querySelector('.sign-slogan-rules');
+  var container = document.querySelector('.sign-image-preview');
 
-  reader.addEventListener('load', () => {
-    Array.prototype.forEach.call(previews, (preview, i) => {
+  reader.addEventListener('load', function () {
+    Array.prototype.forEach.call(previews, function (preview, i) {
       preview.src = reader.result;
     });
     rules.classList.add('_hide');
@@ -1856,12 +1856,12 @@ function getFileForUpload() {
   return fileForUpload;
 }
 
-let gallery = document.getElementById('gallery');
-let currentPage;
-let checking = false;
+var gallery = document.getElementById('gallery');
+var currentPage = void 0;
+var checking = false;
 
 function init() {
-  const urlBtns = document.getElementsByClassName('get-url');
+  var urlBtns = document.getElementsByClassName('get-url');
 
   addingShareToggle(urlBtns);
   if (gallery) {
@@ -1872,10 +1872,10 @@ function init() {
 }
 
 function addingShareToggle(btns) {
-  Array.prototype.forEach.call(btns, btn => {
-    btn.addEventListener('click', () => {
-      const after = btn.nextSibling;
-      const urlField = after.nextSibling;
+  Array.prototype.forEach.call(btns, function (btn) {
+    btn.addEventListener('click', function () {
+      var after = btn.nextSibling;
+      var urlField = after.nextSibling;
 
       urlField.classList.add('visible');
     });
@@ -1883,12 +1883,12 @@ function addingShareToggle(btns) {
 }
 
 function getSign(page) {
-  const url = `/get-signs?page=${page}`;
+  var url = '/get-signs?page=' + page;
 
   checking = true;
-  axios.get(url).then(response => {
+  axios.get(url).then(function (response) {
     renderSigns(response.data);
-  }).catch(error => {
+  }).catch(function (error) {
     onError(error);
   });
 }
@@ -1902,7 +1902,7 @@ function renderSigns(signs) {
   checking = false;
 
   if (signs.length > 0) {
-    const signElements = document.createElement('div');
+    var signElements = document.createElement('div');
 
     currentPage++;
     signElements.innerHTML = signs;
@@ -1914,10 +1914,10 @@ function renderSigns(signs) {
 }
 
 function checkBottom(evt) {
-  const innerHeight = window.innerHeight;
-  const scrollY = window.scrollY;
-  const offsetHeight = document.body.offsetHeight - 700;
-  const scrollPosition = innerHeight + scrollY;
+  var innerHeight = window.innerHeight;
+  var scrollY = window.scrollY;
+  var offsetHeight = document.body.offsetHeight - 700;
+  var scrollPosition = innerHeight + scrollY;
 
   if (scrollPosition >= offsetHeight && !checking) {
     getSign(currentPage);
@@ -1945,14 +1945,14 @@ hamburgerIcon.addEventListener('click', function () {
 // Sticky gallery filter
 
 if (document.getElementById("filter")) {
+  var getDistance = function getDistance() {
+    var topDist = h.parentNode.offsetTop;
+    return topDist;
+  };
+
   var h = document.getElementById("filter");
   var stuck = false;
   var stickPoint = getDistance();
-
-  function getDistance() {
-    var topDist = h.parentNode.offsetTop;
-    return topDist;
-  }
 
   window.onscroll = function (e) {
     var distance = getDistance() - window.pageYOffset;
