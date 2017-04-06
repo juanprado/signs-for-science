@@ -3,7 +3,7 @@
      @media (min-width: 250px) { @content ; }
   }
   @else if $point == sml {
-     @media (min-width: 349px) { @content ; }
+     @media (min-width: 365px) { @content ; }
   }
   @else if $point == med {
      @media (min-width: 650px) { @content ; }
