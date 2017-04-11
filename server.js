@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
   const twDesc = 'Designers, writers, & creative types: we need sign ideas for the @ScienceMarchDC and @Peoples_Climate marches!';
 
   Sign.find()
-    .sort({ featured: -1 })
+    .sort({ featured: -1, created_at: -1 })
     .limit(limit)
     .then(signs => { res.render(`pages/index`, { signs, title, desc, twDesc, page }); })
     .catch(error => { console.log('Error finding list of signs') });
@@ -47,7 +47,7 @@ app.get('/get-signs', (req, res) => {
   const skip = page * limit;
 
   Sign.find()
-    .sort({ featured: -1 })
+    .sort({ featured: -1, created_at: -1 })
     .skip(skip)
     .limit(limit)
     .then(signs => { res.render('partials/sign-list', { signs, page }); })
