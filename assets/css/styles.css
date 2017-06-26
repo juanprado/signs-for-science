@@ -452,7 +452,6 @@ h4 {
   text-decoration: none;
   cursor: pointer;
   color: #181818;
-  -webkit-transition: background .2s, color .2s;
   transition: background .2s, color .2s; }
   @media (min-width: 650px) {
     .body-copy a {
@@ -474,7 +473,6 @@ a.all-caps {
   text-decoration: none;
   cursor: pointer;
   color: #181818;
-  -webkit-transition: background .2s, color .2s;
   transition: background .2s, color .2s; }
   a.all-caps:hover {
     background-image: url(../img/underline-broo.svg);
@@ -672,9 +670,7 @@ nav .btn:after {
   opacity: 1;
   text-align: center;
   box-shadow: 0 4px 59px rgba(0, 0, 0, 0.2);
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
-  -webkit-transition: left .5s;
+  transition-delay: .5s;
   transition: left .5s; }
 
 .mobile-menu li {
@@ -693,7 +689,6 @@ nav .btn:after {
   left: 0;
   z-index: 100;
   opacity: .97;
-  -webkit-transition: all .4s;
   transition: all .4s; }
 
 .mobile-menu .icon-close {
@@ -706,7 +701,6 @@ nav .btn:after {
   right: 7.5%;
   z-index: 200;
   opacity: 1;
-  -webkit-transition: all .5s;
   transition: all .5s; }
 
 .mobile-menu .emb {
@@ -717,7 +711,6 @@ nav .btn:after {
   background-position: bottom 8vh left 20px, top 100px left 40px, bottom 20vh right 25vw, bottom 10vh left -60px;
   z-index: 200;
   left: 0;
-  -webkit-transition: all .5s;
   transition: all .5s; }
 
 /* * * Elements * * */
@@ -747,7 +740,6 @@ button, button:hover, button:active {
   font-weight: 700;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: background .4s, color .2s;
   transition: background .4s, color .2s; }
   @media (min-width: 365px) {
     .btn {
@@ -1031,7 +1023,6 @@ textarea {
   opacity: 0;
   cursor: text;
   pointer-events: none;
-  -webkit-transition: top .1s ease-out;
   transition: top .1s ease-out;
   word-wrap: break-word; }
   .sign-buttons .copy-url:hover {
@@ -1273,7 +1264,6 @@ textarea {
 
 .create-section-container {
   width: 300vw;
-  -webkit-transition: -webkit-transform 400ms ease-out;
   transition: -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out;
   transition: transform 400ms ease-out, -webkit-transform 400ms ease-out; }
@@ -1360,7 +1350,6 @@ textarea {
   color: #181818;
   text-decoration: none;
   cursor: pointer;
-  -webkit-transition: background .4s, color .2s;
   transition: background .4s, color .2s; }
   @media (min-width: 650px) {
     .sign-type {
@@ -1425,12 +1414,10 @@ textarea {
     background: #4d43ff; }
   .sign-type:hover h3, .sign-type:hover .body-copy {
     color: white;
-    -webkit-transition: color .2s;
     transition: color .2s; }
   .sign-type:hover .go {
     color: white;
     background-image: url("../img/icon-right-arrow-hover.svg");
-    -webkit-transition: background .4s, color .2s;
     transition: background .4s, color .2s; }
 
 .sign-type .row {
@@ -1462,7 +1449,6 @@ textarea {
   padding-left: 18px;
   margin-bottom: 20px;
   cursor: pointer;
-  -webkit-transition: background .2s, color .2s;
   transition: background .2s, color .2s;
   display: none; }
   .back:hover {
@@ -1504,7 +1490,6 @@ textarea {
 .instructions .btn {
   width: 100%;
   display: inline-block;
-  -webkit-transition: opacity .5s;
   transition: opacity .5s; }
   @media (min-width: 650px) {
     .instructions .btn {
@@ -1551,7 +1536,6 @@ textarea {
   opacity: .3; }
 
 .create-design .sign-slogan-rules {
-  -webkit-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in; }
   .create-design .sign-slogan-rules._hide {
     opacity: 0; }

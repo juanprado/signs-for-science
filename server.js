@@ -55,17 +55,17 @@ app.get('/get-signs', (req, res) => {
 });
 
 // Post
-app.post('/signs', (req, res) => {
-  const signObj = req.body;
+// app.post('/signs', (req, res) => {
+//   const signObj = req.body;
 
-  delete signObj['file'];
-  delete signObj['sign-type'];
-  signObj.sign = req.sanitize(req.body.sign);
-  signObj.name = signObj.name === '' ? 'Anonymous' : req.body.name
-  Sign(signObj).save()
-    .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
-    .catch(error => { console.log('Error saving sign') })
-});
+//   delete signObj['file'];
+//   delete signObj['sign-type'];
+//   signObj.sign = req.sanitize(req.body.sign);
+//   signObj.name = signObj.name === '' ? 'Anonymous' : req.body.name
+//   Sign(signObj).save()
+//     .then(sign => { res.redirect(`/thank-you?slug=${sign.slug}`) })
+//     .catch(error => { console.log('Error saving sign') })
+// });
 
 
 // Image Signature
